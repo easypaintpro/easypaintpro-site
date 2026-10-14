@@ -371,3 +371,59 @@ html { font-size: clamp(16px, .35vw + 11px, 19px); }
   .stage .window, .stage .skin-tabs { max-width: none; }
 }
 /* Large displays: give the app more room */
+
+/* Coming-soon pill for the Mac App Store (not Apple's badge; the listing isn't live yet) */
+.soon-pill {
+  display: inline-flex; align-items: center; gap: .5em;
+  font: 500 .82rem/1.2 var(--f-mono); color: var(--muted);
+  padding: .65em 1em; border-radius: 999px; border: 1px dashed var(--line); background: var(--surface);
+}
+.soon-pill svg { width: 15px; height: 15px; fill: currentColor; flex: none; }
+.button-primary .dl-icon { width: 18px; height: 18px; flex: none; }
+
+/* Subpages: download, support, legal */
+.sub-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 48px); align-items: start; }
+@media (max-width: 900px) { .sub-grid { grid-template-columns: 1fr; } }
+.card { padding: clamp(20px, 3vw, 28px); border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); display: grid; gap: 12px; align-content: start; }
+.card h2 { font-size: var(--step-2); }
+.card.highlight { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), var(--shadow); }
+.card .muted, .card p { color: var(--muted); }
+.meta-list { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 6px 16px; margin: 0; font-size: .95rem; }
+.meta-list dt { font: 500 .8rem/1.6 var(--f-mono); color: var(--muted); }
+.meta-list dd { margin: 0; }
+.steps { list-style: none; counter-reset: step; padding: 0; margin: 0; display: grid; gap: 14px; }
+.steps li { counter-increment: step; display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 12px; align-items: start; }
+.steps li::before {
+  content: counter(step); display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%;
+  background: var(--accent-soft); color: var(--ink); font: 700 .95rem/1 var(--f-display);
+}
+.steps h3 { font-size: 1.02rem; margin-bottom: 2px; }
+.steps p { color: var(--muted); font-size: .97rem; }
+kbd, .menu-path { font: 500 .85em/1 var(--f-mono); padding: .2em .45em; border-radius: 5px; background: var(--sunk); border: 1px solid var(--line); white-space: nowrap; }
+
+/* FAQ */
+.faq { display: grid; gap: 10px; }
+.faq-group + .faq-group { margin-top: clamp(28px, 4vw, 40px); }
+.faq-group > h2 { font-size: var(--step-2); margin-bottom: 14px; }
+.faq details { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.faq summary {
+  cursor: pointer; list-style: none; padding: 16px 18px; font: 700 1.02rem/1.35 var(--f-body);
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: center;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font: 500 1.3rem/1 var(--f-mono); color: var(--accent); transition: transform .15s ease; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq .answer { padding: 0 18px 18px; display: grid; gap: 10px; color: var(--muted); max-width: 75ch; }
+.faq .answer ul, .faq .answer ol { margin: 0; padding-left: 1.2em; display: grid; gap: 4px; }
+
+/* Legal prose */
+.prose { max-width: 75ch; display: grid; gap: 14px; }
+.prose h2 { font-size: var(--step-2); margin-top: 22px; }
+.prose h3 { font-size: 1.08rem; margin-top: 8px; }
+.prose p, .prose li { color: var(--muted); }
+.prose strong { color: var(--ink); }
+.prose ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+.toc { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0 0 8px; list-style: none; }
+.toc a { display: inline-block; font: 500 .8rem/1 var(--f-mono); padding: .55em .8em; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; color: var(--ink); background: var(--surface); }
+.updated { font: 400 .8rem/1.4 var(--f-mono); color: var(--muted); }
+.prose .toc { display: flex; padding: 0; gap: 8px; }

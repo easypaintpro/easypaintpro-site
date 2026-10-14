@@ -17,24 +17,25 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="styles.css?v=4">
-<script src="script.js?v=4" defer></script>
+<link rel="stylesheet" href="styles.css?v=5">
+<script src="script.js?v=5" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
   <nav class="nav wrap" aria-label="Primary">
-    <a class="brand" href="index.html"><img src="assets/app-icon.png" alt="" width="32" height="32">Easy Paint Pro</a>
+    <a class="brand" href="/"><img src="/assets/app-icon.png" alt="" width="32" height="32">Easy Paint Pro</a>
     <div class="nav-links">
       <a href="#tools">Tools</a>
       <a href="#your-way">Classic look</a>
-      <a href="gallery.html">Gallery</a>
+      <a href="/gallery.html">Gallery</a>
       <a href="#compare">Compare</a>
       <a href="#pricing">Pricing</a>
-      <a href="contact.html">Contact</a>
+      <a href="/support/">Support</a>
+      <a href="/contact.html">Contact</a>
     </div>
-    <button class="button button-primary button-small app-store-link" type="button">Download</button>
+    <a class="button button-primary button-small" href="/download/">Download free trial</a>
   </nav>
 </header>
 
@@ -51,9 +52,10 @@
         <p class="hero-tag">Paint should feel <span class="rainbow">easy again.</span></p>
         <p class="lede">The classic paint program, made for Mac. Every tool has its name on it.</p>
         <div class="cta-row">
-          <button class="button button-store app-store-link" type="button"><span><small>Download on the</small><strong>Mac App Store</strong></span></button>
+          <a class="button button-primary" href="/download/"><svg class="dl-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Download free trial</a>
+          <span class="soon-pill">Coming soon to the Mac App Store</span>
         </div>
-        <p class="requirement">Free 7-day trial · Mac with Apple silicon, macOS 14 or later</p>
+        <p class="requirement">Free 7-day trial, download now · Mac with Apple silicon, macOS 14 or later</p>
       </div>
 
       <div class="stage" data-skins>
@@ -69,7 +71,7 @@
           <button type="button" role="tab" id="skin-classic-blue" aria-selected="false" tabindex="-1"
             data-src="assets/hero-classic-blue.webp" data-srcset="assets/hero-classic-blue-1200.webp 1200w, assets/hero-classic-blue.webp 2400w" srcset="assets/hero-classic-blue-1200.webp 1200w, assets/hero-classic-blue.webp 2400w" sizes="(max-width: 980px) 100vw, 66vw" data-full="assets/hero-classic-blue.webp"
             data-alt="The same picture in the Classic Retro skin: blue title bar, tool palette on the left, color swatches along the bottom.">
-            <span class="skin-dot" style="background:#3355cc" aria-hidden="true"></span>Classic · Blue</button>
+            <span class="skin-dot" style="background:#3355cc" aria-hidden="true"></span>Classic · Sky Blue</button>
           <button type="button" role="tab" id="skin-classic-night" aria-selected="false" tabindex="-1"
             data-src="assets/hero-classic-night.webp" data-srcset="assets/hero-classic-night-1200.webp 1200w, assets/hero-classic-night.webp 2400w" srcset="assets/hero-classic-night-1200.webp 1200w, assets/hero-classic-night.webp 2400w" sizes="(max-width: 980px) 100vw, 66vw" data-full="assets/hero-classic-night.webp"
             data-alt="The same picture in the Classic Retro skin with the Night color scheme.">
@@ -104,7 +106,7 @@
           <p class="eyebrow">The Classic look</p>
           <h2>Remember the paint program you grew up with?</h2>
           <p class="lede">Turn on the Classic Retro skin. Tool palette on the left, colors along the bottom, a blue title bar on top.</p>
-          <ul class="skin-list"><li>Classic Blue</li><li>Olive</li><li>Silver</li><li>Night</li><li>Modern Day</li><li>Modern Night</li></ul>
+          <ul class="skin-list"><li>Sky Blue</li><li>Veggie Green</li><li>Pebble Gray</li><li>Night</li><li>Modern Day</li><li>Modern Night</li></ul>
           <div class="palette" aria-hidden="true">
             <i style="background:#000"></i><i style="background:#808080"></i><i style="background:#800000"></i><i style="background:#808000"></i><i style="background:#008000"></i><i style="background:#008080"></i><i style="background:#000080"></i><i style="background:#800080"></i><i style="background:#808040"></i><i style="background:#004040"></i><i style="background:#0080ff"></i><i style="background:#004080"></i><i style="background:#8000ff"></i><i style="background:#804000"></i>
             <i style="background:#fff"></i><i style="background:#c0c0c0"></i><i style="background:#ff0000"></i><i style="background:#ffff00"></i><i style="background:#00ff00"></i><i style="background:#00ffff"></i><i style="background:#0000ff"></i><i style="background:#ff00ff"></i><i style="background:#ffff80"></i><i style="background:#00ff80"></i><i style="background:#80ffff"></i><i style="background:#8080ff"></i><i style="background:#ff0080"></i><i style="background:#ff8040"></i>
@@ -190,8 +192,8 @@
   <section class="section band" id="layout">
     <div class="wrap way-grid">
       <div class="shot-card">
-        <div class="shot"><img class="zoomable" src="assets/skin-silver.webp" srcset="assets/skin-silver-1200.webp 1200w, assets/skin-silver.webp 1600w" sizes="(max-width: 900px) 100vw, 50vw" data-full="assets/skin-silver.webp" width="1600" height="1042" loading="lazy" alt="Easy Paint Pro in the Classic Retro skin with the Silver color scheme."></div>
-        <h3>Classic Silver</h3>
+        <div class="shot"><img class="zoomable" src="assets/skin-silver.webp" srcset="assets/skin-silver-1200.webp 1200w, assets/skin-silver.webp 1600w" sizes="(max-width: 900px) 100vw, 50vw" data-full="assets/skin-silver.webp" width="1600" height="1042" loading="lazy" alt="Easy Paint Pro in the Classic Retro skin with the Pebble Gray color scheme."></div>
+        <h3>Classic Pebble Gray</h3>
         <p>One of six looks. Your picture's colors never change, only the tools around it.</p>
       </div>
       <div class="shot-card">
@@ -394,8 +396,11 @@
           <span class="price-step">Step 2</span>
           <h3>Buy once</h3>
           <p class="price-amount">$29.99 <small>one time</small></p>
-          <ul class="ticks"><li>No subscription</li><li>All current features</li><li>Purchase handled by Apple</li></ul>
-          <button class="button button-primary app-store-link" type="button">Start your free trial</button>
+          <ul class="ticks"><li>No subscription</li><li>Free updates to version 3</li><li>License key emailed instantly</li><li>14-day money-back guarantee</li></ul>
+          <div class="cta-row">
+            <a class="button button-primary" href="/download/">Download free trial</a>
+            <a class="button button-quiet" href="/download/#buy" data-sales="buy">Buy now</a>
+          </div>
         </article>
         <article class="price-card" id="licensing">
           <span class="price-step">Schools &amp; business</span>
@@ -404,7 +409,7 @@
           <a class="button button-quiet" href="contact.html?topic=education">Ask about licensing</a>
         </article>
       </div>
-      <p class="fine">Introductory launch price. Final price, availability and trial terms are shown on the Mac App Store.</p>
+      <p class="fine">Introductory launch price in US dollars. Sales tax or VAT is added at checkout where it applies. Sold from this website today; coming soon to the Mac App Store, where Apple’s price and terms will apply. See <a href="/terms/">terms and refunds</a>.</p>
     </div>
   </section>
 
@@ -415,51 +420,28 @@
       <div class="final-copy">
         <h2>Open it. Pick a tool. Make something.</h2>
         <div class="cta-row">
-          <button class="button button-store app-store-link" type="button"><span><small>Download on the</small><strong>Mac App Store</strong></span></button>
+          <a class="button button-primary" href="/download/">Download free trial</a>
           <a class="button button-quiet" href="gallery.html">See the gallery</a>
         </div>
+        <p class="requirement">Coming soon to the Mac App Store.</p>
       </div>
     </div>
   </section>
 
-  <!-- Legal -->
-  <section class="legal" id="privacy">
-    <div class="wrap">
-      <div class="legal-tabs" role="tablist" aria-label="Legal information">
-        <button type="button" id="privacy-tab" role="tab" aria-selected="true" aria-controls="privacy-panel" tabindex="0">Privacy</button>
-        <button type="button" id="disclosure-tab" role="tab" aria-selected="false" aria-controls="disclosure-panel" tabindex="-1">App disclosure</button>
-      </div>
-      <div id="privacy-panel" role="tabpanel" aria-labelledby="privacy-tab">
-        <h2>Privacy</h2>
-        <p>Easy Paint Pro is designed for local image editing. Your artwork is processed on your Mac. The app does not require an account for ordinary editing and does not upload your images to an Easy Paint Pro server.</p>
-        <div class="legal-cols">
-          <div><h3>What stays local</h3><p>Images, canvas history, layers, masks, recordings, workspaces and exports stay on your device unless you choose to save or share them elsewhere.</p></div>
-          <div><h3>Contact form</h3><p>Messages sent through our contact form are delivered to us by Web3Forms. We use them only to reply to you.</p></div>
-          <div><h3>Purchase information</h3><p>Trials, purchases and entitlement checks are handled through Apple. Easy Paint Pro does not receive your full payment-card information.</p></div>
-        </div>
-        <p class="legal-date">Draft website privacy summary · Last updated October 14, 2026.</p>
-      </div>
-      <div id="disclosure-panel" role="tabpanel" aria-labelledby="disclosure-tab" hidden>
-        <h2>App disclosure</h2>
-        <div class="legal-cols">
-          <div><h3>Offer terms</h3><p>The Mac-only release, 7-day trial and $29.99 one-time introductory price are launch plans. Final price, availability, eligibility, taxes and trial terms will be shown on the Mac App Store and may change.</p></div>
-          <div><h3>Screenshots</h3><p>Screenshots show a current version of the app. Appearance and individual features may change. The Mac App Store listing is the final source of truth.</p></div>
-          <div><h3>Independent product</h3><p>Easy Paint Pro is an independent application. It is not affiliated with or endorsed by Apple or Microsoft. Apple, Mac, macOS and Windows are trademarks of their respective owners.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer>
   <div class="wrap foot">
-    <a class="brand" href="index.html"><img src="assets/app-icon.png" alt="" width="32" height="32">Easy Paint Pro</a>
+    <a class="brand" href="/"><img src="/assets/app-icon.png" alt="" width="32" height="32">Easy Paint Pro</a>
     <div class="foot-links">
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-      <a href="contact.html?topic=education">Licensing</a>
-      <a href="#privacy" data-legal-tab="privacy-tab">Privacy</a>
-      <button class="link-button app-store-link" type="button">Mac App Store</button>
+      <a href="/download/">Download</a>
+      <a href="/gallery.html">Gallery</a>
+      <a href="/support/">Support</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/contact.html?topic=education">Licensing</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms &amp; refunds</a>
+      <button class="link-button" type="button" data-sales="app-store">Mac App Store (coming soon)</button>
     </div>
     <span>© <span id="copyright-year">2026</span> Easy Paint Pro</span>
   </div>
@@ -471,8 +453,8 @@
 </dialog>
 
 <div class="toast" role="status" aria-live="polite" aria-atomic="true" hidden>
-  <strong>The Mac App Store listing is coming soon.</strong>
-  <span>Check back shortly for the free 7-day trial.</span>
+  <strong></strong>
+  <span></span>
 </div>
 </body>
 </html>

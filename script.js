@@ -1,19 +1,39 @@
+// ---- Sales links: fill these in as each one goes live -----------------------
+// DOWNLOAD_URL: the notarized .dmg (checklist item 24).
+// BUY_URL: the payment provider's checkout link (checklist items 13 and 24).
+// APP_STORE_URL: the Mac App Store listing (checklist item 28).
+// While a value is empty, its buttons show a short notice instead of a dead link.
+const DOWNLOAD_URL = "";
+const BUY_URL = "";
 const APP_STORE_URL = "";
 // Web3Forms access key for the contact form. Messages go to the inbox tied to this key;
 // the address itself never appears on the site. Replace when the key is ready.
 const WEB3FORMS_KEY = "ffe1ef29-6b18-4dd0-accf-be2bf1bd9cf3";
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-// App Store buttons: link when the listing exists, otherwise a short notice.
+const SALES = {
+  download: { url: DOWNLOAD_URL, title: "The download is almost ready.", body: "The free 7-day trial will be available here very soon." },
+  buy: { url: BUY_URL, title: "Checkout opens soon.", body: "Download the free trial first. Purchasing goes live shortly." },
+  "app-store": { url: APP_STORE_URL, title: "Coming soon to the Mac App Store.", body: "You can download Easy Paint Pro from this website today." },
+};
 const toast = document.querySelector(".toast");
 let toastTimer;
-document.querySelectorAll(".app-store-link").forEach((button) => {
-  button.addEventListener("click", () => {
-    if (APP_STORE_URL) { window.location.href = APP_STORE_URL; return; }
-    if (!toast) return;
-    toast.hidden = false;
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => { toast.hidden = true; }, 4200);
+const showToast = (title, body) => {
+  if (!toast) return;
+  toast.querySelector("strong").textContent = title;
+  toast.querySelector("span").textContent = body;
+  toast.hidden = false;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { toast.hidden = true; }, 4200);
+};
+document.querySelectorAll("[data-sales]").forEach((el) => {
+  const item = SALES[el.dataset.sales];
+  if (!item) return;
+  if (item.url && el.tagName === "A") { el.href = item.url; return; }
+  el.addEventListener("click", (e) => {
+    if (item.url) { window.location.href = item.url; return; }
+    e.preventDefault();
+    showToast(item.title, item.body);
   });
 });
 
