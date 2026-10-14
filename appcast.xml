@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Sparkle update feed for the website build of Easy Paint Pro.
+     The app reads this from SUFeedURL (https://easypaintpro.com/appcast.xml).
+     Add one <item> per release, signed with the sparkle-updates private key
+     (Sparkle's sign_update tool prints the sparkle:edSignature and length). -->
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Easy Paint Pro</title>
+    <link>https://easypaintpro.com/appcast.xml</link>
+    <description>Updates for Easy Paint Pro for Mac.</description>
+    <language>en</language>
+  </channel>
+</rss>
