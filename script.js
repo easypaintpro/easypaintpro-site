@@ -1,7 +1,7 @@
 const APP_STORE_URL = "";
 // Web3Forms access key for the contact form. Messages go to the inbox tied to this key;
 // the address itself never appears on the site. Replace when the key is ready.
-const WEB3FORMS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
+const WEB3FORMS_KEY = "ffe1ef29-6b18-4dd0-accf-be2bf1bd9cf3";
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 // App Store buttons: link when the listing exists, otherwise a short notice.
