@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Easy Paint Pro for Mac</title>
-<meta name="description" content="Easy Paint Pro is a Mac paint app with a name under every tool, 50+ brushes, pattern, emoji and gradient fills, classic and modern looks, and canvas recording. Try it free for 7 days, then pay once.">
+<meta name="description" content="Easy Paint Pro is a Mac paint app with a name under every tool, 50+ brushes, pattern, emoji and gradient fills, classic and modern looks, and canvas recording.">
 <meta name="theme-color" content="#f5f6fb">
 <meta property="og:title" content="Easy Paint Pro for Mac">
-<meta property="og:description" content="Paint should feel easy again. Labeled tools, 50+ brushes, creative fills and a classic look, made for Mac. Try free for 7 days, then pay once.">
+<meta property="og:description" content="Paint should feel easy again. Labeled tools, 50+ brushes, creative fills and a classic look, made for Mac.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://easypaintpro.com/">
 <meta property="og:image" content="https://easypaintpro.com/assets/og.png">
@@ -25,162 +25,118 @@
 
 <header class="site-header">
   <nav class="nav wrap" aria-label="Primary">
-    <a class="brand" href="#top"><img src="assets/app-icon.png" alt="" width="36" height="36">Easy Paint Pro</a>
+    <a class="brand" href="index.html"><img src="assets/app-icon.png" alt="" width="32" height="32">Easy Paint Pro</a>
     <div class="nav-links">
-      <a href="#made">See it made</a>
-      <a href="#make">Tools</a>
-      <a href="#your-way">Your way</a>
-      <a href="#record">Record</a>
+      <a href="#tools">Tools</a>
+      <a href="#your-way">Classic look</a>
+      <a href="gallery.html">Gallery</a>
       <a href="#compare">Compare</a>
       <a href="#pricing">Pricing</a>
+      <a href="contact.html">Contact</a>
     </div>
-    <button class="button button-primary button-small app-store-link" type="button">Try free</button>
+    <button class="button button-primary button-small app-store-link" type="button">Download</button>
   </nav>
 </header>
 
 <main id="main">
 
-  <!-- Hero -->
+  <!-- Hero: the app first -->
   <section class="hero" id="top">
-    <div class="wrap">
-      <div class="hero-grid">
-        <div>
-          <p class="eyebrow">Mac paint app · Pay once</p>
-          <h1>Paint should feel <span class="rainbow">easy again.</span></h1>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="hero-name">
+          <img src="assets/app-icon.png" alt="" width="76" height="76">
+          <h1>Easy Paint Pro</h1>
         </div>
-        <div class="hero-side">
-          <p class="lede">Pick a tool and start. Every button has its name under it, every option panel explains itself, and the picture you make stays easy to move and change until it looks right.</p>
-          <div class="offer" aria-label="Introductory offer">
-            <strong>$29.99 once</strong>
-            <span>7 days free first. No subscription.</span>
-          </div>
-          <div class="cta-row">
-            <button class="button button-primary app-store-link" type="button">Download on the Mac App Store</button>
-            <a class="button button-quiet" href="#made">See how this was drawn</a>
-          </div>
-          <p class="requirement">Requires a Mac with Apple silicon and macOS 14 or later. Your pictures stay on your Mac.</p>
+        <p class="hero-tag">Paint should feel <span class="rainbow">easy again.</span></p>
+        <p class="lede">The classic paint program, made for Mac. Every tool has its name on it.</p>
+        <div class="cta-row">
+          <button class="button button-store app-store-link" type="button"><span><small>Download on the</small><strong>Mac App Store</strong></span></button>
         </div>
+        <p class="requirement">Free 7-day trial · Mac with Apple silicon, macOS 14 or later</p>
       </div>
 
       <div class="stage" data-skins>
         <div class="skin-tabs" role="tablist" aria-label="Choose an app look">
           <button type="button" role="tab" id="skin-modern-night" aria-selected="true" tabindex="0"
-            data-src="assets/hero-modern-night.webp"
-            data-alt="Easy Paint Pro in the Modern skin at night: a kite, a brick house, an apple tree, a flower bed, sun and clouds on the canvas, with the Brush Options panel open on the left.">
+            data-src="assets/hero-modern-night.webp" data-srcset="assets/hero-modern-night-1200.webp 1200w, assets/hero-modern-night.webp 2400w" srcset="assets/hero-modern-night-1200.webp 1200w, assets/hero-modern-night.webp 2400w" sizes="(max-width: 980px) 100vw, 66vw" data-full="assets/hero-modern-night.webp"
+            data-alt="Easy Paint Pro in the Modern skin at night: a kite, a brick house, an apple tree and a flower bed on the canvas, with Brush Options open.">
             <span class="skin-dot" style="background:#2b2f3c" aria-hidden="true"></span>Modern · Night</button>
           <button type="button" role="tab" id="skin-modern-day" aria-selected="false" tabindex="-1"
-            data-src="assets/hero-modern-day.webp"
-            data-alt="The same picture in the Modern skin by day, with a light toolbar and Brush Options panel.">
+            data-src="assets/hero-modern-day.webp" data-srcset="assets/hero-modern-day-1200.webp 1200w, assets/hero-modern-day.webp 2400w" srcset="assets/hero-modern-day-1200.webp 1200w, assets/hero-modern-day.webp 2400w" sizes="(max-width: 980px) 100vw, 66vw" data-full="assets/hero-modern-day.webp"
+            data-alt="The same picture in the Modern skin by day.">
             <span class="skin-dot" style="background:#e9ebf2" aria-hidden="true"></span>Modern · Day</button>
           <button type="button" role="tab" id="skin-classic-blue" aria-selected="false" tabindex="-1"
-            data-src="assets/hero-classic-blue.webp"
-            data-alt="The same picture in the Classic Retro skin: blue title bar, tool palette on the left, color swatches along the bottom and Brush Options docked on the right.">
+            data-src="assets/hero-classic-blue.webp" data-srcset="assets/hero-classic-blue-1200.webp 1200w, assets/hero-classic-blue.webp 2400w" srcset="assets/hero-classic-blue-1200.webp 1200w, assets/hero-classic-blue.webp 2400w" sizes="(max-width: 980px) 100vw, 66vw" data-full="assets/hero-classic-blue.webp"
+            data-alt="The same picture in the Classic Retro skin: blue title bar, tool palette on the left, color swatches along the bottom.">
             <span class="skin-dot" style="background:#3355cc" aria-hidden="true"></span>Classic · Blue</button>
           <button type="button" role="tab" id="skin-classic-night" aria-selected="false" tabindex="-1"
-            data-src="assets/hero-classic-night.webp"
+            data-src="assets/hero-classic-night.webp" data-srcset="assets/hero-classic-night-1200.webp 1200w, assets/hero-classic-night.webp 2400w" srcset="assets/hero-classic-night-1200.webp 1200w, assets/hero-classic-night.webp 2400w" sizes="(max-width: 980px) 100vw, 66vw" data-full="assets/hero-classic-night.webp"
             data-alt="The same picture in the Classic Retro skin with the Night color scheme.">
             <span class="skin-dot" style="background:#151722" aria-hidden="true"></span>Classic · Night</button>
         </div>
         <div class="window" role="tabpanel" aria-label="App screenshot">
-          <img id="skin-image" src="assets/hero-modern-night.webp" width="2400" height="1232" fetchpriority="high"
-            alt="Easy Paint Pro in the Modern skin at night: a kite, a brick house, an apple tree, a flower bed, sun and clouds on the canvas, with the Brush Options panel open on the left.">
-        </div>
-        <div class="stage-caption">
-          <span>Untitled 2 · 960 × 640 px · 100%</span>
-          <span>Drawn in Easy Paint Pro 3.3.8 and captured from the app window. Same picture, four looks.</span>
+          <img id="skin-image" class="zoomable" src="assets/hero-modern-night.webp" srcset="assets/hero-modern-night-1200.webp 1200w, assets/hero-modern-night.webp 2400w" sizes="(max-width: 980px) 100vw, 66vw" data-full="assets/hero-modern-night.webp" width="2400" height="1232" fetchpriority="high"
+            alt="Easy Paint Pro in the Modern skin at night: a kite, a brick house, an apple tree and a flower bed on the canvas, with Brush Options open.">
+          <span class="zoom-hint" aria-hidden="true">Click to enlarge</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- How this picture was made -->
-  <section class="section" id="made">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">See it made</p>
-        <h2>One sunny afternoon. A handful of tools.</h2>
-        <p class="lede">Nothing in this picture was imported. Each part was drawn with a tool you can see on the toolbar. Shapes float until you press Return, so you can move, resize or turn them first.</p>
-      </div>
-      <div class="made-grid">
-        <figure class="made-art">
-          <img src="assets/canvas-art.webp" width="1600" height="1067" loading="lazy"
-            alt="The finished canvas: a pink kite with yellow bows on its string, an apple tree, a brick house with a blue roof, pink blossoms in a flower bed, a red ball on a green hill, clouds, birds, a star and the sun.">
-          <div class="palette" aria-hidden="true">
-            <i style="background:#000"></i><i style="background:#808080"></i><i style="background:#800000"></i><i style="background:#808000"></i><i style="background:#008000"></i><i style="background:#008080"></i><i style="background:#000080"></i><i style="background:#800080"></i><i style="background:#808040"></i><i style="background:#004040"></i><i style="background:#0080ff"></i><i style="background:#004080"></i><i style="background:#8000ff"></i><i style="background:#804000"></i>
-            <i style="background:#fff"></i><i style="background:#c0c0c0"></i><i style="background:#ff0000"></i><i style="background:#ffff00"></i><i style="background:#00ff00"></i><i style="background:#00ffff"></i><i style="background:#0000ff"></i><i style="background:#ff00ff"></i><i style="background:#ffff80"></i><i style="background:#00ff80"></i><i style="background:#80ffff"></i><i style="background:#8080ff"></i><i style="background:#ff0080"></i><i style="background:#ff8040"></i>
-          </div>
-        </figure>
-        <ol class="made-list">
-          <li class="made-item">
-            <img src="assets/made-sky.webp" width="720" height="293" loading="lazy" alt="Close-up of the sky: a cloud, two birds and the sun.">
-            <div>
-              <h3>Sky, sun and birds</h3>
-              <p>A rectangle with a radial gradient makes the sky glow. The sun is a circle with its own gradient, the clouds are overlapping white ellipses, and two quick pencil strokes became birds.</p>
-              <ul class="tool-chips"><li>Rectangle</li><li>Radial gradient</li><li>Ellipse</li><li>Pencil 3 px</li></ul>
-            </div>
-          </li>
-          <li class="made-item">
-            <img src="assets/made-kite.webp" width="440" height="820" loading="lazy" alt="Close-up of the kite with white cross spars and yellow bows on the string.">
-            <div>
-              <h3>The kite</h3>
-              <p>A few clicks with the Polygon tool and a Diamond gradient from pink to yellow. A drag on the round handle tilted it into the wind. The spars are 2 px lines, the string is the pencil, and the bows are tiny polygons.</p>
-              <ul class="tool-chips"><li>Polygon</li><li>Diamond gradient</li><li>Rotate handle</li><li>Line</li></ul>
-            </div>
-          </li>
-          <li class="made-item">
-            <img src="assets/made-tree.webp" width="495" height="580" loading="lazy" alt="Close-up of the apple tree: a green canopy dotted with red and a brown trunk.">
-            <div>
-              <h3>The apple tree</h3>
-              <p>Three ellipses filled with the Sparse Dots pattern, using green as one color and red as the other. Apples, for free. The trunk is a plain rectangle.</p>
-              <ul class="tool-chips"><li>Ellipse</li><li>Pattern fill</li><li>Two colors</li></ul>
-            </div>
-          </li>
-          <li class="made-item">
-            <img src="assets/made-house.webp" width="620" height="660" loading="lazy" alt="Close-up of the brick house with two light blue windows and a brown door.">
-            <div>
-              <h3>The brick house</h3>
-              <p>One rectangle with the Brick pattern at 2× tile size. The roof is a three-point polygon, and the door and windows are rectangles placed in front.</p>
-              <ul class="tool-chips"><li>Brick pattern</li><li>Pattern size 2×</li><li>Polygon</li></ul>
-            </div>
-          </li>
-          <li class="made-item">
-            <img src="assets/made-flowers.webp" width="720" height="180" loading="lazy" alt="Close-up of the flower bed tiled with pink blossom emoji on grass green.">
-            <div>
-              <h3>The flower bed</h3>
-              <p>A single rectangle with an emoji fill. Pick 🌸, set the size to 30 px, and drag.</p>
-              <ul class="tool-chips"><li>Emoji fill</li><li>Emoji size</li></ul>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <!-- Labeled tools -->
+  <!-- Every tool tells you its name -->
   <section class="section band" id="tools">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Readable at a glance</p>
         <h2>Every tool tells you its name.</h2>
-        <p class="lede">You should not have to hover over icons to find the bucket. Each button has a colorful symbol and a plain word under it, and the status bar tells you what your next click will do.</p>
+        <p class="lede">No guessing what an icon does. Each button shows a picture and a word.</p>
       </div>
-      <div class="strip-scroll" tabindex="0" aria-label="The real Easy Paint Pro toolbar. Scroll sideways to see all of it.">
-        <img src="assets/toolbar-strip.webp" width="3840" height="286" loading="lazy"
-          alt="The Easy Paint Pro window top: document tabs, then labeled buttons for New, Open, Save, Share, Print, Undo, Redo, Paste, Clear Canvas, Resize, Select/Move, Crop, Rotate, Flip, Zoom, Pencil, Brush, Fill, Rectangle, Line, Curve, Select, Color Picker, Eraser, Text, Airbrush, 3D, Shapes, Ellipse, Polygon, Circle Select, Stamp and More, followed by the color palette.">
+      <div class="toolbar-closeups">
+        <div class="shot"><img class="zoomable" src="assets/toolbar-left.webp" width="1920" height="286" loading="lazy" alt="Close-up of the left half of the toolbar: document tabs, then New, Open, Save, Share, Print, Undo, Redo, Paste, Clear Canvas, Resize, Select/Move, Crop, Rotate, Flip, Zoom, Pencil, Brush and Fill, each with a label."></div>
+        <div class="shot"><img class="zoomable" src="assets/toolbar-right.webp" width="1920" height="286" loading="lazy" alt="Close-up of the right half of the toolbar: Rectangle, Line, Curve, Select, Color Picker, Eraser, Text, Airbrush, 3D, Shapes, Ellipse, Polygon, Circle Select, Stamp and More, then the color palette."></div>
       </div>
-      <p class="strip-note">The actual toolbar from version 3.3.8. Scroll sideways to see every button.</p>
-      <div class="facts">
-        <div class="fact"><strong>17</strong><h3>creative tools in view</h3><p>Pencil, Brush, Fill, Shapes, Stamp, 3D and more sit on the toolbar. Lasso, Magic Wand, Measure and Zoom Area are one click away under More.</p></div>
-        <div class="fact"><strong>15</strong><h3>everyday actions</h3><p>New, Open, Save, Share, Print, Undo, Paste, Crop, Rotate, Flip and the rest, in a steady left-to-right order.</p></div>
-        <div class="fact">
-          <strong>1 line</strong><h3>of help, always on</h3>
-          <p>The status bar says what to do next. A few real ones:</p>
-          <ul class="hints">
-            <li>Drag to draw. Hold Shift for perfect angles.</li>
-            <li>Left-click fills with primary, right-click with secondary.</li>
-            <li>Choose a stamp, then drag it onto the canvas.</li>
-          </ul>
+      <p class="caption">The real toolbar. 17 creative tools and 15 everyday actions, all labeled.</p>
+
+      <div class="nostalgia" id="your-way">
+        <div class="shot"><img class="zoomable" src="assets/cu-classic-window.webp" width="1344" height="998" loading="lazy" alt="Close-up of the Classic Retro skin: a blue title bar, small toolbar, document tabs and the two-column tool palette on the left beside a canvas with a kite."></div>
+        <div class="nostalgia-copy">
+          <p class="eyebrow">The Classic look</p>
+          <h2>Remember the paint program you grew up with?</h2>
+          <p class="lede">Turn on the Classic Retro skin. Tool palette on the left, colors along the bottom, a blue title bar on top.</p>
+          <ul class="skin-list"><li>Classic Blue</li><li>Olive</li><li>Silver</li><li>Night</li><li>Modern Day</li><li>Modern Night</li></ul>
+          <div class="palette" aria-hidden="true">
+            <i style="background:#000"></i><i style="background:#808080"></i><i style="background:#800000"></i><i style="background:#808000"></i><i style="background:#008000"></i><i style="background:#008080"></i><i style="background:#000080"></i><i style="background:#800080"></i><i style="background:#808040"></i><i style="background:#004040"></i><i style="background:#0080ff"></i><i style="background:#004080"></i><i style="background:#8000ff"></i><i style="background:#804000"></i>
+            <i style="background:#fff"></i><i style="background:#c0c0c0"></i><i style="background:#ff0000"></i><i style="background:#ffff00"></i><i style="background:#00ff00"></i><i style="background:#00ffff"></i><i style="background:#0000ff"></i><i style="background:#ff00ff"></i><i style="background:#ffff80"></i><i style="background:#00ff80"></i><i style="background:#80ffff"></i><i style="background:#8080ff"></i><i style="background:#ff0080"></i><i style="background:#ff8040"></i>
+          </div>
         </div>
+      </div>
+
+      <div class="panel-strip" aria-label="Tool option panels up close">
+        <figure class="panel-card">
+          <div class="shot"><img class="zoomable" src="assets/cu-classic-brushes.webp" width="614" height="1622" loading="lazy" alt="Brush Options panel in the Classic skin: brush size and opacity sliders, 22 classic brush tips and the start of the professional brushes."></div>
+          <h3>Brushes</h3><p>22 classic tips plus a professional library.</p>
+        </figure>
+        <figure class="panel-card">
+          <div class="shot"><img class="zoomable" src="assets/cu-pro-brushes.webp" width="606" height="1624" loading="lazy" alt="Professional brushes up close: Calligraphy Nib, Marker, Flat and Round Bristle, Oil Impasto, Palette Knife, Wet Wash, Soft Airbrush, Splatter and Stipple."></div>
+          <h3>Pro brushes</h3><p>Watercolor, oil, ink, airbrush and effects.</p>
+        </figure>
+        <figure class="panel-card">
+          <div class="shot"><img class="zoomable" src="assets/cu-patterns.webp" width="1075" height="1133" loading="lazy" alt="The Document Patterns picker with labeled tiles: Solid, Paper, Fine Checker, Light Checker, Fine Dots, Sparse Dots, stripes, diagonals, Grid, Crosshatch, Brick and Basket."></div>
+          <h3>Patterns</h3><p>Fill shapes with your own two colors.</p>
+        </figure>
+        <figure class="panel-card">
+          <div class="shot"><img class="zoomable" src="assets/cu-stamps.webp" width="560" height="822" loading="lazy" alt="Stamp Options with custom wording and the classic stamp gallery: Date, Date + Time, Approved, Rejected, Pending and Cancelled."></div>
+          <h3>Stamps</h3><p>Approved, Paid, dates and your own words.</p>
+        </figure>
+        <figure class="panel-card">
+          <div class="shot"><img class="zoomable" src="assets/cu-3d.webp" width="560" height="1272" loading="lazy" alt="3D Options with a grid of 3D cube, sphere, cylinder, cone, pyramid, star and 3D letters A to L."></div>
+          <h3>3D shapes</h3><p>Styled 3D letters, numbers and solids.</p>
+        </figure>
+        <figure class="panel-card">
+          <div class="shot"><img class="zoomable" src="assets/cu-text.webp" width="606" height="1624" loading="lazy" alt="Text Options: font family, size, bold, italic, underline, strikethrough, alignment, text fit, direction, rotation and colors."></div>
+          <h3>Text</h3><p>Type right on the picture and style it.</p>
+        </figure>
       </div>
     </div>
   </section>
@@ -190,10 +146,9 @@
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Make something</p>
-        <h2>A real paint box, not a markup bar.</h2>
-        <p class="lede">Brushes that look different from each other, patterns in your own two colors, text you can keep editing, and stamps for every “done.”</p>
+        <h2>A real paint box.</h2>
       </div>
-      <div data-tabset>
+      <div>
         <div class="tabs" role="tablist" aria-label="Tool showcase">
           <button type="button" role="tab" id="t-brush" aria-controls="p-brush" aria-selected="true" tabindex="0">Brushes</button>
           <button type="button" role="tab" id="t-pattern" aria-controls="p-pattern" aria-selected="false" tabindex="-1">Patterns</button>
@@ -204,82 +159,45 @@
         </div>
 
         <div class="panel" role="tabpanel" id="p-brush" aria-labelledby="t-brush" tabindex="0">
-          <div class="panel-copy">
-            <h3>50+ brushes, each with its own feel.</h3>
-            <p>22 classic tips sit next to a professional library sorted into Basics, Sketching, Inking, Painting, Watercolor, Airbrush and Effects. Size and opacity are always one slider away.</p>
-            <ul class="chips"><li>HB Pencil</li><li>Charcoal</li><li>Chalk Pastel</li><li>Brush Pen</li><li>Calligraphy Nib</li><li>Oil Impasto</li><li>Palette Knife</li><li>Wet Wash</li><li>Soft Airbrush</li><li>Splatter</li><li>Stipple</li></ul>
-          </div>
-          <figure><img src="assets/shot-brushes.webp" width="1920" height="1251" loading="lazy" alt="Brush Studio canvas in the Classic Retro skin with pencil, round brush, textured, calligraphy, airbrush and highlighter strokes, and the Brush Options panel showing classic tips and professional brushes."></figure>
+          <div class="panel-line"><h3>50+ brushes</h3><p>Pencil, round, textured, calligraphy, airbrush and highlighter, side by side.</p></div>
+          <div class="shot"><img class="zoomable" src="assets/shot-brushes.webp" srcset="assets/shot-brushes-1200.webp 1200w, assets/shot-brushes.webp 1920w" sizes="(max-width: 1560px) 100vw, 1500px" data-full="assets/shot-brushes.webp" width="1920" height="1251" loading="lazy" alt="Brush Studio canvas in the Classic Retro skin with pencil, round brush, textured, calligraphy, airbrush and highlighter strokes, and the Brush Options panel."></div>
         </div>
-
         <div class="panel" role="tabpanel" id="p-pattern" aria-labelledby="t-pattern" tabindex="0" hidden>
-          <div class="panel-copy">
-            <h3>Patterns in your colors, at your scale.</h3>
-            <p>Checks, dots, stripes, grids, brick, basket and more, drawn in your primary and secondary colors. Set the tile from 1× to 8× and watch the live preview at 100% zoom. Patterns line up with the canvas, so fills that touch meet cleanly.</p>
-            <ul class="chips"><li>Fine Checker</li><li>Sparse Dots</li><li>Diagonal</li><li>Crosshatch</li><li>Brick</li><li>Basket</li><li>1× to 8× tiles</li></ul>
-          </div>
-          <figure><img src="assets/shot-patterns.webp" width="1920" height="986" loading="lazy" alt="Pattern Lab canvas with fine, bold and playful pattern swatches, and the Document Patterns picker open with labeled tiles."></figure>
+          <div class="panel-line"><h3>Patterns at any scale</h3><p>Pick a tile, set it from 1× to 8×, and fill.</p></div>
+          <div class="shot"><img class="zoomable" src="assets/shot-patterns.webp" srcset="assets/shot-patterns-1200.webp 1200w, assets/shot-patterns.webp 1920w" sizes="(max-width: 1560px) 100vw, 1500px" data-full="assets/shot-patterns.webp" width="1920" height="986" loading="lazy" alt="Pattern Lab canvas with fine, bold and playful pattern swatches, and the Document Patterns picker open."></div>
         </div>
-
         <div class="panel" role="tabpanel" id="p-fill" aria-labelledby="t-fill" tabindex="0" hidden>
-          <div class="panel-copy">
-            <h3>One bucket, four kinds of fill.</h3>
-            <p>Solid does what you expect. Gradient blends your two colors as Linear, Radial, Angle, Reflected or Diamond. Pattern pours in a tile. Emoji fills any shape with 😀, ❤️ or 🌸 at the size you choose.</p>
-            <ul class="chips"><li>Solid</li><li>Gradient × 5</li><li>Pattern</li><li>Emoji</li><li>Left / right click colors</li></ul>
-          </div>
-          <figure><img src="assets/shot-fills.webp" width="1920" height="986" loading="lazy" alt="Shapes filled with a brick pattern, smiley and heart emoji, a wave pattern and two gradients, with Fill With Color options open."></figure>
+          <div class="panel-line"><h3>Four kinds of fill</h3><p>Solid, gradient, pattern or emoji.</p></div>
+          <div class="shot"><img class="zoomable" src="assets/shot-fills.webp" srcset="assets/shot-fills-1200.webp 1200w, assets/shot-fills.webp 1920w" sizes="(max-width: 1560px) 100vw, 1500px" data-full="assets/shot-fills.webp" width="1920" height="986" loading="lazy" alt="Shapes filled with a brick pattern, smiley and heart emoji, a wave pattern and two gradients, with Fill With Color options open."></div>
         </div>
-
         <div class="panel" role="tabpanel" id="p-shape" aria-labelledby="t-shape" tabindex="0" hidden>
-          <div class="panel-copy">
-            <h3>Shapes that wait for you.</h3>
-            <p>Rectangles, ellipses, polygons, lines, curves, and a gallery of stars, triangles, diamonds, hexagons and more. Hold Shift for squares, circles and straight angles. Choose outline, fill, or both, and put a shape in front of or behind what is already there.</p>
-            <ul class="chips"><li>Outline / Both / Fill</li><li>In Front / Behind</li><li>Shift to constrain</li></ul>
-          </div>
-          <figure><img src="assets/shot-shapes.webp" width="1920" height="986" loading="lazy" alt="Shapes and Type canvas with an orange rectangle, purple circle, outlined rectangle and three lines, and the Line Options panel open."></figure>
+          <div class="panel-line"><h3>Shapes that wait for you</h3><p>Move, resize and turn a shape before you place it.</p></div>
+          <div class="shot"><img class="zoomable" src="assets/shot-shapes.webp" srcset="assets/shot-shapes-1200.webp 1200w, assets/shot-shapes.webp 1920w" sizes="(max-width: 1560px) 100vw, 1500px" data-full="assets/shot-shapes.webp" width="1920" height="986" loading="lazy" alt="Shapes and Type canvas with an orange rectangle, purple circle, outlined rectangle and three lines, and Line Options open."></div>
         </div>
-
         <div class="panel" role="tabpanel" id="p-text" aria-labelledby="t-text" tabindex="0" hidden>
-          <div class="panel-copy">
-            <h3>Type right on the picture.</h3>
-            <p>Drag a box and type. Choose the font and size, add bold, italic, underline, strikethrough, outline or shadow, and pick Wrap, Natural or Stretch to control how text fits its box. Move it by the border and rotate it with the handle.</p>
-            <ul class="chips"><li>Wrap · Natural · Stretch</li><li>Alignment</li><li>Rotation</li><li>Transparent or opaque</li></ul>
-          </div>
-          <figure><img src="assets/shot-text.webp" width="1920" height="1251" loading="lazy" alt="Classic Retro skin at night with the headline Make your ideas visible on the canvas and the Text Options panel open."></figure>
+          <div class="panel-line"><h3>Text on the picture</h3><p>Fonts, styles, alignment and rotation.</p></div>
+          <div class="shot"><img class="zoomable" src="assets/shot-text.webp" srcset="assets/shot-text-1200.webp 1200w, assets/shot-text.webp 1920w" sizes="(max-width: 1560px) 100vw, 1500px" data-full="assets/shot-text.webp" width="1920" height="1251" loading="lazy" alt="Classic Retro skin at night with the headline Make your ideas visible on the canvas and the Text Options panel open."></div>
         </div>
-
         <div class="panel" role="tabpanel" id="p-stamp" aria-labelledby="t-stamp" tabindex="0" hidden>
-          <div class="panel-copy">
-            <h3>A stamp for every “done.”</h3>
-            <p>Approved, Paid, Confidential, Urgent, Air Mail and more, plus clock, date, calendar and country stamps. Change the wording, drag to size, rotate with the handle, and press Return to place.</p>
-            <ul class="chips"><li>Classic stamps</li><li>Date &amp; time</li><li>Calendar</li><li>Custom wording</li></ul>
-          </div>
-          <figure><img src="assets/shot-stamps.webp" width="1920" height="986" loading="lazy" alt="A canvas of placed stamps including Approved, Paid, Air Mail, Confidential and Top Secret, with the Classic Stamps gallery open."></figure>
+          <div class="panel-line"><h3>A stamp for every “done”</h3><p>Change the wording, size it and place it.</p></div>
+          <div class="shot"><img class="zoomable" src="assets/shot-stamps.webp" srcset="assets/shot-stamps-1200.webp 1200w, assets/shot-stamps.webp 1920w" sizes="(max-width: 1560px) 100vw, 1500px" data-full="assets/shot-stamps.webp" width="1920" height="986" loading="lazy" alt="A canvas of placed stamps including Approved, Paid, Air Mail, Confidential and Top Secret, with the Classic Stamps gallery open."></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Your way -->
-  <section class="section band" id="your-way">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Your way</p>
-        <h2>Make it look like the Paint you remember.</h2>
-        <p class="lede">Switch to the Classic Retro skin for a tool palette on the left and colors along the bottom, or keep the modern Mac layout. Either way, you decide what goes where.</p>
+  <!-- Layout -->
+  <section class="section band" id="layout">
+    <div class="wrap way-grid">
+      <div class="shot-card">
+        <div class="shot"><img class="zoomable" src="assets/skin-silver.webp" srcset="assets/skin-silver-1200.webp 1200w, assets/skin-silver.webp 1600w" sizes="(max-width: 900px) 100vw, 50vw" data-full="assets/skin-silver.webp" width="1600" height="1042" loading="lazy" alt="Easy Paint Pro in the Classic Retro skin with the Silver color scheme."></div>
+        <h3>Classic Silver</h3>
+        <p>One of six looks. Your picture's colors never change, only the tools around it.</p>
       </div>
-      <div class="way-grid">
-        <div class="shot-card">
-          <img src="assets/skin-silver.webp" width="1600" height="1042" loading="lazy" alt="Easy Paint Pro in the Classic Retro skin with the Silver color scheme, showing the Shapes and Type canvas.">
-          <h3>Six looks to choose from</h3>
-          <p>Modern by day or by night, plus four classic color schemes. Your picture’s colors never change, only the tools around it.</p>
-          <ul class="skin-list"><li>Modern Day</li><li>Modern Night</li><li>Classic Blue</li><li>Classic Olive</li><li>Classic Silver</li><li>Classic Night</li></ul>
-        </div>
-        <div class="shot-card">
-          <img src="assets/crop-customize-toolbar.webp" width="1400" height="715" loading="lazy" alt="The Customize Toolbar popover with One Row and Two Rows buttons and arrows to move the File, Edit, Image, Draw, Shapes, Select, More and Colors sections.">
-          <h3>One toolbar row or two</h3>
-          <p>Spread the tools over two rows for bigger targets, or keep one row for more canvas. Move whole sections left or right, and dock the Tool Options panel or let it float.</p>
-        </div>
+      <div class="shot-card">
+        <div class="shot"><img class="zoomable" src="assets/crop-customize-toolbar.webp" width="1400" height="715" loading="lazy" alt="The Customize Toolbar popover with One Row and Two Rows buttons and arrows to move each toolbar section."></div>
+        <h3>One toolbar row or two</h3>
+        <p>Bigger buttons on two rows, or more canvas on one. Move whole sections around.</p>
       </div>
     </div>
   </section>
@@ -291,35 +209,30 @@
         <div>
           <div class="section-head" style="margin-bottom:0">
             <p class="eyebrow">Canvas recording</p>
-            <h2>Hit Record. Watch the picture come together.</h2>
-            <p class="lede">Canvas recording captures your strokes and edits, then plays them back. Great for lessons, for showing a friend how you did it, or just for fun.</p>
+            <h2>Hit Record. Watch it come together.</h2>
           </div>
           <ul class="checks">
-            <li>Only the picture is recorded. No screen, window or audio capture.</li>
-            <li>Count down 3 or 5 seconds before it starts.</li>
-            <li>Skip idle time over 2 seconds so replays stay snappy.</li>
-            <li>Show the cursor and color or tool changes in the replay.</li>
-            <li>Pick a default replay speed, and loop it if you like.</li>
-            <li>Save Canvas &amp; Recording keeps the replay with your picture.</li>
+            <li>Records only the picture. No screen or audio.</li>
+            <li>Countdown, skip idle time, choose replay speed.</li>
+            <li>Saves the replay with your picture.</li>
           </ul>
         </div>
-        <img src="assets/crop-recording.webp" width="1400" height="971" loading="lazy" alt="The Canvas recording popover under the Record button, with countdown, show cursor, skip idle time, include color and tool steps, replay speed and loop options.">
+        <div class="shot"><img class="zoomable" src="assets/crop-recording.webp" width="1400" height="971" loading="lazy" alt="The Canvas recording popover under the Record button, with countdown, show cursor, skip idle time, replay speed and loop options."></div>
       </div>
-
       <div class="demos">
         <figure class="demo">
           <div class="demo-media">
-            <img src="assets/poster-shape.webp" width="1200" height="616" loading="lazy" data-gif="assets/step-shapes.gif" data-poster="assets/poster-shape.webp" alt="Step-by-step demo: drawing a filled rectangle, a circle and an outlined rectangle in Easy Paint Pro.">
+            <img src="assets/poster-shape.webp" width="1200" height="616" loading="lazy" data-gif="assets/step-shapes.gif" data-poster="assets/poster-shape.webp" alt="Step-by-step demo: drawing a filled rectangle, a circle and an outlined rectangle.">
             <button class="demo-play" type="button" aria-pressed="false">Play steps</button>
           </div>
-          <figcaption>Step-by-step demo: making shapes. Four captured stages from the app, not a screen recording.</figcaption>
+          <figcaption>Step-by-step demo: making shapes. Four captured stages from the app.</figcaption>
         </figure>
         <figure class="demo">
           <div class="demo-media">
-            <img src="assets/poster-line.webp" width="1200" height="616" loading="lazy" data-gif="assets/step-lines.gif" data-poster="assets/poster-line.webp" alt="Step-by-step demo: drawing three straight lines in Easy Paint Pro.">
+            <img src="assets/poster-line.webp" width="1200" height="616" loading="lazy" data-gif="assets/step-lines.gif" data-poster="assets/poster-line.webp" alt="Step-by-step demo: drawing three straight lines.">
             <button class="demo-play" type="button" aria-pressed="false">Play steps</button>
           </div>
-          <figcaption>Step-by-step demo: drawing lines. Four captured stages from the app, not a screen recording.</figcaption>
+          <figcaption>Step-by-step demo: drawing lines. Four captured stages from the app.</figcaption>
         </figure>
       </div>
     </div>
@@ -334,14 +247,14 @@
       </div>
       <div class="grow-grid">
         <article class="grow-card">
-          <div class="media"><img src="assets/crop-layers.webp" width="1100" height="1415" loading="lazy" alt="The Layers and Masks panel with two layers, visibility toggles, opacity slider and Add Mask button."></div>
+          <div class="media"><img class="zoomable" src="assets/crop-layers.webp" width="1100" height="1415" loading="lazy" alt="The Layers and Masks panel with two layers, visibility toggles, opacity slider and Add Mask button."></div>
           <h3>Layers and masks</h3>
-          <p>Name, hide, lock and reorder layers, set opacity, and add a mask when you want to hide part of one without erasing it.</p>
+          <p>Hide, lock, reorder and mask layers.</p>
         </article>
         <article class="grow-card">
-          <div class="media"><img src="assets/crop-tab-search.webp" width="1100" height="847" loading="lazy" alt="The tab switcher with a search field showing three open images and their sizes."></div>
+          <div class="media"><img class="zoomable" src="assets/crop-tab-search.webp" width="1100" height="847" loading="lazy" alt="The tab switcher with a search field showing three open images."></div>
           <h3>Tabs you can search</h3>
-          <p>Keep several pictures open, each in its own tab with its own layers. Type in the tab switcher to jump straight to one.</p>
+          <p>Many pictures open, each with its own layers.</p>
         </article>
         <article class="grow-card">
           <div class="media">
@@ -350,41 +263,61 @@
             </video>
           </div>
           <h3>Zoom from 10% to 3,200%</h3>
-          <p>Click with the Zoom tool to double the view, right-click to come back, or pinch on the trackpad. Rulers, grid and guides help you line things up.</p>
+          <p>Down to single pixels, with rulers, grid and guides.</p>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- See it made -->
+  <section class="section" id="made">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">See it made</p>
+        <h2>One sunny afternoon, a handful of tools.</h2>
+      </div>
+      <div class="made-grid">
+        <figure class="made-art">
+          <div class="shot"><img class="zoomable" src="assets/canvas-art.webp" srcset="assets/canvas-art-1200.webp 1200w, assets/canvas-art.webp 1600w" sizes="(max-width: 900px) 100vw, 50vw" data-full="assets/canvas-art.webp" width="1600" height="1067" loading="lazy" alt="A pink kite with yellow bows, an apple tree, a brick house, pink blossoms in a flower bed, a red ball on a hill, clouds, birds, a star and the sun, drawn in Easy Paint Pro."></div>
+          <figcaption class="caption">Drawn entirely with Easy Paint Pro's own tools. More in the <a href="gallery.html">gallery</a>.</figcaption>
+        </figure>
+        <ol class="made-list">
+          <li class="made-item"><img src="assets/made-sky.webp" width="720" height="293" loading="lazy" alt=""><div><h3>Sky, sun and birds</h3><ul class="tool-chips"><li>Radial gradient</li><li>Ellipse</li><li>Pencil</li></ul></div></li>
+          <li class="made-item"><img src="assets/made-kite.webp" width="440" height="820" loading="lazy" alt=""><div><h3>The kite</h3><ul class="tool-chips"><li>Polygon</li><li>Diamond gradient</li><li>Rotate</li><li>Line</li></ul></div></li>
+          <li class="made-item"><img src="assets/made-tree.webp" width="495" height="580" loading="lazy" alt=""><div><h3>The apple tree</h3><ul class="tool-chips"><li>Ellipse</li><li>Dot pattern in two colors</li></ul></div></li>
+          <li class="made-item"><img src="assets/made-house.webp" width="620" height="660" loading="lazy" alt=""><div><h3>The brick house</h3><ul class="tool-chips"><li>Brick pattern</li><li>Polygon roof</li></ul></div></li>
+          <li class="made-item"><img src="assets/made-flowers.webp" width="720" height="180" loading="lazy" alt=""><div><h3>The flower bed</h3><ul class="tool-chips"><li>Emoji fill 🌸</li></ul></div></li>
+        </ol>
       </div>
     </div>
   </section>
 
   <!-- Extras: privacy + PDF -->
-  <section class="section" id="extras">
-    <div class="wrap">
-      <div class="extras">
-        <article class="extra">
-          <p class="eyebrow">Privacy tools</p>
-          <h2>Share the picture, not the private details.</h2>
-          <p>Blur, pixelate or black out names, numbers and faces in a screenshot, then export a sanitized image copy. Your normal editing happens on your Mac with no account and no upload.</p>
-          <p class="note">Editable workspaces and recordings can keep the history of what you covered. Share the flattened exported image, and check it before you send it.</p>
-        </article>
-        <article class="extra" id="pdf">
-          <p class="eyebrow">PDF pages</p>
-          <h2>Mark up a PDF page like a picture.</h2>
-          <p>Open a PDF and each page arrives as its own paint tab. Add arrows, shapes, text, stamps or painting, then save a new PDF. Save All Tabs as One PDF combines your open tabs in order.</p>
-          <p class="note">PDF pages are imported as images, and very large PDFs may open partly or at lower resolution. The original PDF text and form fields are not editable, and a stamped or drawn signature is a visual mark, not a digital signature. For filling forms and reorganizing original pages, Preview is the better tool.</p>
-        </article>
-      </div>
+  <section class="section band" id="extras">
+    <div class="wrap extras">
+      <article class="extra">
+        <p class="eyebrow">Privacy tools</p>
+        <h2>Share the picture, not the private details.</h2>
+        <p>Blur, pixelate or black out names and numbers in a screenshot, then export a clean copy. No account, no upload.</p>
+        <p class="note">Editable workspaces and recordings can keep the history of what you covered. Share the flattened export.</p>
+      </article>
+      <article class="extra" id="pdf">
+        <p class="eyebrow">PDF pages</p>
+        <h2>Mark up a PDF page like a picture.</h2>
+        <p>Each PDF page opens as its own paint tab. Draw, stamp or add text, then save a new PDF.</p>
+        <p class="note">Pages are imported as images, so the original PDF text and form fields aren't editable. For filling forms and reordering original pages, Preview is the better tool.</p>
+      </article>
     </div>
   </section>
 
   <!-- Compare -->
-  <section class="section band" id="compare">
+  <section class="section" id="compare">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Compare</p>
         <h2>Built for making pictures, not just viewing them.</h2>
-        <p class="lede">Preview is great at reading PDFs and quick markup, and Microsoft Paint is a Windows favorite. Here is where Easy Paint Pro fits.</p>
       </div>
-      <div data-tabset>
+      <div>
         <div class="compare-switch" role="tablist" aria-label="Compare with">
           <button type="button" role="tab" id="c-preview" aria-controls="cp-preview" aria-selected="true" tabindex="0">Apple Preview</button>
           <button type="button" role="tab" id="c-paint" aria-controls="cp-paint" aria-selected="false" tabindex="-1">Microsoft Paint</button>
@@ -394,7 +327,7 @@
           <div class="table-wrap">
             <table>
               <caption class="visually-hidden">Easy Paint Pro compared with Apple Preview</caption>
-              <thead><tr><th scope="col">What you want to do</th><th scope="col" class="col-epp">Easy Paint Pro 3.3.8</th><th scope="col">Apple Preview</th></tr></thead>
+              <thead><tr><th scope="col">What you want to do</th><th scope="col" class="col-epp"><span><img src="assets/app-icon.png" alt="" width="24" height="24">Easy Paint Pro</span></th><th scope="col">Apple Preview</th></tr></thead>
               <tbody>
                 <tr><th scope="row">Paint with real brushes</th><td class="col-epp"><span class="mark yes">✓</span>Classic tips and professional brush families</td><td><span class="mark part">◐</span>Sketch and Draw markup</td></tr>
                 <tr><th scope="row">Airbrush</th><td class="col-epp"><span class="mark yes">✓</span>Dedicated spray tool and presets</td><td><span class="mark no">—</span></td></tr>
@@ -408,19 +341,19 @@
                 <tr><th scope="row">Classic and modern looks, custom toolbar</th><td class="col-epp"><span class="mark yes">✓</span>Six looks, one or two toolbar rows</td><td><span class="mark no">—</span></td></tr>
                 <tr><th scope="row">Record and replay your drawing</th><td class="col-epp"><span class="mark yes">✓</span>Canvas recording with replay</td><td><span class="mark no">—</span></td></tr>
                 <tr><th scope="row">Fill forms, sign and reorder original PDF pages</th><td class="col-epp"><span class="mark part">◐</span>Pages open as images to paint on</td><td><span class="mark yes">✓</span>Better choice for this</td></tr>
-                <tr><th scope="row">Price</th><td class="col-epp"><strong>7 days free, then $29.99 once</strong></td><td>Included with macOS</td></tr>
+                <tr><th scope="row">Price</th><td class="col-epp">7 days free, then a one-time purchase</td><td>Included with macOS</td></tr>
               </tbody>
             </table>
           </div>
           <div class="legend"><span><span class="mark yes">✓</span>Included</span><span><span class="mark part">◐</span>Partly, or in a different way</span><span><span class="mark no">—</span>Not listed in Apple’s Preview documentation</span></div>
-          <p class="fine">Preview features are taken from Apple’s Preview User Guide for macOS Tahoe 26, checked October 13, 2026. Easy Paint Pro features reflect version 3.3.8. Easy Paint Pro is not affiliated with or endorsed by Apple.</p>
+          <p class="fine">Preview features are taken from Apple’s Preview User Guide for macOS Tahoe 26, checked October 13, 2026. Easy Paint Pro is not affiliated with or endorsed by Apple.</p>
         </div>
 
         <div role="tabpanel" id="cp-paint" aria-labelledby="c-paint" tabindex="0" hidden>
           <div class="table-wrap">
             <table>
               <caption class="visually-hidden">Easy Paint Pro compared with Microsoft Paint</caption>
-              <thead><tr><th scope="col">Capability</th><th scope="col" class="col-epp">Easy Paint Pro 3.3.8</th><th scope="col">Microsoft Paint</th></tr></thead>
+              <thead><tr><th scope="col">Capability</th><th scope="col" class="col-epp"><span><img src="assets/app-icon.png" alt="" width="24" height="24">Easy Paint Pro</span></th><th scope="col">Microsoft Paint</th></tr></thead>
               <tbody>
                 <tr><th scope="row">Runs on</th><td class="col-epp"><span class="mark yes">✓</span>macOS 14 or later, Apple silicon</td><td>Windows 11</td></tr>
                 <tr><th scope="row">Labeled, always-visible tools</th><td class="col-epp"><span class="mark yes">✓</span>A name under every button</td><td><span class="mark part">◐</span>Familiar ribbon tools</td></tr>
@@ -432,7 +365,7 @@
                 <tr><th scope="row">Privacy cover-ups and sanitized export</th><td class="col-epp"><span class="mark yes">✓</span>Blur, pixelate, redact, sanitized copy</td><td><span class="mark no">—</span></td></tr>
                 <tr><th scope="row">Canvas recording and replay</th><td class="col-epp"><span class="mark yes">✓</span>Included</td><td><span class="mark no">—</span></td></tr>
                 <tr><th scope="row">AI image generation</th><td class="col-epp"><span class="mark no">—</span>Not part of the app</td><td><span class="mark yes">✓</span>Depends on device and account</td></tr>
-                <tr><th scope="row">Price</th><td class="col-epp"><strong>7 days free, then $29.99 once</strong></td><td>Included with Windows</td></tr>
+                <tr><th scope="row">Price</th><td class="col-epp">7 days free, then a one-time purchase</td><td>Included with Windows</td></tr>
               </tbody>
             </table>
           </div>
@@ -443,7 +376,7 @@
   </section>
 
   <!-- Pricing -->
-  <section class="section" id="pricing">
+  <section class="section band" id="pricing">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Pricing</p>
@@ -454,15 +387,21 @@
           <span class="price-step">Step 1</span>
           <h3>Free trial</h3>
           <p class="price-amount">$0 <small>for 7 days</small></p>
-          <p class="muted">Every brush, fill, skin and tool, before you pay anything.</p>
+          <p class="muted">Every brush, fill, skin and tool.</p>
         </article>
         <span class="price-arrow" aria-hidden="true">→</span>
         <article class="price-card main">
           <span class="price-step">Step 2</span>
           <h3>Buy once</h3>
           <p class="price-amount">$29.99 <small>one time</small></p>
-          <ul class="ticks"><li>No subscription or monthly fee</li><li>All current features included</li><li>Purchase handled by Apple</li></ul>
+          <ul class="ticks"><li>No subscription</li><li>All current features</li><li>Purchase handled by Apple</li></ul>
           <button class="button button-primary app-store-link" type="button">Start your free trial</button>
+        </article>
+        <article class="price-card" id="licensing">
+          <span class="price-step">Schools &amp; business</span>
+          <h3>Classroom and team licenses</h3>
+          <p class="muted">For schools, educators and companies putting Easy Paint Pro on many Macs.</p>
+          <a class="button button-quiet" href="contact.html?topic=education">Ask about licensing</a>
         </article>
       </div>
       <p class="fine">Introductory launch price. Final price, availability and trial terms are shown on the Mac App Store.</p>
@@ -470,15 +409,14 @@
   </section>
 
   <!-- Final -->
-  <section class="section band final">
+  <section class="section final">
     <div class="wrap final-inner">
       <img class="icon" src="assets/app-icon.png" alt="" width="256" height="256" loading="lazy">
       <div class="final-copy">
         <h2>Open it. Pick a tool. Make something.</h2>
-        <p class="lede">Easy Paint Pro for Mac. 7 days free, then $29.99 once.</p>
         <div class="cta-row">
-          <button class="button button-primary app-store-link" type="button">Get it on the Mac App Store</button>
-          <span class="requirement">Mac App Store link coming soon.</span>
+          <button class="button button-store app-store-link" type="button"><span><small>Download on the</small><strong>Mac App Store</strong></span></button>
+          <a class="button button-quiet" href="gallery.html">See the gallery</a>
         </div>
       </div>
     </div>
@@ -486,7 +424,7 @@
 
   <!-- Legal -->
   <section class="legal" id="privacy">
-    <div class="wrap" data-tabset>
+    <div class="wrap">
       <div class="legal-tabs" role="tablist" aria-label="Legal information">
         <button type="button" id="privacy-tab" role="tab" aria-selected="true" aria-controls="privacy-panel" tabindex="0">Privacy</button>
         <button type="button" id="disclosure-tab" role="tab" aria-selected="false" aria-controls="disclosure-panel" tabindex="-1">App disclosure</button>
@@ -496,19 +434,18 @@
         <p>Easy Paint Pro is designed for local image editing. Your artwork is processed on your Mac. The app does not require an account for ordinary editing and does not upload your images to an Easy Paint Pro server.</p>
         <div class="legal-cols">
           <div><h3>What stays local</h3><p>Images, canvas history, layers, masks, recordings, workspaces and exports stay on your device unless you choose to save or share them elsewhere.</p></div>
-          <div><h3>Sharing is your choice</h3><p>When you use Apple’s Share sheet or export to another service, that destination’s privacy terms apply. Easy Paint Pro only starts that action when you ask.</p></div>
+          <div><h3>Contact form</h3><p>Messages sent through our contact form are delivered to us by Web3Forms. We use them only to reply to you.</p></div>
           <div><h3>Purchase information</h3><p>Trials, purchases and entitlement checks are handled through Apple. Easy Paint Pro does not receive your full payment-card information.</p></div>
         </div>
-        <p class="legal-date">Draft website privacy summary · Last updated October 13, 2026. A final App Store privacy policy URL and contact details will be added before release.</p>
+        <p class="legal-date">Draft website privacy summary · Last updated October 14, 2026.</p>
       </div>
       <div id="disclosure-panel" role="tabpanel" aria-labelledby="disclosure-tab" hidden>
         <h2>App disclosure</h2>
         <div class="legal-cols">
-          <div><h3>Offer terms</h3><p>The Mac-only release, 7-day trial and $29.99 one-time introductory price are launch plans. Final price, availability, eligibility, taxes and trial terms will be shown on the Mac App Store and may change. No recurring subscription is planned.</p></div>
-          <div><h3>Development build</h3><p>Screenshots show version 3.3.8, a current development build. Appearance and individual features may change before release. The Mac App Store listing is the final source of truth.</p></div>
+          <div><h3>Offer terms</h3><p>The Mac-only release, 7-day trial and $29.99 one-time introductory price are launch plans. Final price, availability, eligibility, taxes and trial terms will be shown on the Mac App Store and may change.</p></div>
+          <div><h3>Screenshots</h3><p>Screenshots show a current version of the app. Appearance and individual features may change. The Mac App Store listing is the final source of truth.</p></div>
           <div><h3>Independent product</h3><p>Easy Paint Pro is an independent application. It is not affiliated with or endorsed by Apple or Microsoft. Apple, Mac, macOS and Windows are trademarks of their respective owners.</p></div>
         </div>
-        <p class="legal-date">The Mac App Store button on this preview site is a placeholder until the official listing is available.</p>
       </div>
     </div>
   </section>
@@ -516,19 +453,26 @@
 
 <footer>
   <div class="wrap foot">
-    <a class="brand" href="#top"><img src="assets/app-icon.png" alt="" width="36" height="36">Easy Paint Pro</a>
+    <a class="brand" href="index.html"><img src="assets/app-icon.png" alt="" width="32" height="32">Easy Paint Pro</a>
     <div class="foot-links">
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html?topic=education">Licensing</a>
       <a href="#privacy" data-legal-tab="privacy-tab">Privacy</a>
-      <a href="#privacy" data-legal-tab="disclosure-tab">Disclosure</a>
       <button class="link-button app-store-link" type="button">Mac App Store</button>
     </div>
     <span>© <span id="copyright-year">2026</span> Easy Paint Pro</span>
   </div>
 </footer>
 
+<dialog class="lightbox" id="lightbox" aria-label="Enlarged screenshot">
+  <button class="lightbox-close" type="button" data-close>Close</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+</dialog>
+
 <div class="toast" role="status" aria-live="polite" aria-atomic="true" hidden>
   <strong>The Mac App Store listing is coming soon.</strong>
-  <span>Your 7-day trial and $29.99 one-time price will be waiting. No subscription.</span>
+  <span>Check back shortly for the free 7-day trial.</span>
 </div>
 </body>
 </html>

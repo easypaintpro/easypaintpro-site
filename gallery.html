@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gallery · Easy Paint Pro</title>
+<meta name="description" content="Pictures made in Easy Paint Pro for Mac.">
+<meta name="theme-color" content="#f5f6fb">
+<meta property="og:title" content="Gallery · Easy Paint Pro">
+<meta property="og:image" content="https://easypaintpro.com/assets/og.png">
+<link rel="icon" href="assets/app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="nav wrap" aria-label="Primary">
+    <a class="brand" href="index.html"><img src="assets/app-icon.png" alt="" width="32" height="32">Easy Paint Pro</a>
+    <div class="nav-links">
+      <a href="index.html#tools">Tools</a>
+      <a href="index.html#your-way">Classic look</a>
+      <a href="gallery.html" aria-current="page">Gallery</a>
+      <a href="index.html#compare">Compare</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button class="button button-primary button-small app-store-link" type="button">Download</button>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Gallery</p>
+        <h1>Made in Easy Paint Pro</h1>
+        <p class="lede">Pictures drawn with the app’s own brushes, fills, shapes and stamps. Click any picture to see it full size.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <!-- To add a picture: put the image in assets/gallery/ and copy one <figure> block below. -->
+      <div class="art-grid">
+        <figure class="art">
+          <div class="shot"><img class="zoomable" src="assets/gallery/sunny-afternoon.webp" width="1600" height="1067" loading="lazy" alt="A sunny afternoon: a pink kite with yellow bows, an apple tree, a brick house, a flower bed of pink blossoms, a red ball, clouds, birds, a star and the sun."></div>
+          <figcaption><strong>Sunny afternoon</strong><span>Polygon kite, brick pattern house, emoji flower bed.</span></figcaption>
+        </figure>
+        <figure class="art">
+          <div class="shot"><img class="zoomable" src="assets/gallery/fill-sampler.webp" width="1200" height="799" loading="lazy" alt="Six shapes: a red brick pattern square, a circle of smiley emoji, a yellow gradient star, a wave pattern square, a circle of red hearts and a purple-to-blue gradient hexagon."></div>
+          <figcaption><strong>Fill sampler</strong><span>Pattern, emoji and gradient fills.</span></figcaption>
+        </figure>
+        <figure class="art">
+          <div class="shot"><img class="zoomable" src="assets/gallery/stamp-sheet.webp" width="1200" height="799" loading="lazy" alt="A sheet of stamps: Approved, Paid, Air Mail, Confidential, a check mark, Top Secret, Urgent, a star and Priority."></div>
+          <figcaption><strong>Stamp sheet</strong><span>Classic stamps, placed and sized.</span></figcaption>
+        </figure>
+        <figure class="art">
+          <div class="shot"><img class="zoomable" src="assets/gallery/pen-styles.webp" width="1253" height="799" loading="lazy" alt="Wavy lines in solid, dashed, dotted, crayon and textured pen styles, a double arrow, an orange spiral with a shadow and a red arrow."></div>
+          <figcaption><strong>Pen styles</strong><span>Solid, dashed, dotted, crayon, arrows and shadow.</span></figcaption>
+        </figure>
+        <figure class="art">
+          <div class="shot"><img class="zoomable" src="assets/gallery/brush-studio.webp" width="1600" height="932" loading="lazy" alt="Six brush samples: pencil, round brush, textured brush, calligraphy, airbrush and highlighter."></div>
+          <figcaption><strong>Brush studio</strong><span>Six brushes on one card.</span></figcaption>
+        </figure>
+        <figure class="art">
+          <div class="shot"><img class="zoomable" src="assets/gallery/pattern-lab.webp" width="1600" height="931" loading="lazy" alt="Three pattern swatches: fine purple diagonals, bold orange diagonals and a blue checkerboard."></div>
+          <figcaption><strong>Pattern lab</strong><span>One pattern at three scales.</span></figcaption>
+        </figure>
+        <figure class="art">
+          <div class="shot"><img class="zoomable" src="assets/gallery/shapes-and-type.webp" width="1600" height="931" loading="lazy" alt="The headline Make your ideas visible above an orange rectangle, a purple circle, an outlined rectangle and three lines."></div>
+          <figcaption><strong>Shapes and type</strong><span>Text, shapes and lines.</span></figcaption>
+        </figure>
+      </div>
+      <p class="caption add-note">Made something in Easy Paint Pro? <a href="contact.html">Send it to us</a> and it could appear here.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="index.html"><img src="assets/app-icon.png" alt="" width="32" height="32">Easy Paint Pro</a>
+    <div class="foot-links">
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html?topic=education">Licensing</a>
+      <a href="index.html#privacy">Privacy</a>
+      <button class="link-button app-store-link" type="button">Mac App Store</button>
+    </div>
+    <span>© <span id="copyright-year">2026</span> Easy Paint Pro</span>
+  </div>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Enlarged picture">
+  <button class="lightbox-close" type="button" data-close>Close</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+</dialog>
+
+<div class="toast" role="status" aria-live="polite" aria-atomic="true" hidden>
+  <strong>The Mac App Store listing is coming soon.</strong>
+  <span>Check back shortly for the free 7-day trial.</span>
+</div>
+</body>
+</html>

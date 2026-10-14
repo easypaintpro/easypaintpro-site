@@ -1,4 +1,7 @@
 const APP_STORE_URL = "";
+// Web3Forms access key for the contact form. Messages go to the inbox tied to this key;
+// the address itself never appears on the site. Replace when the key is ready.
+const WEB3FORMS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 // App Store buttons: link when the listing exists, otherwise a short notice.
@@ -7,13 +10,14 @@ let toastTimer;
 document.querySelectorAll(".app-store-link").forEach((button) => {
   button.addEventListener("click", () => {
     if (APP_STORE_URL) { window.location.href = APP_STORE_URL; return; }
+    if (!toast) return;
     toast.hidden = false;
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => { toast.hidden = true; }, 4200);
   });
 });
 
-// Generic tab lists: each tablist controls only its own panels.
+// Tab lists: each tablist controls only its own panels.
 function selectTab(tab, focus = false) {
   const list = tab.closest('[role="tablist"]');
   [...list.querySelectorAll('[role="tab"]')].forEach((t) => {
@@ -49,14 +53,16 @@ document.querySelectorAll("[data-legal-tab]").forEach((link) => {
 const skinImage = document.getElementById("skin-image");
 const skinFrame = skinImage?.closest(".window");
 document.querySelectorAll(".skin-tabs [role='tab']").forEach((tab) => {
-  // Warm the cache so switching feels instant.
-  const pre = new Image(); pre.src = tab.dataset.src;
   tab.addEventListener("tabselect", () => {
-    if (skinImage.getAttribute("src") === tab.dataset.src) return;
+    if (skinImage.dataset.full === tab.dataset.src) return;
     skinFrame.classList.add("is-switching");
     const next = new Image();
+    next.sizes = skinImage.sizes;
+    next.srcset = tab.dataset.srcset || "";
     next.onload = () => {
+      skinImage.srcset = tab.dataset.srcset || "";
       skinImage.src = tab.dataset.src;
+      skinImage.dataset.full = tab.dataset.src;
       skinImage.alt = tab.dataset.alt;
       skinFrame.classList.remove("is-switching");
     };
@@ -64,6 +70,25 @@ document.querySelectorAll(".skin-tabs [role='tab']").forEach((tab) => {
     next.src = tab.dataset.src;
   });
 });
+
+// Lightbox: click any screenshot to see it full size.
+const lightbox = document.getElementById("lightbox");
+if (lightbox) {
+  const lbImg = lightbox.querySelector("img");
+  const lbCap = lightbox.querySelector("figcaption");
+  document.addEventListener("click", (e) => {
+    const img = e.target.closest("img.zoomable");
+    if (!img) return;
+    lbImg.src = img.dataset.full || img.currentSrc || img.src;
+    lbImg.alt = img.alt;
+    lbCap.textContent = img.alt;
+    lightbox.showModal();
+  });
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox || e.target.closest("[data-close]") || e.target === lbImg) lightbox.close();
+  });
+  lightbox.addEventListener("close", () => { lbImg.removeAttribute("src"); });
+}
 
 // Step-by-step demos stay still until the viewer presses Play.
 document.querySelectorAll(".demo-media").forEach((media) => {
@@ -88,6 +113,68 @@ document.querySelectorAll(".grow-card video").forEach((video) => {
   }, { threshold: 0.4 });
   io.observe(video);
 });
+
+// Contact form
+const form = document.getElementById("contact-form");
+if (form) {
+  const status = document.getElementById("form-status");
+  const licenseFields = document.getElementById("license-fields");
+  const submit = form.querySelector('button[type="submit"]');
+  const topicInputs = [...form.querySelectorAll('input[name="topic"]')];
+  const isLicense = (v) => v === "School or educator license" || v === "Business license";
+
+  const syncTopic = () => {
+    const v = form.querySelector('input[name="topic"]:checked')?.value || "";
+    const show = isLicense(v);
+    licenseFields.hidden = !show;
+    licenseFields.querySelectorAll("input").forEach((i) => { i.required = show && i.dataset.required === "true"; });
+  };
+  topicInputs.forEach((i) => i.addEventListener("change", syncTopic));
+  const param = new URLSearchParams(location.search).get("topic");
+  if (param) {
+    const map = { education: "School or educator license", business: "Business license", support: "Help with the app", press: "Press" };
+    const match = topicInputs.find((i) => i.value === map[param]);
+    if (match) match.checked = true;
+  }
+  syncTopic();
+
+  const show = (kind, text) => { status.hidden = false; status.className = `form-status ${kind}`; status.textContent = text; };
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    if (!WEB3FORMS_KEY || WEB3FORMS_KEY.startsWith("YOUR_")) {
+      show("err", "The contact form isn’t connected yet. Please check back soon.");
+      return;
+    }
+    const data = Object.fromEntries(new FormData(form));
+    if (data.botcheck) return;
+    data.access_key = WEB3FORMS_KEY;
+    data.subject = `Easy Paint Pro: ${data.topic || "Message"}`;
+    data.from_name = "easypaintpro.com";
+    submit.disabled = true;
+    submit.textContent = "Sending…";
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json();
+      if (json.success) {
+        form.reset(); syncTopic();
+        show("ok", "Thanks, your message was sent. We’ll reply to the email you gave.");
+      } else {
+        show("err", "Your message didn’t send. Please try again in a minute.");
+      }
+    } catch {
+      show("err", "Your message didn’t send. Check your connection and try again.");
+    } finally {
+      submit.disabled = false;
+      submit.textContent = "Send message";
+    }
+  });
+}
 
 const year = document.getElementById("copyright-year");
 if (year) year.textContent = new Date().getFullYear();

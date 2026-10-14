@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact · Easy Paint Pro</title>
+<meta name="description" content="Contact Easy Paint Pro: questions, help with the app, press, and licensing for schools, educators and businesses.">
+<meta name="theme-color" content="#f5f6fb">
+<meta property="og:title" content="Contact · Easy Paint Pro">
+<meta property="og:image" content="https://easypaintpro.com/assets/og.png">
+<link rel="icon" href="assets/app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="nav wrap" aria-label="Primary">
+    <a class="brand" href="index.html"><img src="assets/app-icon.png" alt="" width="32" height="32">Easy Paint Pro</a>
+    <div class="nav-links">
+      <a href="index.html#tools">Tools</a>
+      <a href="index.html#your-way">Classic look</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="index.html#compare">Compare</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </div>
+    <button class="button button-primary button-small app-store-link" type="button">Download</button>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Contact</p>
+        <h1>Get in touch</h1>
+        <p class="lede">Questions, help with the app, press, or licenses for your school or business. We read every message.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap contact-grid">
+      <form class="form" id="contact-form" novalidate>
+        <fieldset class="topic-group">
+          <legend class="field"><span style="font-weight:700">What’s this about?</span></legend>
+          <div class="topics">
+            <label><input type="radio" name="topic" value="Question or feedback" checked> Question or feedback</label>
+            <label><input type="radio" name="topic" value="Help with the app"> Help with the app</label>
+            <label><input type="radio" name="topic" value="School or educator license"> School or educator license</label>
+            <label><input type="radio" name="topic" value="Business license"> Business license</label>
+            <label><input type="radio" name="topic" value="Press"> Press</label>
+          </div>
+        </fieldset>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="cf-name">Your name</label>
+            <input type="text" id="cf-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" name="email" autocomplete="email" required>
+            <span class="hint">We’ll only use it to reply.</span>
+          </div>
+        </div>
+
+        <div id="license-fields" class="field-row" hidden>
+          <div class="field">
+            <label for="cf-org">School or organization</label>
+            <input type="text" id="cf-org" name="organization" autocomplete="organization" data-required="true">
+          </div>
+          <div class="field">
+            <label for="cf-seats">How many Macs?</label>
+            <input type="number" id="cf-seats" name="seats" min="1" inputmode="numeric">
+            <span class="hint">An estimate is fine.</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" required></textarea>
+        </div>
+
+        <input class="honeypot" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="cta-row">
+          <button class="button button-primary" type="submit">Send message</button>
+        </div>
+        <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
+      </form>
+
+      <div class="side-cards">
+        <article class="side-card" id="education">
+          <p class="eyebrow">Schools &amp; educators</p>
+          <h2>Easy Paint Pro in the classroom</h2>
+          <p>Labeled tools make it easy for students to find their way. Tell us about your school and we’ll get back to you with options for:</p>
+          <ul>
+            <li>Classrooms and computer labs</li>
+            <li>Whole schools and districts</li>
+            <li>Individual teachers</li>
+          </ul>
+          <a class="button button-quiet button-small" href="?topic=education#contact-form">Ask about an education license</a>
+        </article>
+        <article class="side-card" id="business">
+          <p class="eyebrow">Business</p>
+          <h2>Licenses for teams</h2>
+          <p>Putting Easy Paint Pro on many Macs at work? Tell us how many and we’ll reply with options.</p>
+          <a class="button button-quiet button-small" href="?topic=business#contact-form">Ask about a business license</a>
+        </article>
+        <article class="side-card">
+          <p class="eyebrow">Share your art</p>
+          <h2>Made something?</h2>
+          <p>Tell us about it here and it could appear in the <a href="gallery.html">gallery</a>.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="index.html"><img src="assets/app-icon.png" alt="" width="32" height="32">Easy Paint Pro</a>
+    <div class="foot-links">
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html?topic=education">Licensing</a>
+      <a href="index.html#privacy">Privacy</a>
+      <button class="link-button app-store-link" type="button">Mac App Store</button>
+    </div>
+    <span>© <span id="copyright-year">2026</span> Easy Paint Pro</span>
+  </div>
+</footer>
+
+<div class="toast" role="status" aria-live="polite" aria-atomic="true" hidden>
+  <strong>The Mac App Store listing is coming soon.</strong>
+  <span>Check back shortly for the free 7-day trial.</span>
+</div>
+</body>
+</html>
