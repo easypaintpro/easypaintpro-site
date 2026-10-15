@@ -2,7 +2,7 @@
 // DOWNLOAD_URL: the notarized .dmg (GitHub release asset on this repository).
 // APP_STORE_URL: the Mac App Store listing.
 // While a value is empty, its buttons show a short notice instead of a dead link.
-const DOWNLOAD_URL = "";
+const DOWNLOAD_URL = "https://github.com/easypaintpro/easypaintpro-site/releases/latest/download/EasyPaintPro.dmg";
 const APP_STORE_URL = "";
 // Paddle checkout (live). The client-side token is public by design: it can only
 // open checkouts. Paddle.js loads only when someone chooses Buy.

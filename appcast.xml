@@ -9,5 +9,21 @@
     <link>https://easypaintpro.com/appcast.xml</link>
     <description>Updates for Easy Paint Pro for Mac.</description>
     <language>en</language>
+    <item>
+      <title>Version 3.4.2</title>
+      <description><![CDATA[
+        <ul>
+          <li>Try every tool free for 7 days, then buy once at easypaintpro.com.</li>
+          <li>License keys activate on 1 Mac and can move to another one.</li>
+          <li>New toolbar choices: Two Rows, Fit Window and sizes up to 150%.</li>
+          <li>The Classic colour schemes have new names.</li>
+        </ul>
+      ]]></description>
+      <pubDate>Thu, 15 Oct 2026 22:10:35 +0000</pubDate>
+      <sparkle:version>89</sparkle:version>
+      <sparkle:shortVersionString>3.4.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/easypaintpro/easypaintpro-site/releases/download/v3.4.2/EasyPaintPro.dmg" sparkle:edSignature="NvM0nboe6v8AMHPhnByw0pIlgjTcPFTzUMj4JeqJvA+IqL7mKaN8EmdPKBcs2WV9v0PP6TlxMI3rtICPeIEhDg==" length="11798473" type="application/octet-stream"/>
+    </item>
   </channel>
 </rss>
