@@ -16,8 +16,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/styles.css?v=5">
-<script src="/script.js?v=5" defer></script>
+<link rel="stylesheet" href="/styles.css?v=6">
+<script src="/script.js?v=6" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -71,17 +71,18 @@
           <li><strong>Settings.</strong> Preferences such as your chosen skin and toolbar layout are stored locally on your Mac.</li>
           <li><strong>Trial.</strong> The website version records when your trial started on your Mac (in the macOS Keychain), so reinstalling doesn’t restart it. Nothing about the trial is sent to us.</li>
           <li><strong>License activation.</strong> When you enter a license key, the app sends the key, an anonymous identifier for this Mac (a one-way scrambled code made from the Mac’s hardware ID, not its name or serial number) and the app version to our license server, which runs on Google Firebase. The server stores them so your license works on 1 Mac. About every two weeks, when you’re online, the app checks the license again the same way. Choosing <em>Deactivate This Mac</em> removes this Mac from your license.</li>
-          <li><strong>Updates.</strong> The website version checks easypaintpro.com for new versions. That request includes the app version and your macOS version, and like any web request it reveals your IP address to the website host. We don’t use it to identify you.</li>
+          <li><strong>Updates.</strong> The website version checks easypaintpro.com for new versions. That request includes the app version and your macOS version, and like any web request it reveals your IP address to the website host. The app and its updates are downloaded from GitHub, which hosts our releases. We don’t use any of this to identify you.</li>
           <li><strong>Mac App Store version.</strong> When it’s available, purchases and trials will be handled by Apple under <a href="https://www.apple.com/legal/privacy/">Apple’s privacy policy</a>. We don’t receive your payment details.</li>
         </ul>
 
         <h2 id="purchases">Purchases on this website</h2>
         <p>Orders are processed by Paddle.com, our online reseller and Merchant of Record. Paddle collects your name, email address, billing country and payment details under <a href="https://www.paddle.com/legal/privacy">Paddle’s privacy policy</a>.</p>
-        <p>We receive your name, email address, country, order number and the license key issued to you. We use them to deliver your license, provide support and process refunds (to carry out our agreement with you), and to keep the records tax and accounting law requires. We never receive your full card number.</p>
+        <p>We receive your name, email address, country, order number and the license key issued to you. Right after checkout, the thank-you page fetches your key from our license server using your order number, which stays in your browser tab. We email you the key through Resend, our email delivery provider. We use them to deliver your license, provide support and process refunds (to carry out our agreement with you), and to keep the records tax and accounting law requires. We never receive your full card number.</p>
 
         <h2 id="website">This website</h2>
         <ul>
           <li>The site doesn’t use cookies, analytics or advertising trackers.</li>
+          <li>Paddle’s checkout loads only when you choose <em>Buy now</em>. From then on, Paddle’s privacy policy covers what it collects, including any cookies it needs for payment and fraud prevention.</li>
           <li>It’s hosted on GitHub Pages. GitHub may record visitors’ IP addresses for security; see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub’s privacy statement</a>.</li>
           <li>Fonts are loaded from Google Fonts, which receives your IP address when the page loads; see <a href="https://policies.google.com/privacy">Google’s privacy policy</a>.</li>
         </ul>
@@ -91,7 +92,7 @@
 
         <h2 id="sharing">Who we share it with, and for how long</h2>
         <ul>
-          <li>Only the service providers named on this page (Paddle, Google Firebase, GitHub, Web3Forms and Google Fonts), professional advisers such as an accountant, and authorities where the law requires it.</li>
+          <li>Only the service providers named on this page (Paddle, Google Firebase, Resend, GitHub, Web3Forms and Google Fonts), professional advisers such as an accountant, and authorities where the law requires it.</li>
           <li>We keep order and license records while your license is in use and for as long as tax and accounting law requires, and contact messages only as long as the conversation needs.</li>
           <li>We protect the information we hold with access controls and encrypted connections.</li>
         </ul>
