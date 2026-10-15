@@ -174,10 +174,31 @@ document.querySelectorAll("[data-legal-tab]").forEach((link) => {
   });
 });
 
+// Small storage helpers: settings are a convenience, so failures are ignored.
+const store = {
+  get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+  set(k, v) { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch {} },
+  sget(k) { try { return sessionStorage.getItem(k); } catch { return null; } },
+  sset(k, v) { try { sessionStorage.setItem(k, v); } catch {} },
+};
+const root = document.documentElement;
+const mqDark = window.matchMedia("(prefers-color-scheme: dark)");
+const systemTheme = () => (mqDark.matches ? "dark" : "light");
+const effectiveTheme = () => root.dataset.theme || systemTheme();
+
 // Hero skin switcher: swap the screenshot once the next image has loaded.
 const skinImage = document.getElementById("skin-image");
 const skinFrame = skinImage?.closest(".window");
+const skinSource = document.getElementById("skin-dark-source");
+let skinChosenByVisitor = false;
+if (skinImage) {
+  // The <picture> already shows Modern Day or Night to match the system look.
+  const shown = skinSource && systemTheme() === "dark" ? "skin-modern-night" : "skin-modern-day";
+  skinImage.dataset.full = document.getElementById(shown).dataset.src;
+}
 document.querySelectorAll(".skin-tabs [role='tab']").forEach((tab) => {
+  tab.addEventListener("click", () => { skinChosenByVisitor = true; });
+  tab.addEventListener("keydown", (e) => { if (["ArrowLeft", "ArrowRight", "Home", "End"].includes(e.key)) skinChosenByVisitor = true; });
   tab.addEventListener("tabselect", () => {
     if (skinImage.dataset.full === tab.dataset.src) return;
     skinFrame.classList.add("is-switching");
@@ -185,6 +206,7 @@ document.querySelectorAll(".skin-tabs [role='tab']").forEach((tab) => {
     next.sizes = skinImage.sizes;
     next.srcset = tab.dataset.srcset || "";
     next.onload = () => {
+      skinSource?.remove();
       skinImage.srcset = tab.dataset.srcset || "";
       skinImage.src = tab.dataset.src;
       skinImage.dataset.full = tab.dataset.src;
@@ -195,6 +217,144 @@ document.querySelectorAll(".skin-tabs [role='tab']").forEach((tab) => {
     next.src = tab.dataset.src;
   });
 });
+// Until the visitor picks a look, the hero follows Day/Night.
+function syncHeroSkin() {
+  if (!skinImage || skinChosenByVisitor) return;
+  const tab = document.getElementById(effectiveTheme() === "dark" ? "skin-modern-night" : "skin-modern-day");
+  if (tab) selectTab(tab);
+}
+
+// Day / Night: follows the Mac until the visitor changes it.
+const themeColors = { light: "#f6f7f9", dark: "#1c1e2a" };
+function applyThemeChrome() {
+  const metas = document.querySelectorAll('meta[name="theme-color"]');
+  metas.forEach((m) => {
+    const forced = root.dataset.theme;
+    m.content = forced ? themeColors[forced] : (m.media.includes("dark") ? themeColors.dark : themeColors.light);
+  });
+  syncHeroSkin();
+  syncReadingPanel();
+}
+function setTheme(mode) {
+  if (mode === "light" || mode === "dark") { root.dataset.theme = mode; store.set("epp-theme", mode); }
+  else { delete root.dataset.theme; store.set("epp-theme", null); }
+  applyThemeChrome();
+}
+document.querySelectorAll(".theme-toggle").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const target = effectiveTheme() === "dark" ? "light" : "dark";
+    // Going back to what the Mac shows means "follow my Mac" again.
+    setTheme(target === systemTheme() ? "system" : target);
+  });
+});
+mqDark.addEventListener("change", applyThemeChrome);
+
+// Text size and reading font
+const LEXEND_URL = "https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap";
+function loadLexend() {
+  if (document.getElementById("lexend-css")) return;
+  const link = document.createElement("link");
+  link.rel = "stylesheet"; link.id = "lexend-css"; link.href = LEXEND_URL;
+  document.head.appendChild(link);
+}
+function setFont(value) {
+  if (value) { root.dataset.font = value; store.set("epp-font", value); if (value === "lexend") loadLexend(); }
+  else { delete root.dataset.font; store.set("epp-font", null); }
+}
+function setSize(value) {
+  if (value && value !== "1") { root.style.setProperty("--text-scale", value); store.set("epp-size", value); }
+  else { root.style.removeProperty("--text-scale"); store.set("epp-size", null); }
+}
+const panel = document.getElementById("reading-panel");
+function syncReadingPanel() {
+  if (!panel) return;
+  const check = (name, value) => { const input = panel.querySelector(`input[name="${name}"][value="${value}"]`); if (input) input.checked = true; };
+  check("rp-theme", root.dataset.theme || "system");
+  check("rp-size", root.style.getPropertyValue("--text-scale").trim() || "1");
+  check("rp-font", root.dataset.font || "");
+}
+if (panel) {
+  panel.addEventListener("change", (e) => {
+    const { name, value } = e.target;
+    if (name === "rp-theme") setTheme(value);
+    if (name === "rp-size") setSize(value);
+    if (name === "rp-font") setFont(value);
+  });
+  panel.querySelector("[data-reading-reset]")?.addEventListener("click", () => {
+    setTheme("system"); setSize("1"); setFont("");
+    syncReadingPanel();
+  });
+  panel.addEventListener("toggle", (e) => { if (e.newState === "open") { loadLexend(); syncReadingPanel(); } });
+  // Older browsers without the Popover API: open and close it by hand.
+  if (!("popover" in HTMLElement.prototype)) {
+    const open = (on) => { panel.classList.toggle("is-open", on); if (on) { loadLexend(); syncReadingPanel(); } };
+    document.querySelectorAll('[popovertarget="reading-panel"]').forEach((b) => {
+      b.addEventListener("click", (e) => { e.stopPropagation(); open(b.getAttribute("popovertargetaction") === "hide" ? false : !panel.classList.contains("is-open")); });
+    });
+    document.addEventListener("click", (e) => { if (!panel.contains(e.target)) open(false); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") open(false); });
+  }
+  syncReadingPanel();
+}
+// Keep several open tabs in step.
+window.addEventListener("storage", (e) => {
+  if (e.key === "epp-theme") { e.newValue ? (root.dataset.theme = e.newValue) : delete root.dataset.theme; applyThemeChrome(); }
+  if (e.key === "epp-font") { e.newValue ? (root.dataset.font = e.newValue) : delete root.dataset.font; if (e.newValue === "lexend") loadLexend(); syncReadingPanel(); }
+  if (e.key === "epp-size") { e.newValue ? root.style.setProperty("--text-scale", e.newValue) : root.style.removeProperty("--text-scale"); syncReadingPanel(); }
+});
+applyThemeChrome();
+
+// Keep the header on one line when big text or a wide font would wrap it.
+const nav = document.querySelector(".nav");
+if (nav) {
+  const fitNav = () => {
+    nav.classList.remove("is-compact");
+    const links = nav.querySelector(".nav-links");
+    const wraps = links && getComputedStyle(links).display !== "none" && (nav.scrollWidth > nav.clientWidth + 1 || links.getBoundingClientRect().height > 48 || nav.querySelector(".brand").getBoundingClientRect().height > 48);
+    nav.classList.toggle("is-compact", !!wraps);
+  };
+  new ResizeObserver(fitNav).observe(document.documentElement);
+  new MutationObserver(fitNav).observe(root, { attributes: true, attributeFilter: ["data-font", "style"] });
+  document.fonts?.ready.then(fitNav);
+  fitNav();
+}
+
+// Paintbrush reminder: appears once the visitor scrolls past the first screen.
+const nudge = document.getElementById("brush-nudge");
+if (nudge) {
+  const brush = nudge.querySelector(".nudge-brush");
+  let tucked = store.sget("epp-nudge") === "tucked";
+  const blockers = new Set();
+  const render = () => {
+    const show = window.scrollY > window.innerHeight * 0.9 && blockers.size === 0;
+    nudge.classList.toggle("is-shown", show);
+    if (show && !wasShown && !tucked) armAutoTuck();
+    wasShown = show;
+    nudge.classList.toggle("is-tucked", tucked);
+    brush.setAttribute("aria-expanded", String(!tucked));
+    brush.setAttribute("aria-label", tucked ? "Show the reminder again" : "Hide the reminder");
+  };
+  nudge.hidden = false;
+  // After a while the bubble folds away and just the brush stays. Tap it to open again.
+  let autoTuck;
+  const armAutoTuck = () => { clearTimeout(autoTuck); autoTuck = setTimeout(() => { if (!tucked && nudge.classList.contains("is-shown") && !nudge.matches(":hover, :focus-within")) { tucked = true; render(); } }, 10000); };
+  let wasShown = false;
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { ticking = false; render(); });
+  }, { passive: true });
+  // Step aside where the page already asks people to try it.
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => (en.isIntersecting ? blockers.add(en.target) : blockers.delete(en.target)));
+    render();
+  }, { threshold: 0.15 });
+  document.querySelectorAll("#pricing, .final, footer").forEach((el) => io.observe(el));
+  nudge.querySelector(".nudge-close").addEventListener("click", () => { tucked = true; store.sset("epp-nudge", "tucked"); render(); brush.focus(); });
+  brush.addEventListener("click", () => { tucked = !tucked; store.sset("epp-nudge", tucked ? "tucked" : "open"); render(); if (!tucked) armAutoTuck(); });
+  render();
+}
 
 // Lightbox: click any screenshot to see it full size.
 const lightbox = document.getElementById("lightbox");

@@ -6,20 +6,29 @@
 <title>Thank you · Easy Paint Pro</title>
 <meta name="description" content="Your Easy Paint Pro license key and how to unlock the app.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#f5f6fb">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1e2a" media="(prefers-color-scheme: dark)">
+<script>
+/* Apply saved reading choices before the page paints. */
+try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f = localStorage.getItem("epp-font"), s = localStorage.getItem("epp-size");
+  if (t) d.dataset.theme = t; if (f) d.dataset.font = f; if (s) d.style.setProperty("--text-scale", s);
+  if (f === "lexend") document.write('<link rel="stylesheet" id="lexend-css" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap">');
+} catch (e) {}
+</script>
 <link rel="icon" href="/assets/app-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/styles.css?v=6">
-<script src="/script.js?v=6" defer></script>
+<link rel="stylesheet" href="/styles.css?v=7">
+<script src="/script.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
   <nav class="nav wrap" aria-label="Primary">
-    <a class="brand" href="/"><img src="/assets/app-icon.png" alt="" width="32" height="32">Easy Paint Pro</a>
+    <a class="brand" href="/"><img src="/assets/app-icon.png" alt="" width="32" height="32"><span>Easy Paint Pro</span></a>
     <div class="nav-links">
       <a href="/#tools">Tools</a>
       <a href="/#your-way">Classic look</a>
@@ -28,6 +37,13 @@
       <a href="/#pricing">Pricing</a>
       <a href="/support/">Support</a>
       <a href="/contact.html">Contact</a>
+    </div>
+    <div class="nav-tools">
+      <button class="icon-btn" type="button" popovertarget="reading-panel" aria-label="Reading options: text size and font" title="Text size and font"><span class="aa" aria-hidden="true">Aa</span></button>
+      <button class="icon-btn theme-toggle" type="button" title="Switch between Day and Night">
+        <span class="to-night"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.4 14.6A8.5 8.5 0 0 1 9.4 3.6a.6.6 0 0 0-.8-.7 9.7 9.7 0 1 0 12.5 12.5.6.6 0 0 0-.7-.8z"/></svg><span class="label">Night</span><span class="visually-hidden">Switch to Night look</span></span>
+        <span class="to-day"><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.6" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1.8v2.4M12 19.8v2.4M1.8 12h2.4M19.8 12h2.4M4.8 4.8l1.7 1.7M17.5 17.5l1.7 1.7M4.8 19.2l1.7-1.7M17.5 6.5l1.7-1.7"/></g></svg><span class="label">Day</span><span class="visually-hidden">Switch to Day look</span></span>
+      </button>
     </div>
     <a class="button button-primary button-small" href="/download/">Download free trial</a>
   </nav>
@@ -93,6 +109,41 @@
 <div class="toast" role="status" aria-live="polite" aria-atomic="true" hidden>
   <strong></strong>
   <span></span>
+</div>
+<div class="reading-panel" id="reading-panel" popover aria-labelledby="reading-title">
+  <div>
+    <h2 id="reading-title">Make it easy to read</h2>
+    <p class="intro">Your choices are saved on this device.</p>
+  </div>
+  <fieldset>
+    <legend>Look</legend>
+    <div class="seg">
+      <label><input type="radio" name="rp-theme" value="system">Match my Mac</label>
+      <label><input type="radio" name="rp-theme" value="light">Day</label>
+      <label><input type="radio" name="rp-theme" value="dark">Night</label>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Text size</legend>
+    <div class="seg size-seg">
+      <label><input type="radio" name="rp-size" value="1"><span aria-hidden="true">A</span><span class="visually-hidden">Standard</span></label>
+      <label><input type="radio" name="rp-size" value="1.15"><span aria-hidden="true">A</span><span class="visually-hidden">Large</span></label>
+      <label><input type="radio" name="rp-size" value="1.3"><span aria-hidden="true">A</span><span class="visually-hidden">Larger</span></label>
+      <label><input type="radio" name="rp-size" value="1.5"><span aria-hidden="true">A</span><span class="visually-hidden">Largest</span></label>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Font</legend>
+    <div class="font-list">
+      <div class="font-choice"><label class="f-atkinson"><input type="radio" name="rp-font" value=""><strong>Atkinson Hyperlegible</strong><small>Standard. Designed for low vision, every letter easy to tell apart.</small></label></div>
+      <div class="font-choice"><label class="f-lexend"><input type="radio" name="rp-font" value="lexend"><strong>Lexend</strong><small>Wider spacing made for smoother, less tiring reading.</small></label></div>
+      <div class="font-choice"><label class="f-dyslexic"><input type="radio" name="rp-font" value="dyslexic"><strong>OpenDyslexic</strong><small>Weighted letters made for readers with dyslexia.</small></label></div>
+    </div>
+  </fieldset>
+  <div class="panel-foot">
+    <button class="link-button" type="button" data-reading-reset>Reset to standard</button>
+    <button class="button button-primary button-small" type="button" popovertarget="reading-panel" popovertargetaction="hide">Done</button>
+  </div>
 </div>
 </body>
 </html>
