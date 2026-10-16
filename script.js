@@ -196,6 +196,12 @@ if (skinImage) {
   // The <picture> already shows Modern Day or Night to match the system look.
   const shown = skinSource && systemTheme() === "dark" ? "skin-modern-night" : "skin-modern-day";
   skinImage.dataset.full = document.getElementById(shown).dataset.src;
+  // Mark the look that is actually on screen, without loading anything.
+  document.querySelectorAll(".skin-tabs [role='tab']").forEach((t) => {
+    const on = t.id === shown;
+    t.setAttribute("aria-selected", String(on));
+    t.tabIndex = on ? 0 : -1;
+  });
 }
 document.querySelectorAll(".skin-tabs [role='tab']").forEach((tab) => {
   tab.addEventListener("click", () => { skinChosenByVisitor = true; skinShow?.stop(); });
@@ -312,10 +318,10 @@ window.addEventListener("storage", (e) => {
   if (e.key === "epp-font") { e.newValue ? (root.dataset.font = e.newValue) : delete root.dataset.font; if (e.newValue === "lexend") loadLexend(); syncReadingPanel(); }
   if (e.key === "epp-size") { e.newValue ? root.style.setProperty("--text-scale", e.newValue) : root.style.removeProperty("--text-scale"); syncReadingPanel(); }
 });
-// Theme slideshow: the hero cycles through the app's looks every half second.
+// Theme slideshow: the hero cycles through the app’s looks every 1.5 seconds.
 const playButton = document.querySelector(".skin-play");
 if (skinImage && playButton) {
-  const SKIN_MS = 500;
+  const SKIN_MS = 1500;
   const stage = skinImage.closest(".stage");
   const tabs = [...document.querySelectorAll(".skin-tabs [role='tab']")];
   const label = playButton.querySelector(".skin-play-label");

@@ -26,8 +26,8 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/styles.css?v=8">
-<script src="/script.js?v=8" defer></script>
+<link rel="stylesheet" href="/styles.css?v=9">
+<script src="/script.js?v=9" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -61,7 +61,6 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
   <section class="hero" id="top">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <a class="new-pill" href="/download/#whats-new"><span>New in 3.5</span>Tab groups and a toolbar that fits your screen</a>
         <div class="hero-name">
           <img src="assets/app-icon.png" alt="" width="76" height="76">
           <h1>Easy Paint Pro</h1>
@@ -79,21 +78,23 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
         <div class="skin-bar">
         <div class="skin-tabs" role="tablist" aria-label="Choose an app look">
           <button type="button" role="tab" id="skin-modern-night" aria-selected="true" tabindex="0"
-            data-src="assets/hero-modern-night.webp" data-srcset="assets/hero-modern-night-1200.webp 1200w, assets/hero-modern-night.webp 2400w" srcset="assets/hero-modern-night-1200.webp 1200w, assets/hero-modern-night.webp 2400w" sizes="(max-width: 980px) 100vw, 66vw" data-full="assets/hero-modern-night.webp"
-            data-alt="Easy Paint Pro in the Modern skin at night: a kite, a brick house, an apple tree and a flower bed on the canvas, with Brush Options open.">
-            <span class="skin-dot" style="background:#2b2f3c" aria-hidden="true"></span>Modern · Night</button>
+            data-src="assets/hero35-modern-night.webp" data-srcset="assets/hero35-modern-night-1200.webp 1200w, assets/hero35-modern-night.webp 2880w" data-alt="Easy Paint Pro 3.5 in the Modern skin at night: tab groups, the labelled toolbar, Brush Options and a kite, brick house, apple tree and flower bed on the canvas.">
+            <span class="skin-dot" style="background:#262c38" aria-hidden="true"></span>Modern Night</button>
           <button type="button" role="tab" id="skin-modern-day" aria-selected="false" tabindex="-1"
-            data-src="assets/hero-modern-day.webp" data-srcset="assets/hero-modern-day-1200.webp 1200w, assets/hero-modern-day.webp 2400w" srcset="assets/hero-modern-day-1200.webp 1200w, assets/hero-modern-day.webp 2400w" sizes="(max-width: 980px) 100vw, 66vw" data-full="assets/hero-modern-day.webp"
-            data-alt="The same picture in the Modern skin by day.">
-            <span class="skin-dot" style="background:#e9ebf2" aria-hidden="true"></span>Modern · Day</button>
+            data-src="assets/hero35-modern-day.webp" data-srcset="assets/hero35-modern-day-1200.webp 1200w, assets/hero35-modern-day.webp 2880w" data-alt="The same picture in the Modern skin by day.">
+            <span class="skin-dot" style="background:#f6f7f9" aria-hidden="true"></span>Modern Day</button>
           <button type="button" role="tab" id="skin-classic-blue" aria-selected="false" tabindex="-1"
-            data-src="assets/hero-classic-blue.webp" data-srcset="assets/hero-classic-blue-1200.webp 1200w, assets/hero-classic-blue.webp 2400w" srcset="assets/hero-classic-blue-1200.webp 1200w, assets/hero-classic-blue.webp 2400w" sizes="(max-width: 980px) 100vw, 66vw" data-full="assets/hero-classic-blue.webp"
-            data-alt="The same picture in the Classic Retro skin: blue title bar, tool palette on the left, color swatches along the bottom.">
-            <span class="skin-dot" style="background:#3355cc" aria-hidden="true"></span>Classic · Sky Blue</button>
+            data-src="assets/hero35-classic-blue.webp" data-srcset="assets/hero35-classic-blue-1200.webp 1200w, assets/hero35-classic-blue.webp 2880w" data-alt="The same picture in the Classic Retro skin with Sky Blue colours: tool palette on the left, colour swatches along the bottom, Brush Options docked on the right.">
+            <span class="skin-dot" style="background:#3355cc" aria-hidden="true"></span>Sky Blue</button>
+          <button type="button" role="tab" id="skin-classic-green" aria-selected="false" tabindex="-1"
+            data-src="assets/hero35-classic-green.webp" data-srcset="assets/hero35-classic-green-1200.webp 1200w, assets/hero35-classic-green.webp 2880w" data-alt="The same picture in the Classic Retro skin with Veggie Green colours.">
+            <span class="skin-dot" style="background:#5b7a32" aria-hidden="true"></span>Veggie Green</button>
+          <button type="button" role="tab" id="skin-classic-gray" aria-selected="false" tabindex="-1"
+            data-src="assets/hero35-classic-gray.webp" data-srcset="assets/hero35-classic-gray-1200.webp 1200w, assets/hero35-classic-gray.webp 2880w" data-alt="The same picture in the Classic Retro skin with Pebble Gray colours.">
+            <span class="skin-dot" style="background:#9a9db0" aria-hidden="true"></span>Pebble Gray</button>
           <button type="button" role="tab" id="skin-classic-night" aria-selected="false" tabindex="-1"
-            data-src="assets/hero-classic-night.webp" data-srcset="assets/hero-classic-night-1200.webp 1200w, assets/hero-classic-night.webp 2400w" srcset="assets/hero-classic-night-1200.webp 1200w, assets/hero-classic-night.webp 2400w" sizes="(max-width: 980px) 100vw, 66vw" data-full="assets/hero-classic-night.webp"
-            data-alt="The same picture in the Classic Retro skin with the Night color scheme.">
-            <span class="skin-dot" style="background:#151722" aria-hidden="true"></span>Classic · Night</button>
+            data-src="assets/hero35-classic-night.webp" data-srcset="assets/hero35-classic-night-1200.webp 1200w, assets/hero35-classic-night.webp 2880w" data-alt="The same picture in the Classic Retro skin with Night colours.">
+            <span class="skin-dot" style="background:#151722" aria-hidden="true"></span>Classic Night</button>
         </div>
           <button class="skin-play" type="button" aria-pressed="true" title="Pause or play the theme slideshow">
             <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.2"/><rect x="14" y="5" width="4" height="14" rx="1.2"/></svg>
@@ -102,8 +103,8 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
           </button>
         </div>
         <div class="window" role="tabpanel" aria-label="App screenshot">
-          <picture id="skin-picture"><source id="skin-dark-source" media="(prefers-color-scheme: dark)" srcset="assets/hero-modern-night-1200.webp 1200w, assets/hero-modern-night.webp 2400w" sizes="(max-width: 980px) 100vw, 66vw"><img id="skin-image" class="zoomable" src="assets/hero-modern-day.webp" srcset="assets/hero-modern-day-1200.webp 1200w, assets/hero-modern-day.webp 2400w" sizes="(max-width: 980px) 100vw, 66vw" width="2400" height="1232" fetchpriority="high"
-            alt="Easy Paint Pro in the Modern skin: a kite, a brick house, an apple tree and a flower bed on the canvas, with Brush Options open."></picture>
+          <picture id="skin-picture"><source id="skin-dark-source" media="(prefers-color-scheme: dark)" srcset="assets/hero35-modern-night-1200.webp 1200w, assets/hero35-modern-night.webp 2880w" sizes="(max-width: 980px) 100vw, 66vw"><img id="skin-image" class="zoomable" src="assets/hero35-modern-day.webp" srcset="assets/hero35-modern-day-1200.webp 1200w, assets/hero35-modern-day.webp 2880w" sizes="(max-width: 980px) 100vw, 66vw" width="2880" height="1612" fetchpriority="high"
+            alt="Easy Paint Pro 3.5 in the Modern skin: tab groups, the labelled toolbar, Brush Options and a kite, brick house, apple tree and flower bed on the canvas."></picture>
           <span class="zoom-hint" aria-hidden="true">Click to enlarge</span>
         </div>
       </div>
@@ -119,8 +120,10 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
         <p class="lede">No guessing what an icon does. Each button shows a picture and a word.</p>
       </div>
       <div class="toolbar-closeups">
-        <div class="shot"><img class="zoomable" src="assets/toolbar-left.webp" width="1920" height="286" loading="lazy" alt="Close-up of the left half of the toolbar: document tabs, then New, Open, Save, Share, Print, Undo, Redo, Paste, Clear Canvas, Resize, Select/Move, Crop, Rotate, Flip, Zoom, Pencil, Brush and Fill, each with a label."></div>
-        <div class="shot"><img class="zoomable" src="assets/toolbar-right.webp" width="1920" height="286" loading="lazy" alt="Close-up of the right half of the toolbar: Rectangle, Line, Curve, Select, Color Picker, Eraser, Text, Airbrush, 3D, Shapes, Ellipse, Polygon, Circle Select, Stamp and More, then the color palette."></div>
+        <div class="shot only-day"><img class="zoomable" src="assets/toolbar35-left-day.webp" width="1280" height="296" loading="lazy" alt="Close-up of the left of the 3.5 toolbar in Day: tab groups References and Launch poster, then New, Open, Save, Share, Print, Undo, Redo, Paste, Clear Canvas, Resize, Select/Move, Crop, Rotate, Flip, Zoom, Pencil, Brush, Fill, Rectangle, Line, Curve, Select, Color Picker, Eraser, Text, Airbrush and 3D, each with a label."></div>
+        <div class="shot only-day"><img class="zoomable" src="assets/toolbar35-right-day.webp" width="1280" height="296" loading="lazy" alt="Close-up of the right of the 3.5 toolbar in Day: Shapes, Ellipse, Polygon, Circle Select, Stamp, Round Rect, Measure, Zoom Area, Magic Wand, Lasso and More, then the colour palette, Utilities and the Day/Night switch."></div>
+        <div class="shot only-night"><img class="zoomable" src="assets/toolbar35-left-night.webp" width="1280" height="296" loading="lazy" alt="Close-up of the left of the 3.5 toolbar in Night: tab groups, then the labelled file, edit, image and drawing tools."></div>
+        <div class="shot only-night"><img class="zoomable" src="assets/toolbar35-right-night.webp" width="1280" height="296" loading="lazy" alt="Close-up of the right of the 3.5 toolbar in Night: shapes, selection tools, Stamp, More, the colour palette and Utilities."></div>
       </div>
       <p class="caption">The real toolbar, a name under every button. Prefer bigger buttons? Choose Icons Only in Customize Toolbar.</p>
 
@@ -162,6 +165,30 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
         <figure class="panel-card">
           <div class="shot"><img class="zoomable" src="assets/cu-text.webp" width="606" height="1624" loading="lazy" alt="Text Options: font family, size, bold, italic, underline, strikethrough, alignment, text fit, direction, rotation and colors."></div>
           <h3>Text</h3><p>Type right on the picture and style it.</p>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tab groups (new in 3.5) -->
+  <section class="section" id="tab-groups">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Tab groups</p>
+        <h2>Group your tabs, like in Chrome.</h2>
+      </div>
+      <div class="groups-grid">
+        <figure class="group-shot">
+          <div class="shot strip"><img class="zoomable" src="assets/groups-open.webp" width="1560" height="73" loading="lazy" alt="The tab bar with two tab groups: a green References chip holding 2 tabs, and a blue Launch poster chip with its tabs Colour pass and Final underlined in blue."></div>
+          <figcaption><strong>Name it, colour it</strong>A group's tabs sit together under a coloured line.</figcaption>
+        </figure>
+        <figure class="group-shot">
+          <div class="shot strip"><img class="zoomable" src="assets/groups-folded.webp" width="1800" height="73" loading="lazy" alt="Both tab groups folded away: the References chip shows 2 and the Launch poster chip shows 3, leaving room for the other tabs."></div>
+          <figcaption><strong>Fold it away</strong>Click a chip and its tabs tuck in. The chip shows how many it holds.</figcaption>
+        </figure>
+        <figure class="group-shot menu">
+          <div class="shot"><img class="zoomable" src="assets/groups-menu.webp" width="1200" height="514" loading="lazy" alt="Right-click menu on a tab group: Edit Group, Color with Blue, Teal, Purple, Orange, Pink, Green, Red and Grey, New Tab in Group, Collapse Group, Move Group Left, Move Group Right, Ungroup and Close Group."></div>
+          <figcaption><strong>Everything on one menu</strong>Rename, recolour, move, ungroup or close the whole group.</figcaption>
         </figure>
       </div>
     </div>
