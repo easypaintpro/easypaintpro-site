@@ -182,6 +182,7 @@ p { margin: 0; }
 /* Tools: labeled toolbar close-ups */
 .toolbar-closeups { display: grid; gap: 10px; }
 .toolbar-closeups .shot img { width: 100%; }
+.toolbar-closeups .tb-rest { width: calc(100% * 1118 / 1779); }
 .nostalgia { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(20px, 3vw, 40px); align-items: center; margin-top: clamp(40px, 5vw, 64px); }
 @media (max-width: 900px) { .nostalgia { grid-template-columns: 1fr; } }
 .nostalgia-copy { display: grid; gap: 14px; }
