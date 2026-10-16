@@ -26,8 +26,8 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/styles.css?v=10">
-<script src="/script.js?v=10" defer></script>
+<link rel="stylesheet" href="/styles.css?v=11">
+<script src="/script.js?v=11" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -248,11 +248,31 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
         <p class="lede">Scroll the tools, pull them down into more rows, hide the names or make every button bigger.</p>
       </div>
       <figure class="toolbar-tour">
-        <div class="shot"><picture>
-          <source media="(prefers-reduced-motion: reduce)" srcset="assets/toolbar-tour-poster.webp">
-          <img src="assets/toolbar-tour.gif" width="1600" height="411" loading="lazy" alt="Animation of the Easy Paint Pro 3.5 toolbar: one row with the colours fixed on the right, scrolling the drawing tools with the › button, pulled down into two rows, Icons Only, toolbar size 130% and 150%, and the same toolbar in the Day look.">
-        </picture></div>
+        <div class="shot">
+          <video class="tour-video" muted loop playsinline preload="metadata" poster="assets/toolbar-tour-poster.webp" width="1920" height="900" aria-label="Video of the Easy Paint Pro 3.5 toolbar: one row with the colours fixed on the right, scrolling the drawing tools, two rows, Icons Only, toolbar sizes 130% and 150%, and the Day look.">
+            <source src="assets/toolbar-tour.mp4" type="video/mp4">
+          </video>
+          <button class="tour-toggle" type="button" aria-pressed="false">Pause</button>
+        </div>
       </figure>
+      <div class="tb-stills">
+        <figure class="tb-still">
+          <div class="shot"><img class="zoomable" src="assets/tb35-two-rows.webp" srcset="assets/tb35-two-rows-600.webp 595w, assets/tb35-two-rows.webp 1190w" sizes="(max-width: 900px) 100vw, 50vw" data-full="assets/tb35-two-rows.webp" width="1190" height="174" loading="lazy" alt="Close-up of the toolbar with the drawing tools in two rows, each button labelled."></div>
+          <figcaption><strong>Two rows</strong>Pull the handle down and the drawing tools spread out.</figcaption>
+        </figure>
+        <figure class="tb-still">
+          <div class="shot"><img class="zoomable" src="assets/tb35-icons-only.webp" srcset="assets/tb35-icons-only-600.webp 595w, assets/tb35-icons-only.webp 1190w" sizes="(max-width: 900px) 100vw, 50vw" data-full="assets/tb35-icons-only.webp" width="1190" height="174" loading="lazy" alt="Close-up of the toolbar in Icons Only mode: the same buttons without names."></div>
+          <figcaption><strong>Icons Only</strong>Hide the names for a cleaner toolbar with bigger icons.</figcaption>
+        </figure>
+        <figure class="tb-still">
+          <div class="shot"><img class="zoomable" src="assets/tb35-150-night.webp" srcset="assets/tb35-150-night-600.webp 595w, assets/tb35-150-night.webp 1190w" sizes="(max-width: 900px) 100vw, 50vw" data-full="assets/tb35-150-night.webp" width="1190" height="374" loading="lazy" alt="Close-up of the toolbar at 150% size in the Night look, with three rows of large labelled buttons."></div>
+          <figcaption><strong>150% at night</strong>Big, easy-to-read buttons in three rows.</figcaption>
+        </figure>
+        <figure class="tb-still">
+          <div class="shot"><img class="zoomable" src="assets/tb35-150-day.webp" srcset="assets/tb35-150-day-600.webp 595w, assets/tb35-150-day.webp 1190w" sizes="(max-width: 900px) 100vw, 50vw" data-full="assets/tb35-150-day.webp" width="1190" height="374" loading="lazy" alt="Close-up of the toolbar at 150% size in the Day look."></div>
+          <figcaption><strong>150% by day</strong>The same toolbar in the Day look.</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 

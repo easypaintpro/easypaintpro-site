@@ -463,6 +463,22 @@ document.querySelectorAll(".grow-card video").forEach((video) => {
   io.observe(video);
 });
 
+// Toolbar tour video: plays while on screen; a button pauses it; reduced motion starts paused.
+document.querySelectorAll(".toolbar-tour").forEach((fig) => {
+  const video = fig.querySelector("video");
+  const btn = fig.querySelector(".tour-toggle");
+  if (!video || !btn) return;
+  let wanted = !reduceMotion.matches, visible = false;
+  const sync = () => {
+    if (wanted && visible) video.play().catch(() => {}); else video.pause();
+    btn.textContent = wanted ? "Pause" : "Play";
+    btn.setAttribute("aria-pressed", String(!wanted));
+  };
+  btn.addEventListener("click", () => { wanted = !wanted; sync(); });
+  new IntersectionObserver(([e]) => { visible = e.isIntersecting; sync(); }, { threshold: 0.3 }).observe(video);
+  sync();
+});
+
 // Contact form
 const form = document.getElementById("contact-form");
 if (form) {
@@ -524,6 +540,45 @@ if (form) {
     }
   });
 }
+
+// Owner details stay out of the page source and search results. They are stored
+// scrambled, decoded only when a visitor asks, and drawn as a picture, not text.
+const _od = {"a":{"s":194225,"c":["8PN","y61","ywP","bdv","ov4","BA","VNH","F+V","4Y7","OhY","gdI","lVd","BrU","t2J","GFa","/wF","gCI"],"o":[3,6,5,8,2,16,0,9,4,7,14,11,13,10,12,15,1]},"b":{"s":334909,"c":["5fq","og","c/E","Gn1","2U+"],"o":[1,4,2,3,0]}};
+function _odDecode(p) {
+  const parts = [];
+  p.o.forEach((idx, pos) => { parts[idx] = p.c[pos]; });
+  const bin = atob(parts.join(""));
+  const out = Array.from(bin, (ch) => ch.charCodeAt(0)).reverse();
+  let st = p.s;
+  const bytes = out.map((c, i) => {
+    st = (Math.imul(st, 1103515245) + 12345) & 0x7fffffff;
+    return c ^ ((st >>> 16) & 0xff) ^ ((i * 31) & 0xff);
+  });
+  return new TextDecoder().decode(new Uint8Array(bytes));
+}
+document.querySelectorAll(".owner-btn").forEach((btn) => {
+  btn.addEventListener("click", async () => {
+    const text = _odDecode(_od[btn.dataset.owner]);
+    const cs = getComputedStyle(btn.closest("p") || document.body);
+    try { await document.fonts.ready; } catch {}
+    const dpr = Math.max(2, window.devicePixelRatio || 1);
+    const size = parseFloat(cs.fontSize);
+    const font = `700 ${size}px ${cs.fontFamily}`;
+    const c = document.createElement("canvas");
+    const ctx = c.getContext("2d");
+    ctx.font = font;
+    const w = Math.ceil(ctx.measureText(text).width) + 2;
+    const h = Math.ceil(size * 1.4);
+    c.width = w * dpr; c.height = h * dpr;
+    c.style.width = `${w}px`; c.style.height = `${h}px`;
+    c.className = "owner-canvas";
+    c.setAttribute("role", "img");
+    c.setAttribute("aria-label", text);
+    ctx.scale(dpr, dpr); ctx.font = font; ctx.textBaseline = "middle";
+    ctx.fillStyle = cs.color; ctx.fillText(text, 1, h / 2);
+    btn.replaceWith(c);
+  });
+});
 
 const year = document.getElementById("copyright-year");
 if (year) year.textContent = new Date().getFullYear();
