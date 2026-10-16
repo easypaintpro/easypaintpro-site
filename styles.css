@@ -385,14 +385,14 @@ html { font-size: calc(clamp(16px, .35vw + 11px, 19px) * var(--text-scale, 1)); 
 /* Keep the whole hero screenshot inside the first screen on short displays.
    2400x1232 screenshot = 1.948 aspect; ~150px covers header, padding and the skin buttons. */
 .stage .window { width: 100%; max-width: calc((100dvh - 150px) * 1.948); }
-.stage .skin-tabs { max-width: calc((100dvh - 150px) * 1.948); }
+.stage .skin-bar { max-width: calc((100dvh - 150px) * 1.948); }
 @media (max-height: 820px) and (min-width: 981px) {
   .hero { padding-block: 14px 36px; }
   .hero-copy { gap: 12px; }
   .section { padding-block: clamp(44px, 6vw, 80px); }
 }
 @media (max-width: 980px) {
-  .stage .window, .stage .skin-tabs { max-width: none; }
+  .stage .window, .stage .skin-bar { max-width: none; }
 }
 /* Large displays: give the app more room */
 
@@ -610,3 +610,27 @@ kbd, .menu-path { font: 500 .85em/1 var(--f-mono); padding: .2em .45em; border-r
 .nav.is-compact .nav-tools { margin-left: auto; }
 @media (max-width: 430px) { .nav .brand span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } }
 .brush-nudge.is-tucked .nudge-brush { background: var(--surface); border-radius: 50%; box-shadow: var(--shadow); padding: 6px; }
+
+/* ---------- Theme slideshow (hero) ---------- */
+.skin-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.skin-bar .skin-tabs { flex: 1 1 auto; }
+.skin-play {
+  display: inline-flex; align-items: center; gap: 6px; flex: none; cursor: pointer;
+  font: 700 .8rem/1 var(--f-body); color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line); border-radius: 999px; padding: .55em .95em .55em .75em;
+}
+.skin-play:hover { background: var(--sunk); }
+.skin-play svg { width: 15px; height: 15px; fill: currentColor; }
+.skin-play[aria-pressed="true"] .i-play, .skin-play[aria-pressed="false"] .i-pause { display: none; }
+/* while playing, the selected look gets a soft pulse so the cycle reads as a slideshow */
+.stage.is-playing .skin-tabs button[aria-selected="true"] { box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 45%, transparent); }
+.stage.is-playing .window img { transition: none; }
+
+/* New in 3.5 pill */
+.new-pill {
+  justify-self: start; display: inline-flex; align-items: center; gap: 8px; max-width: 100%;
+  padding: 5px 12px 5px 5px; border-radius: 999px; text-decoration: none;
+  background: var(--surface); border: 1px solid var(--line); color: var(--ink); font-size: .85rem; line-height: 1.25;
+}
+.new-pill span { flex: none; font: 700 .72rem/1 var(--f-mono); padding: .45em .7em; border-radius: 999px; background: var(--accent); color: var(--accent-ink); }
+.new-pill:hover { border-color: var(--accent); }

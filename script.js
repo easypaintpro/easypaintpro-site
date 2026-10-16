@@ -191,16 +191,26 @@ const skinImage = document.getElementById("skin-image");
 const skinFrame = skinImage?.closest(".window");
 const skinSource = document.getElementById("skin-dark-source");
 let skinChosenByVisitor = false;
+let skinShow = null; // theme slideshow, set up below
 if (skinImage) {
   // The <picture> already shows Modern Day or Night to match the system look.
   const shown = skinSource && systemTheme() === "dark" ? "skin-modern-night" : "skin-modern-day";
   skinImage.dataset.full = document.getElementById(shown).dataset.src;
 }
 document.querySelectorAll(".skin-tabs [role='tab']").forEach((tab) => {
-  tab.addEventListener("click", () => { skinChosenByVisitor = true; });
-  tab.addEventListener("keydown", (e) => { if (["ArrowLeft", "ArrowRight", "Home", "End"].includes(e.key)) skinChosenByVisitor = true; });
+  tab.addEventListener("click", () => { skinChosenByVisitor = true; skinShow?.stop(); });
+  tab.addEventListener("keydown", (e) => { if (["ArrowLeft", "ArrowRight", "Home", "End"].includes(e.key)) { skinChosenByVisitor = true; skinShow?.stop(); } });
   tab.addEventListener("tabselect", () => {
     if (skinImage.dataset.full === tab.dataset.src) return;
+    if (skinShow?.isPlaying()) {
+      // Slideshow frames are preloaded, so swap straight away with no fade.
+      skinSource?.remove();
+      skinImage.srcset = tab.dataset.srcset || "";
+      skinImage.src = tab.dataset.src;
+      skinImage.dataset.full = tab.dataset.src;
+      skinImage.alt = tab.dataset.alt;
+      return;
+    }
     skinFrame.classList.add("is-switching");
     const next = new Image();
     next.sizes = skinImage.sizes;
@@ -219,7 +229,7 @@ document.querySelectorAll(".skin-tabs [role='tab']").forEach((tab) => {
 });
 // Until the visitor picks a look, the hero follows Day/Night.
 function syncHeroSkin() {
-  if (!skinImage || skinChosenByVisitor) return;
+  if (!skinImage || skinChosenByVisitor || skinShow?.isPlaying()) return;
   const tab = document.getElementById(effectiveTheme() === "dark" ? "skin-modern-night" : "skin-modern-day");
   if (tab) selectTab(tab);
 }
@@ -302,6 +312,54 @@ window.addEventListener("storage", (e) => {
   if (e.key === "epp-font") { e.newValue ? (root.dataset.font = e.newValue) : delete root.dataset.font; if (e.newValue === "lexend") loadLexend(); syncReadingPanel(); }
   if (e.key === "epp-size") { e.newValue ? root.style.setProperty("--text-scale", e.newValue) : root.style.removeProperty("--text-scale"); syncReadingPanel(); }
 });
+// Theme slideshow: the hero cycles through the app's looks every half second.
+const playButton = document.querySelector(".skin-play");
+if (skinImage && playButton) {
+  const SKIN_MS = 500;
+  const stage = skinImage.closest(".stage");
+  const tabs = [...document.querySelectorAll(".skin-tabs [role='tab']")];
+  const label = playButton.querySelector(".skin-play-label");
+  let wanted = !reduceMotion.matches; // what the visitor asked for
+  let timer = null, ready = false, onScreen = true;
+  const running = () => timer !== null;
+  const advance = () => {
+    const current = tabs.findIndex((t) => t.getAttribute("aria-selected") === "true");
+    selectTab(tabs[(current + 1) % tabs.length]);
+  };
+  const update = () => {
+    const shouldRun = wanted && ready && onScreen && !document.hidden;
+    if (shouldRun && !running()) timer = setInterval(advance, SKIN_MS);
+    if (!shouldRun && running()) { clearInterval(timer); timer = null; }
+    stage.classList.toggle("is-playing", running());
+    playButton.setAttribute("aria-pressed", String(wanted));
+    label.textContent = wanted ? "Pause" : "Play";
+    playButton.setAttribute("aria-label", wanted ? "Pause the theme slideshow" : "Play the theme slideshow");
+  };
+  skinShow = {
+    isPlaying: () => wanted,
+    stop() { wanted = false; update(); },
+  };
+  playButton.addEventListener("click", () => {
+    wanted = !wanted;
+    // Pausing keeps the look on screen, as if the visitor had picked it.
+    skinChosenByVisitor = !wanted;
+    update();
+  });
+  // Load every look first so the swaps are instant.
+  const preload = () => Promise.all(tabs.map((t) => {
+    const im = new Image();
+    im.sizes = skinImage.sizes;
+    im.srcset = t.dataset.srcset || "";
+    im.src = t.dataset.src;
+    return im.decode().catch(() => {});
+  }));
+  const start = () => preload().then(() => { ready = true; update(); });
+  if (document.readyState === "complete") start(); else window.addEventListener("load", start, { once: true });
+  new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; update(); }, { threshold: 0.2 }).observe(skinImage);
+  document.addEventListener("visibilitychange", update);
+  update();
+}
+
 applyThemeChrome();
 
 // Keep the header on one line when big text or a wide font would wrap it.

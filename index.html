@@ -26,8 +26,8 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/styles.css?v=7">
-<script src="/script.js?v=7" defer></script>
+<link rel="stylesheet" href="/styles.css?v=8">
+<script src="/script.js?v=8" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -61,6 +61,7 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
   <section class="hero" id="top">
     <div class="wrap hero-grid">
       <div class="hero-copy">
+        <a class="new-pill" href="/download/#whats-new"><span>New in 3.5</span>Tab groups and a toolbar that fits your screen</a>
         <div class="hero-name">
           <img src="assets/app-icon.png" alt="" width="76" height="76">
           <h1>Easy Paint Pro</h1>
@@ -75,6 +76,7 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
       </div>
 
       <div class="stage" data-skins>
+        <div class="skin-bar">
         <div class="skin-tabs" role="tablist" aria-label="Choose an app look">
           <button type="button" role="tab" id="skin-modern-night" aria-selected="true" tabindex="0"
             data-src="assets/hero-modern-night.webp" data-srcset="assets/hero-modern-night-1200.webp 1200w, assets/hero-modern-night.webp 2400w" srcset="assets/hero-modern-night-1200.webp 1200w, assets/hero-modern-night.webp 2400w" sizes="(max-width: 980px) 100vw, 66vw" data-full="assets/hero-modern-night.webp"
@@ -92,6 +94,12 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
             data-src="assets/hero-classic-night.webp" data-srcset="assets/hero-classic-night-1200.webp 1200w, assets/hero-classic-night.webp 2400w" srcset="assets/hero-classic-night-1200.webp 1200w, assets/hero-classic-night.webp 2400w" sizes="(max-width: 980px) 100vw, 66vw" data-full="assets/hero-classic-night.webp"
             data-alt="The same picture in the Classic Retro skin with the Night color scheme.">
             <span class="skin-dot" style="background:#151722" aria-hidden="true"></span>Classic · Night</button>
+        </div>
+          <button class="skin-play" type="button" aria-pressed="true" title="Pause or play the theme slideshow">
+            <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.2"/><rect x="14" y="5" width="4" height="14" rx="1.2"/></svg>
+            <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.4-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>
+            <span class="skin-play-label">Pause</span>
+          </button>
         </div>
         <div class="window" role="tabpanel" aria-label="App screenshot">
           <picture id="skin-picture"><source id="skin-dark-source" media="(prefers-color-scheme: dark)" srcset="assets/hero-modern-night-1200.webp 1200w, assets/hero-modern-night.webp 2400w" sizes="(max-width: 980px) 100vw, 66vw"><img id="skin-image" class="zoomable" src="assets/hero-modern-day.webp" srcset="assets/hero-modern-day-1200.webp 1200w, assets/hero-modern-day.webp 2400w" sizes="(max-width: 980px) 100vw, 66vw" width="2400" height="1232" fetchpriority="high"
@@ -114,7 +122,7 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
         <div class="shot"><img class="zoomable" src="assets/toolbar-left.webp" width="1920" height="286" loading="lazy" alt="Close-up of the left half of the toolbar: document tabs, then New, Open, Save, Share, Print, Undo, Redo, Paste, Clear Canvas, Resize, Select/Move, Crop, Rotate, Flip, Zoom, Pencil, Brush and Fill, each with a label."></div>
         <div class="shot"><img class="zoomable" src="assets/toolbar-right.webp" width="1920" height="286" loading="lazy" alt="Close-up of the right half of the toolbar: Rectangle, Line, Curve, Select, Color Picker, Eraser, Text, Airbrush, 3D, Shapes, Ellipse, Polygon, Circle Select, Stamp and More, then the color palette."></div>
       </div>
-      <p class="caption">The real toolbar. 17 creative tools and 15 everyday actions, all labeled.</p>
+      <p class="caption">The real toolbar, a name under every button. Prefer bigger buttons? Choose Icons Only in Customize Toolbar.</p>
 
       <div class="nostalgia" id="your-way">
         <div class="shot"><img class="zoomable" src="assets/cu-classic-window.webp" width="1344" height="998" loading="lazy" alt="Close-up of the Classic Retro skin: a blue title bar, small toolbar, document tabs and the two-column tool palette on the left beside a canvas with a kite."></div>
@@ -214,8 +222,8 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
       </div>
       <div class="shot-card">
         <div class="shot"><img class="zoomable" src="assets/crop-customize-toolbar.webp" width="1400" height="715" loading="lazy" alt="The Customize Toolbar popover with One Row and Two Rows buttons and arrows to move each toolbar section."></div>
-        <h3>One toolbar row or two</h3>
-        <p>Bigger buttons on two rows, or more canvas on one. Move whole sections around.</p>
+        <h3>A toolbar that fits your screen</h3>
+        <p>The drawing tools scroll, or pull down into two or three rows. Hide the toolbar for more canvas, or pin it.</p>
       </div>
     </div>
   </section>
@@ -271,8 +279,8 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
         </article>
         <article class="grow-card">
           <div class="media"><img class="zoomable" src="assets/crop-tab-search.webp" width="1100" height="847" loading="lazy" alt="The tab switcher with a search field showing three open images."></div>
-          <h3>Tabs you can search</h3>
-          <p>Many pictures open, each with its own layers.</p>
+          <h3>Tabs and tab groups</h3>
+          <p>Search your open pictures, and group tabs like in Chrome: name, color, fold away.</p>
         </article>
         <article class="grow-card">
           <div class="media">
@@ -356,7 +364,7 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
                 <tr><th scope="row">Layers and masks</th><td class="col-epp"><span class="mark yes">✓</span>Names, visibility, locks, opacity, masks</td><td><span class="mark no">—</span></td></tr>
                 <tr><th scope="row">Selections</th><td class="col-epp"><span class="mark yes">✓</span>Rectangle, circle, lasso, magic wand</td><td><span class="mark yes">✓</span>Rectangle, ellipse, lasso, Smart Lasso</td></tr>
                 <tr><th scope="row">Crop, resize, rotate, adjust color</th><td class="col-epp"><span class="mark yes">✓</span>Included</td><td><span class="mark yes">✓</span>Included</td></tr>
-                <tr><th scope="row">Classic and modern looks, custom toolbar</th><td class="col-epp"><span class="mark yes">✓</span>Six looks, one or two toolbar rows</td><td><span class="mark no">—</span></td></tr>
+                <tr><th scope="row">Classic and modern looks, custom toolbar</th><td class="col-epp"><span class="mark yes">✓</span>Six looks, 1 to 3 toolbar rows, Icons Only</td><td><span class="mark no">—</span></td></tr>
                 <tr><th scope="row">Record and replay your drawing</th><td class="col-epp"><span class="mark yes">✓</span>Canvas recording with replay</td><td><span class="mark no">—</span></td></tr>
                 <tr><th scope="row">Fill forms, sign and reorder original PDF pages</th><td class="col-epp"><span class="mark part">◐</span>Pages open as images to paint on</td><td><span class="mark yes">✓</span>Better choice for this</td></tr>
                 <tr><th scope="row">Price</th><td class="col-epp">7 days free, then a one-time purchase</td><td>Included with macOS</td></tr>
