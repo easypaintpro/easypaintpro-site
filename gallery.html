@@ -21,8 +21,8 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/styles.css?v=11">
-<script src="/script.js?v=11" defer></script>
+<link rel="stylesheet" href="/styles.css?v=12">
+<script src="/script.js?v=12" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -57,6 +57,29 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
         <p class="eyebrow">Gallery</p>
         <h1>Made in Easy Paint Pro</h1>
         <p class="lede">Pictures drawn with the app’s own brushes, fills, shapes and stamps. Click any picture to see it full size.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section replay-feature" style="padding-top:0" aria-labelledby="knight-title">
+    <div class="wrap">
+      <div class="made-grid">
+        <figure class="made-art replay-video">
+          <div class="shot"><video class="tour-video" muted loop playsinline preload="metadata" poster="assets/gallery/pixel-knight-poster.webp" width="1080" height="1080" aria-label="Screen recording: an 8-bit knight drawn block by block in Easy Paint Pro. A light blue sky, green grass, a black outline, silver armour, a red plume, a blue shield with a yellow cross and a raised sword."><source src="assets/gallery/pixel-knight.mp4" type="video/mp4"></video><button class="tour-toggle" type="button" aria-pressed="false">Pause</button></div>
+          <figcaption class="caption">Recorded with <strong>Record Canvas</strong>, then saved with <strong>Export Replay</strong>. Sped up to about 30 seconds.</figcaption>
+        </figure>
+        <div class="replay-steps">
+          <p class="eyebrow">Recorded in the app</p>
+          <h2 id="knight-title">“Let me draw a little 8-bit knight, like the game heroes from my childhood.”</h2>
+          <p>A 320 × 320 canvas with the grid set to 10 pixels. Every square is one 10 × 10 Rectangle in a Classic palette colour.</p>
+          <ol class="made-list">
+            <li class="made-item"><img src="assets/gallery/knight-step-sky.webp" width="320" height="320" loading="lazy" alt=""><div><h3>Sky</h3><ul class="tool-chips" aria-label="Tools used"><li><span class="ti ti-fill" aria-hidden="true"></span><span class="sw sw-c" style="--c:#80ffff" aria-hidden="true"></span>Fill, light cyan</li></ul></div></li>
+            <li class="made-item"><img src="assets/gallery/knight-step-grass.webp" width="320" height="320" loading="lazy" alt=""><div><h3>Grass</h3><ul class="tool-chips" aria-label="Tools used"><li><span class="ti ti-rectangle" aria-hidden="true"></span><span class="sw sw-c" style="--c:#008000" aria-hidden="true"></span><span class="sw sw-c" style="--c:#00ff00" aria-hidden="true"></span>Rectangle, two greens</li></ul></div></li>
+            <li class="made-item"><img src="assets/gallery/knight-step-outline.webp" width="320" height="320" loading="lazy" alt=""><div><h3>Outline</h3><ul class="tool-chips" aria-label="Tools used"><li><span class="ti ti-rectangle" aria-hidden="true"></span><span class="sw sw-c" style="--c:#000000" aria-hidden="true"></span>10-pixel blocks in black</li></ul></div></li>
+            <li class="made-item"><img src="assets/gallery/knight-step-armour.webp" width="320" height="320" loading="lazy" alt=""><div><h3>Armour and sword</h3><ul class="tool-chips" aria-label="Tools used"><li><span class="ti ti-rectangle" aria-hidden="true"></span><span class="sw sw-c" style="--c:#c0c0c0" aria-hidden="true"></span><span class="sw sw-c" style="--c:#808080" aria-hidden="true"></span><span class="sw sw-c" style="--c:#ffffff" aria-hidden="true"></span>Silver, grey, white</li></ul></div></li>
+            <li class="made-item"><img src="assets/gallery/knight-step-colour.webp" width="320" height="320" loading="lazy" alt=""><div><h3>Plume, shield and belt</h3><ul class="tool-chips" aria-label="Tools used"><li><span class="ti ti-rectangle" aria-hidden="true"></span><span class="sw sw-c" style="--c:#ff0000" aria-hidden="true"></span><span class="sw sw-c" style="--c:#0000ff" aria-hidden="true"></span><span class="sw sw-c" style="--c:#ffff00" aria-hidden="true"></span><span class="sw sw-c" style="--c:#804000" aria-hidden="true"></span>Red, blue, yellow, brown</li></ul></div></li>
+          </ol>
+        </div>
       </div>
     </div>
   </section>

@@ -682,3 +682,15 @@ kbd, .menu-path { font: 500 .85em/1 var(--f-mono); padding: .2em .45em; border-r
 .tb-still .shot { background: #262c38; }
 .tb-still figcaption { color: var(--muted); font-size: .95rem; }
 .tb-still figcaption strong { color: var(--ink); font: 700 1.02rem/1.3 var(--f-display); margin-right: .45em; }
+
+/* Gallery: recorded pixel knight */
+.sw-c { background: var(--c); }
+.tool-chips .sw-c + .sw-c { margin-left: -4px; }
+.replay-video .shot { position: relative; background: #80ffff; }
+.replay-video .tour-video { image-rendering: pixelated; }
+.replay-steps { display: grid; gap: 12px; align-content: start; }
+.replay-steps h2 { font-size: clamp(1.35rem, 2.4vw, 1.9rem); line-height: 1.2; margin: 0; }
+.replay-steps > p:not(.eyebrow) { color: var(--muted); margin: 0 0 4px; }
+.replay-steps .made-item img { image-rendering: pixelated; object-fit: cover; }
+.replay-feature .made-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+@media (max-width: 960px) { .replay-feature .made-grid { grid-template-columns: 1fr; } }

@@ -464,7 +464,7 @@ document.querySelectorAll(".grow-card video").forEach((video) => {
 });
 
 // Toolbar tour video: plays while on screen; a button pauses it; reduced motion starts paused.
-document.querySelectorAll(".toolbar-tour").forEach((fig) => {
+document.querySelectorAll(".toolbar-tour, .replay-video").forEach((fig) => {
   const video = fig.querySelector("video");
   const btn = fig.querySelector(".tour-toggle");
   if (!video || !btn) return;
