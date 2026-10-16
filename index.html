@@ -26,8 +26,8 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/styles.css?v=9">
-<script src="/script.js?v=9" defer></script>
+<link rel="stylesheet" href="/styles.css?v=10">
+<script src="/script.js?v=10" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -239,19 +239,20 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
     </div>
   </section>
 
-  <!-- Layout -->
+  <!-- Layout: the 3.5 toolbar -->
   <section class="section band" id="layout">
-    <div class="wrap way-grid">
-      <div class="shot-card">
-        <div class="shot"><img class="zoomable" src="assets/skin-silver.webp" srcset="assets/skin-silver-1200.webp 1200w, assets/skin-silver.webp 1600w" sizes="(max-width: 900px) 100vw, 50vw" data-full="assets/skin-silver.webp" width="1600" height="1042" loading="lazy" alt="Easy Paint Pro in the Classic Retro skin with the Pebble Gray color scheme."></div>
-        <h3>Classic Pebble Gray</h3>
-        <p>One of six looks. Your picture's colors never change, only the tools around it.</p>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Your toolbar, your way</p>
+        <h2>A toolbar that fits your screen.</h2>
+        <p class="lede">Scroll the tools, pull them down into more rows, hide the names or make every button bigger.</p>
       </div>
-      <div class="shot-card">
-        <div class="shot"><img class="zoomable" src="assets/crop-customize-toolbar.webp" width="1400" height="715" loading="lazy" alt="The Customize Toolbar popover with One Row and Two Rows buttons and arrows to move each toolbar section."></div>
-        <h3>A toolbar that fits your screen</h3>
-        <p>The drawing tools scroll, or pull down into two or three rows. Hide the toolbar for more canvas, or pin it.</p>
-      </div>
+      <figure class="toolbar-tour">
+        <div class="shot"><picture>
+          <source media="(prefers-reduced-motion: reduce)" srcset="assets/toolbar-tour-poster.webp">
+          <img src="assets/toolbar-tour.gif" width="1600" height="411" loading="lazy" alt="Animation of the Easy Paint Pro 3.5 toolbar: one row with the colours fixed on the right, scrolling the drawing tools with the › button, pulled down into two rows, Icons Only, toolbar size 130% and 150%, and the same toolbar in the Day look.">
+        </picture></div>
+      </figure>
     </div>
   </section>
 
