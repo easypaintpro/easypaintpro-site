@@ -1,0 +1,5 @@
+# easypaintpro.com
+User-agent: *
+Allow: /
+
+Sitemap: https://easypaintpro.com/sitemap.xml

@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How to Make Pixel Art on a Mac · Easy Paint Pro</title>
+<meta name="description" content="Make crisp 8-bit style pixel art on a Mac with a grid, snapping and square blocks, then export it small for games or large for sharing. Shown step by step with a pixel knight.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1e2a" media="(prefers-color-scheme: dark)">
+<script>
+/* Apply saved reading choices before the page paints. */
+try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f = localStorage.getItem("epp-font"), s = localStorage.getItem("epp-size");
+  if (t) d.dataset.theme = t; if (f) d.dataset.font = f; if (s) d.style.setProperty("--text-scale", s);
+  if (f === "lexend") document.write('<link rel="stylesheet" id="lexend-css" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap">');
+} catch (e) {}
+</script>
+<meta property="og:site_name" content="Easy Paint Pro">
+<meta property="og:title" content="How to make pixel art on a Mac">
+<meta property="og:description" content="Make crisp 8-bit style pixel art on a Mac with a grid, snapping and square blocks, then export it small for games or large for sharing. Shown step by step with a pixel knight.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://easypaintpro.com/guides/pixel-art-on-mac/">
+<meta property="og:image" content="https://easypaintpro.com/assets/gallery/pixel-knight-poster.webp">
+<meta property="og:image:alt" content="A pixel-art knight with a red plume and a blue shield.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://easypaintpro.com/guides/pixel-art-on-mac/">
+<link rel="icon" href="/assets/app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/styles.css?v=14">
+<script src="/script.js?v=14" defer></script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "TechArticle",
+ "headline": "How to make pixel art on a Mac",
+ "description": "Make crisp 8-bit style pixel art on a Mac with a grid, snapping and square blocks, then export it small for games or large for sharing. Shown step by step with a pixel knight.",
+ "image": "https://easypaintpro.com/assets/gallery/pixel-knight-poster.webp",
+ "url": "https://easypaintpro.com/guides/pixel-art-on-mac/",
+ "datePublished": "2026-10-20",
+ "dateModified": "2026-10-20",
+ "author": {
+  "@type": "Organization",
+  "name": "Easy Paint Pro",
+  "url": "https://easypaintpro.com/"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "Easy Paint Pro",
+  "url": "https://easypaintpro.com/",
+  "logo": {
+   "@type": "ImageObject",
+   "url": "https://easypaintpro.com/assets/app-icon.png"
+  }
+ },
+ "about": {
+  "@type": "SoftwareApplication",
+  "name": "Easy Paint Pro",
+  "operatingSystem": "macOS 14 or later",
+  "applicationCategory": "DesignApplication"
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Easy Paint Pro",
+   "item": "https://easypaintpro.com/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Guides",
+   "item": "https://easypaintpro.com/guides/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "How to make pixel art on a Mac",
+   "item": "https://easypaintpro.com/guides/pixel-art-on-mac/"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="nav wrap" aria-label="Primary">
+    <a class="brand" href="/"><img src="/assets/app-icon.png" alt="" width="32" height="32"><span>Easy Paint Pro</span></a>
+    <div class="nav-links">
+      <a href="/#tools">Tools</a>
+      <a href="/#your-way">Classic look</a>
+      <a href="/gallery.html">Gallery</a>
+      <a href="/#compare">Compare</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/support/">Support</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="nav-tools">
+      <button class="icon-btn" type="button" popovertarget="reading-panel" aria-label="Reading options: text size and font" title="Text size and font"><span class="aa" aria-hidden="true">Aa</span></button>
+      <button class="icon-btn theme-toggle" type="button" title="Switch between Day and Night">
+        <span class="to-night"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.4 14.6A8.5 8.5 0 0 1 9.4 3.6a.6.6 0 0 0-.8-.7 9.7 9.7 0 1 0 12.5 12.5.6.6 0 0 0-.7-.8z"/></svg><span class="label">Night</span><span class="visually-hidden">Switch to Night look</span></span>
+        <span class="to-day"><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.6" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1.8v2.4M12 19.8v2.4M1.8 12h2.4M19.8 12h2.4M4.8 4.8l1.7 1.7M17.5 17.5l1.7 1.7M4.8 19.2l1.7-1.7M17.5 6.5l1.7-1.7"/></g></svg><span class="label">Day</span><span class="visually-hidden">Switch to Day look</span></span>
+      </button>
+    </div>
+    <a class="button button-primary button-small" href="/download/">Download free trial</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Guide</p>
+        <h1>How to make pixel art on a Mac</h1>
+        <p class="lede">Crisp 8-bit style pixel art with a grid and square blocks, shown with a real recording.</p>
+        <p class="updated">Updated October 20, 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span aria-hidden="true">›</span> <a href="/guides/">Guides</a> <span aria-hidden="true">›</span> <span aria-current="page">How to make pixel art on a Mac</span></nav>
+      <div class="prose">
+        <p>Pixel art is made of square blocks of solid colour with crisp edges. The easiest way to get that in Easy Paint Pro is to draw on a grid with “big pixels”: each block is a small square snapped to the grid, filled with one colour. This is exactly how the knight below was made, recorded straight from the app.</p>
+
+        <figure class="guide-figure">
+          <video src="/assets/gallery/pixel-knight.mp4" poster="/assets/gallery/pixel-knight-poster.webp" width="1080" height="1080" controls muted playsinline preload="none" aria-label="Recording of a pixel-art knight being drawn in Easy Paint Pro, block by block."></video>
+          <figcaption>An 8-bit knight on a 320 × 320 canvas with a 10-pixel grid, recorded with Record Canvas. More in the <a href="/gallery.html">gallery</a>.</figcaption>
+        </figure>
+
+        <h2 id="steps">Step by step</h2>
+        <ol class="steps">
+          <li><div><h3>Make a small canvas</h3><p>Click <strong>+</strong> beside your tabs for a new canvas. Double-click the size at the bottom of the window and enter an exact size, for example 320 × 320. That gives you a 32 × 32 picture made of 10-pixel blocks.</p></div></li>
+          <li><div><h3>Turn on the grid</h3><p>Choose <span class="menu-path">View ▸ Guides and Grid ▸ Set Grid Spacing…</span> and enter 10. Then turn on <span class="menu-path">View ▸ Show Pixel Grid</span> and <span class="menu-path">View ▸ Snap to Grid</span>.</p></div></li>
+          <li><div><h3>Fill the background</h3><p>Pick a colour and use <strong>Fill</strong> to paint the sky, then the ground.</p></div></li>
+          <li><div><h3>Place the blocks</h3><p>Choose <strong>Rectangle</strong>, set the shape finish to a solid fill, and drag one 10 × 10 square at a time. They snap to the grid, so the edges stay crisp. Outline first in a dark colour, then fill in the details.</p></div></li>
+          <li><div><h3>Zoom in for detail</h3><p>Hold Shift and scroll to zoom around the pointer, all the way to 3,200%. Command–Z undoes a misplaced block.</p></div></li>
+          <li><div><h3>Export</h3><p>Use <span class="menu-path">File ▸ Export ▸ PNG…</span>. For a true 32 × 32 sprite, first choose <span class="menu-path">Image ▸ Resize Image…</span>, resize by percentage to 10%, and choose the crisp pixel-art option so the blocks don’t blur. Resize up the same way for sharing.</p></div></li>
+        </ol>
+
+        <figure class="guide-figure guide-steps">
+          <img src="/assets/gallery/knight-step-ground.webp" alt="Step 1: light cyan sky and two greens of grass, filled with the Fill tool." width="320" height="320" loading="lazy">
+          <img src="/assets/gallery/knight-step-outline.webp" alt="Step 2: the knight’s outline in black 10-pixel blocks." width="320" height="320" loading="lazy">
+          <img src="/assets/gallery/knight-step-armour.webp" alt="Step 3: silver, grey and white armour and sword." width="320" height="320" loading="lazy">
+          <img src="/assets/gallery/knight-step-colour.webp" alt="Step 4: red plume, blue shield with a yellow triangle, and a brown belt." width="320" height="320" loading="lazy">
+          <figcaption>Sky and grass, outline, armour, then colour.</figcaption>
+        </figure>
+
+        <h2 id="tips">Tips</h2>
+        <ul>
+          <li><strong>Use a small palette.</strong> Four to eight colours look the most “8-bit”.</li>
+          <li><strong>Why not the Pencil?</strong> Pencil and brushes draw smooth, anti-aliased lines, which is what you want for sketches but not for pixel art. Snapped blocks and Fill keep every edge hard.</li>
+          <li><strong>Record it.</strong> <span class="menu-path">Record ▸ Record Canvas</span> captures your picture coming together, and you can export the replay as a video or GIF.</li>
+        </ul>
+
+        <aside class="guide-cta card">
+          <img src="/assets/app-icon.png" alt="" width="56" height="56" loading="lazy">
+          <div>
+            <h2>Easy Paint Pro for Mac</h2>
+            <p>Try every tool free for 7 days. Then it’s a one-time purchase. Needs a Mac with Apple silicon and macOS 14 or later.</p>
+          </div>
+          <a class="button button-primary button-small" href="/download/">Download free trial</a>
+        </aside>
+
+        <h2>More guides</h2>
+        <ul>
+            <li><a href="/guides/ms-paint-for-mac/">Is there MS Paint for Mac?</a></li>
+            <li><a href="/guides/blur-or-pixelate-a-screenshot-on-mac/">Blur or pixelate part of a screenshot</a></li>
+            <li><a href="/guides/remove-background-from-a-picture-on-mac/">Remove the background from a picture</a></li>
+            <li><a href="/guides/draw-on-a-picture-on-mac/">Draw and write on a picture</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="/"><img src="/assets/app-icon.png" alt="" width="32" height="32">Easy Paint Pro</a>
+    <div class="foot-links">
+      <a href="/download/">Download</a>
+      <a href="/gallery.html">Gallery</a>
+      <a href="/guides/">Guides</a>
+      <a href="/support/">Support</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/contact.html?topic=education">Licensing</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms &amp; refunds</a>
+      <button class="link-button" type="button" data-sales="app-store">Mac App Store (coming soon)</button>
+    </div>
+    <span>© <span id="copyright-year">2026</span> Easy Paint Pro</span>
+  </div>
+</footer>
+
+<div class="toast" role="status" aria-live="polite" aria-atomic="true" hidden>
+  <strong></strong>
+  <span></span>
+</div>
+<div class="reading-panel" id="reading-panel" popover aria-labelledby="reading-title">
+  <div>
+    <h2 id="reading-title">Make it easy to read</h2>
+    <p class="intro">Your choices are saved on this device.</p>
+  </div>
+  <fieldset>
+    <legend>Look</legend>
+    <div class="seg">
+      <label><input type="radio" name="rp-theme" value="system">Match my Mac</label>
+      <label><input type="radio" name="rp-theme" value="light">Day</label>
+      <label><input type="radio" name="rp-theme" value="dark">Night</label>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Text size</legend>
+    <div class="seg size-seg">
+      <label><input type="radio" name="rp-size" value="1"><span aria-hidden="true">A</span><span class="visually-hidden">Standard</span></label>
+      <label><input type="radio" name="rp-size" value="1.15"><span aria-hidden="true">A</span><span class="visually-hidden">Large</span></label>
+      <label><input type="radio" name="rp-size" value="1.3"><span aria-hidden="true">A</span><span class="visually-hidden">Larger</span></label>
+      <label><input type="radio" name="rp-size" value="1.5"><span aria-hidden="true">A</span><span class="visually-hidden">Largest</span></label>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Font</legend>
+    <div class="font-list">
+      <div class="font-choice"><label class="f-atkinson"><input type="radio" name="rp-font" value=""><strong>Atkinson Hyperlegible</strong><small>Standard. Designed for low vision, every letter easy to tell apart.</small></label></div>
+      <div class="font-choice"><label class="f-lexend"><input type="radio" name="rp-font" value="lexend"><strong>Lexend</strong><small>Wider spacing made for smoother, less tiring reading.</small></label></div>
+      <div class="font-choice"><label class="f-dyslexic"><input type="radio" name="rp-font" value="dyslexic"><strong>OpenDyslexic</strong><small>Weighted letters made for readers with dyslexia.</small></label></div>
+    </div>
+  </fieldset>
+  <div class="panel-foot">
+    <button class="link-button" type="button" data-reading-reset>Reset to standard</button>
+    <button class="button button-primary button-small" type="button" popovertarget="reading-panel" popovertargetaction="hide">Done</button>
+  </div>
+</div>
+</body>
+</html>
