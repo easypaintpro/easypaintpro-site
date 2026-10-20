@@ -28,8 +28,8 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/styles.css?v=14">
-<script src="/script.js?v=14" defer></script>
+<link rel="stylesheet" href="/styles.css?v=15">
+<script src="/script.js?v=15" defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -87,7 +87,7 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
   "priceCurrency": "USD",
   "url": "https://easypaintpro.com/download/",
   "availability": "https://schema.org/InStock",
-  "description": "Free 7-day trial, then a one-time purchase."
+  "description": "Free 7-day trial, then a one-time purchase at an introductory launch price."
  },
  "publisher": {
   "@id": "https://easypaintpro.com/#org"
@@ -520,8 +520,9 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
   <section class="section band" id="pricing">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">Pricing</p>
+        <p class="eyebrow">Launch pricing</p>
         <h2>Try it free. Then it’s yours.</h2>
+        <p class="lede">$29.99 once is an <strong>introductory launch price</strong>, and it won’t last. The price will go up soon, so this is the time to buy.</p>
       </div>
       <div class="price-grid">
         <article class="price-card">
@@ -533,8 +534,10 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
         <span class="price-arrow" aria-hidden="true">→</span>
         <article class="price-card main">
           <span class="price-step">Step 2</span>
+          <span class="launch-pill">Introductory price · limited time</span>
           <h3>Buy once</h3>
           <p class="price-amount">$29.99 <small>one time</small></p>
+          <p class="launch-note">Buy at the launch price and keep it. The price will go up soon, and every Easy Paint Pro 3 update stays free for you.</p>
           <ul class="ticks"><li>No subscription</li><li>Free updates to version 3</li><li>License key instantly, on screen and by email</li><li>1 Mac per license, movable</li><li>14-day money-back guarantee</li></ul>
           <div class="cta-row">
             <a class="button button-primary" href="/download/">Download free trial</a>
@@ -548,7 +551,19 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
           <a class="button button-quiet" href="contact.html?topic=education">Ask about licensing</a>
         </article>
       </div>
-      <p class="fine">Introductory launch price in US dollars. Sales tax or VAT is added at checkout where it applies. Sold from this website today; coming soon to the Mac App Store, where Apple’s price and terms will apply. See <a href="/terms/">terms and refunds</a>.</p>
+      <div class="price-compare">
+        <h3>What other Mac art apps charge</h3>
+        <p>Many are subscriptions you pay for every month, and paint apps you buy once can cost $80 or more.</p>
+        <ul>
+          <li><span>Easy Paint Pro</span><strong>$29.99 once</strong><em>launch price</em></li>
+          <li><span>ArtRage Vitae</span><strong>$80 once</strong></li>
+          <li><span>Corel Painter</span><strong>$19.99 a month</strong><em>or $199.99 a year</em></li>
+          <li><span>Adobe Photoshop</span><strong>from $22.99 a month</strong><em>subscription only</em></li>
+          <li><span>Pixelmator Pro in Apple Creator Studio</span><strong>$12.99 a month</strong><em>or $129 a year</em></li>
+        </ul>
+        <p class="fine">Other apps’ US list prices from their developers, the Mac App Store and Apple, checked October 20, 2026; they may change. These apps do different jobs, from painting to professional photo editing. Easy Paint Pro is not affiliated with any of them.</p>
+      </div>
+      <p class="fine">Introductory launch price in US dollars, for a limited time. Sales tax or VAT is added at checkout where it applies. Sold from this website today; coming soon to the Mac App Store, where Apple’s price and terms will apply. See <a href="/terms/">terms and refunds</a>.</p>
     </div>
   </section>
 
