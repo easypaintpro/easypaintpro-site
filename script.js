@@ -28,6 +28,60 @@ const showToast = (title, body) => {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => { toast.hidden = true; }, 4200);
 };
+// ---- Ad measurement (Facebook and Instagram ads): no Meta code, no cookies ------
+// A visitor who arrives from one of our ads has Meta's click ID (fbclid) in the
+// link. This tab keeps it in sessionStorage (gone when the tab closes) so the
+// license server can tell Meta that the ad led to a download, an emailed link or
+// a purchase. Nothing is kept or sent for anyone else, when the browser sends
+// Global Privacy Control, or after "Don't share" on the privacy page.
+const AD_KEY = "epp-ad";
+const AD_OPT_OUT_KEY = "epp-no-ad-sharing";
+const AD_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
+function adSharingOff() {
+  if (navigator.globalPrivacyControl === true) return true;
+  try { return localStorage.getItem(AD_OPT_OUT_KEY) === "1"; } catch { return false; }
+}
+(function keepAdClick() {
+  const params = new URLSearchParams(location.search);
+  const fbclid = params.get("fbclid");
+  if (!fbclid) return;
+  if (!adSharingOff() && /^[A-Za-z0-9_-]{10,500}$/.test(fbclid)) {
+    // fbat: the click time, carried by our download-link email from phone to Mac.
+    const fbat = Number(params.get("fbat"));
+    const at = Number.isSafeInteger(fbat) && fbat > 0 && fbat <= Date.now() ? fbat : Date.now();
+    try { sessionStorage.setItem(AD_KEY, JSON.stringify({ fbclid, at })); } catch { /* private mode */ }
+  }
+  // Tidy the address bar so the click ID isn't copied into links people share.
+  params.delete("fbclid");
+  params.delete("fbat");
+  const query = params.toString();
+  history.replaceState(history.state, "", `${location.pathname}${query ? `?${query}` : ""}${location.hash}`);
+})();
+function adClick() {
+  if (adSharingOff()) return null;
+  try {
+    const click = JSON.parse(sessionStorage.getItem(AD_KEY) || "null");
+    const fresh = click && typeof click.fbclid === "string" && Number.isSafeInteger(click.at) && Date.now() - click.at < AD_MAX_AGE_MS;
+    return fresh ? { fbclid: click.fbclid, at: click.at } : null;
+  } catch { return null; }
+}
+function sendAdEvent(event) {
+  const click = adClick();
+  if (!click || !navigator.sendBeacon) return;
+  // One ID per event per tab, so Meta counts repeat clicks once.
+  let id;
+  try {
+    id = sessionStorage.getItem(`${AD_KEY}-${event}`) || `st-${crypto.randomUUID()}`;
+    sessionStorage.setItem(`${AD_KEY}-${event}`, id);
+  } catch { /* private mode */ }
+  const body = JSON.stringify({ event, click, page: location.origin + location.pathname, id });
+  // text/plain needs no CORS preflight, and a beacon still goes out as the .dmg download starts.
+  navigator.sendBeacon(`${LICENSE_API}/ad-event`, new Blob([body], { type: "text/plain" }));
+}
+document.querySelectorAll('[data-sales="download"]').forEach((el) => {
+  el.addEventListener("click", () => sendAdEvent("StartTrial"));
+});
+
 // ---- Buying: Paddle overlay checkout, then the thank-you page shows the key ----
 const ORDER_KEY = "epp-order";
 let paddleReady;
@@ -58,8 +112,14 @@ async function openCheckout(button) {
   button.setAttribute("aria-busy", "true");
   try {
     const paddle = await loadPaddle();
+    // Visitors from one of our ads: the order carries the ad click so the server can report it.
+    const click = adClick();
+    const customData = click
+      ? { fbclid: click.fbclid, fbat: String(click.at), ua: navigator.userAgent.slice(0, 400), page: location.origin + location.pathname }
+      : undefined;
     paddle.Checkout.open({
       items: [{ priceId: PADDLE_PRICE_ID, quantity: 1 }],
+      ...(customData ? { customData } : {}),
       settings: { displayMode: "overlay", theme: "light", allowLogout: true },
     });
   } catch {
@@ -539,6 +599,92 @@ if (form) {
       submit.textContent = "Send message";
     }
   });
+}
+
+// ---- Ad landing page (/mac/): download on a Mac, email the link anywhere else ----
+// A Mac reports "Macintosh" with no touch screen; an iPad also says "Macintosh"
+// but has touch points.
+const onMacDesktop = () => /Macintosh|Mac OS X/.test(navigator.userAgent)
+  && !/iPhone|iPad|iPod|Android/.test(navigator.userAgent) && (navigator.maxTouchPoints || 0) < 2;
+const deviceAreas = document.querySelectorAll("[data-device]");
+if (deviceAreas.length) {
+  const setDevice = (device, focus = false) => {
+    deviceAreas.forEach((area) => { area.dataset.device = device; });
+    if (focus) document.querySelector(`.device-cta .for-${device} input, .device-cta .for-${device} .button`)?.focus();
+  };
+  setDevice(onMacDesktop() ? "mac" : "other");
+  document.querySelectorAll("[data-show-device]").forEach((el) => {
+    el.addEventListener("click", () => setDevice(el.dataset.showDevice, true));
+  });
+}
+
+const macForm = document.getElementById("mac-link-form");
+if (macForm) {
+  const status = macForm.querySelector(".form-status");
+  const submit = macForm.querySelector('button[type="submit"]');
+  const label = submit.textContent;
+  const show = (kind, text) => { status.hidden = false; status.className = `form-status ${kind}`; status.textContent = text; };
+  macForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = macForm.elements.email.value.trim();
+    if (!email || !macForm.elements.email.checkValidity()) {
+      show("err", "Enter your email address, like name@example.com.");
+      macForm.elements.email.focus();
+      return;
+    }
+    submit.disabled = true;
+    submit.textContent = "Sending…";
+    try {
+      const res = await fetch(`${LICENSE_API}/mac-link`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email, website: macForm.elements.website.value, click: adClick() ?? undefined,
+          page: location.origin + location.pathname,
+        }),
+      });
+      const result = await res.json().catch(() => ({}));
+      if (result.ok) {
+        macForm.reset();
+        show("ok", `Sent to ${email}. Open the email on your Mac and click Download. If it isn’t there in a few minutes, check your spam folder.`);
+      } else if (result.error === "invalid_email") {
+        show("err", "That email address doesn’t look right. Check it and try again.");
+      } else if (res.status === 429) {
+        show("err", "Too many tries. Wait a few minutes, then try again.");
+      } else {
+        show("err", "We couldn’t send it just now. Try again, or visit easypaintpro.com on your Mac.");
+      }
+    } catch {
+      show("err", "We couldn’t send it. Check your connection and try again.");
+    } finally {
+      submit.disabled = false;
+      submit.textContent = label;
+    }
+  });
+}
+
+// ---- Privacy page: switch off sharing ad results with Meta in this browser ----
+const adShareButton = document.querySelector("[data-ad-sharing]");
+if (adShareButton) {
+  const note = document.getElementById("ad-sharing-status");
+  const sync = () => {
+    const gpc = navigator.globalPrivacyControl === true;
+    let off = false;
+    try { off = localStorage.getItem(AD_OPT_OUT_KEY) === "1"; } catch { /* storage blocked */ }
+    adShareButton.textContent = off ? "Allow sharing again" : "Don’t share with Meta";
+    adShareButton.hidden = gpc;
+    note.textContent = gpc
+      ? "Your browser sends Global Privacy Control, so this browser never shares anything with Meta."
+      : off ? "Sharing is off in this browser." : "Sharing is on in this browser, and only happens if you came from one of our ads.";
+  };
+  adShareButton.addEventListener("click", () => {
+    try {
+      if (localStorage.getItem(AD_OPT_OUT_KEY) === "1") localStorage.removeItem(AD_OPT_OUT_KEY);
+      else { localStorage.setItem(AD_OPT_OUT_KEY, "1"); sessionStorage.removeItem(AD_KEY); }
+    } catch { /* storage blocked: nothing was stored either */ }
+    sync();
+  });
+  sync();
 }
 
 // Owner details stay out of the page source and search results. They are stored

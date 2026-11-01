@@ -734,3 +734,23 @@ kbd, .menu-path { font: 500 .85em/1 var(--f-mono); padding: .2em .45em; border-r
 .price-compare li em { font-style: normal; color: var(--muted); font-size: .9rem; }
 .price-compare li:first-child span, .price-compare li:first-child strong { color: var(--accent); }
 @media (max-width: 560px) { .price-compare li { grid-template-columns: minmax(0, 1fr) auto; } .price-compare li em { grid-column: 1 / -1; margin-top: -6px; } }
+
+/* Ad landing page (/mac/): the Mac download, or "email me the link" anywhere else */
+.device-cta { display: grid; gap: 12px; }
+.device-cta .for-mac { display: grid; gap: 12px; }
+.device-cta .for-other { display: none; gap: 12px; }
+.device-cta[data-device="other"] .for-mac { display: none; }
+.device-cta[data-device="other"] .for-other { display: grid; }
+.device-cta .link-button { justify-self: start; }
+[data-device="other"] .mac-only, [data-device="mac"] .other-only { display: none; }
+.mac-link-form { display: grid; gap: 10px; max-width: 480px; }
+.mac-link-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.mac-link-row input { flex: 1 1 220px; min-width: 0; }
+.phone-note { font-weight: 700; }
+.mac-shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+@media (max-width: 860px) { .mac-shots { grid-template-columns: 1fr; } }
+.mac-shots figure { margin: 0; display: grid; gap: 10px; align-content: start; }
+.mac-shots .shot { aspect-ratio: 1200 / 782; }
+.mac-shots .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+.mac-shots figcaption h3 { font-size: 1.05rem; margin-bottom: 2px; }
+.mac-shots figcaption p { color: var(--muted); font-size: .95rem; }
