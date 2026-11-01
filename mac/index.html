@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Easy Paint Pro – The Simple Paint App for Mac</title>
+<meta name="description" content="The classic paint program, made for Mac. Every tool has its name on it. Free for 7 days, then $29.99 once. No subscription.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1e2a" media="(prefers-color-scheme: dark)">
+<script>
+/* Apply saved reading choices before the page paints. */
+try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f = localStorage.getItem("epp-font"), s = localStorage.getItem("epp-size");
+  if (t) d.dataset.theme = t; if (f) d.dataset.font = f; if (s) d.style.setProperty("--text-scale", s);
+  if (f === "lexend") document.write('<link rel="stylesheet" id="lexend-css" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap">');
+} catch (e) {}
+</script>
+<meta property="og:site_name" content="Easy Paint Pro">
+<meta property="og:title" content="Easy Paint Pro – the simple paint app for Mac">
+<meta property="og:description" content="The classic paint program, made for Mac. Every tool has its name on it. Free for 7 days, then $29.99 once. No subscription.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://easypaintpro.com/mac/">
+<meta property="og:image" content="https://easypaintpro.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://easypaintpro.com/mac/">
+<link rel="icon" href="/assets/app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/styles.css?v=16">
+<script src="/script.js?v=16" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="nav wrap" aria-label="Primary">
+    <a class="brand" href="/"><img src="/assets/app-icon.png" alt="" width="32" height="32"><span>Easy Paint Pro</span></a>
+    <div class="nav-links">
+      <a href="/#tools">Tools</a>
+      <a href="/#your-way">Classic look</a>
+      <a href="/gallery.html">Gallery</a>
+      <a href="/#compare">Compare</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/support/">Support</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="nav-tools">
+      <button class="icon-btn" type="button" popovertarget="reading-panel" aria-label="Reading options: text size and font" title="Text size and font"><span class="aa" aria-hidden="true">Aa</span></button>
+      <button class="icon-btn theme-toggle" type="button" title="Switch between Day and Night">
+        <span class="to-night"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.4 14.6A8.5 8.5 0 0 1 9.4 3.6a.6.6 0 0 0-.8-.7 9.7 9.7 0 1 0 12.5 12.5.6.6 0 0 0-.7-.8z"/></svg><span class="label">Night</span><span class="visually-hidden">Switch to Night look</span></span>
+        <span class="to-day"><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.6" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1.8v2.4M12 19.8v2.4M1.8 12h2.4M19.8 12h2.4M4.8 4.8l1.7 1.7M17.5 17.5l1.7 1.7M4.8 19.2l1.7-1.7M17.5 6.5l1.7-1.7"/></g></svg><span class="label">Day</span><span class="visually-hidden">Switch to Day look</span></span>
+      </button>
+    </div>
+    <a class="button button-primary button-small" href="/download/">Download free trial</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="hero-name">
+          <img src="/assets/app-icon.png" alt="" width="76" height="76">
+          <h1>Easy Paint Pro</h1>
+        </div>
+        <p class="hero-tag">The simple paint app <span class="rainbow">for Mac.</span></p>
+        <p class="lede">Paint, draw, add text and shapes, then save or share. Every tool has its name on it, so there’s nothing to learn.</p>
+
+        <div class="device-cta" data-device="mac">
+          <div class="for-mac">
+            <div class="cta-row">
+              <a class="button button-primary" href="/download/" data-sales="download"><svg class="dl-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Download free trial</a>
+            </div>
+            <p class="requirement">7 days free, then <a href="#buy">$29.99 once</a> · no account, no card · Mac with Apple silicon (M1 or later), macOS 14 or later</p>
+            <button class="link-button" type="button" data-show-device="other">Not at your Mac? Email yourself the link</button>
+          </div>
+
+          <div class="for-other">
+            <p class="phone-note">Easy Paint Pro is a Mac app. We’ll email you the download link so you can open it on your Mac.</p>
+            <form class="mac-link-form" id="mac-link-form" novalidate>
+              <label class="visually-hidden" for="ml-email">Your email address</label>
+              <div class="mac-link-row">
+                <input type="email" id="ml-email" name="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
+                <button class="button button-primary" type="submit">Email me the link</button>
+              </div>
+              <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <p class="form-status" role="status" aria-live="polite" hidden></p>
+              <p class="requirement">One email with the link. No mailing list. <a href="/privacy/#ads">Privacy</a></p>
+            </form>
+            <button class="link-button" type="button" data-show-device="mac">On your Mac now? Download it here</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="window">
+        <picture><source media="(prefers-color-scheme: dark)" srcset="/assets/hero35-modern-night-1200.webp 1200w, /assets/hero35-modern-night.webp 2880w" sizes="(max-width: 980px) 100vw, 60vw"><img src="/assets/hero35-modern-day-1200.webp" srcset="/assets/hero35-modern-day-1200.webp 1200w, /assets/hero35-modern-day.webp 2880w" sizes="(max-width: 980px) 100vw, 60vw" width="2880" height="1612" fetchpriority="high"
+          alt="Easy Paint Pro on a Mac: the labelled toolbar, Brush Options and a picture of a kite, a brick house, an apple tree and a flower bed."></picture>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">What you can do</p>
+        <h2>Everything you need to paint, nothing you have to learn</h2>
+      </div>
+      <div class="mac-shots">
+        <figure>
+          <div class="shot"><img src="/assets/shot-brushes-1200.webp" width="1200" height="782" loading="lazy" alt="Brush Studio canvas with pencil, round brush, textured, calligraphy, airbrush and highlighter strokes, and the Brush Options panel."></div>
+          <figcaption><h3>50+ brushes</h3><p>Pencil, calligraphy, watercolor, oil, crayon and airbrush, plus pattern, gradient and emoji fills.</p></figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="/assets/shot-text-1200.webp" width="1200" height="782" loading="lazy" alt="The headline Make your ideas visible on the canvas with the Text Options panel open."></div>
+          <figcaption><h3>Text, shapes and stamps</h3><p>They stay editable until you place them, so you can move and restyle as you go.</p></figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="/assets/crop-recording.webp" width="1400" height="971" loading="lazy" alt="The Canvas recording popover under the Record button, with replay speed and loop options."></div>
+          <figcaption><h3>Record and replay</h3><p>Watch your picture paint itself again, then export it as a video or GIF.</p></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="buy">
+    <div class="wrap sub-grid">
+      <div class="card highlight">
+        <p class="eyebrow">Buy once · introductory price</p>
+        <h2>$29.99, then it’s yours</h2>
+        <p class="launch-note">This launch price is for a limited time and will go up soon.</p>
+        <ul class="ticks"><li>One-time purchase, no subscription</li><li>Free updates to Easy Paint Pro 3</li><li>Activates on 1 Mac, and you can move it</li><li>14-day money-back guarantee</li></ul>
+        <div class="cta-row" data-device="mac">
+          <a class="button button-primary" href="#" data-sales="buy">Buy now</a>
+          <a class="button button-quiet mac-only" href="/download/" data-sales="download">Try free for 7 days</a>
+          <a class="button button-quiet other-only" href="#top">Email me the download link</a>
+        </div>
+        <p class="fine">Introductory launch price in US dollars. Sales tax or VAT is added at checkout where it applies.</p>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Which Macs does it run on?</summary>
+          <div class="answer"><p>Any Mac with Apple silicon (M1 or later) running macOS 14 Sonoma or later.</p></div>
+        </details>
+        <details>
+          <summary>How does the free trial work?</summary>
+          <div class="answer"><p>Download it and open it. You get 7 days with every tool unlocked. No account and no card needed.</p></div>
+        </details>
+        <details>
+          <summary>What happens when the trial ends?</summary>
+          <div class="answer"><p>The app becomes view-only until you buy. Your pictures are never deleted, changed or watermarked.</p></div>
+        </details>
+        <details>
+          <summary>Can I get my money back?</summary>
+          <div class="answer"><p>Yes. Get a full refund within 14 days of buying. See <a href="/terms/">terms and refunds</a>.</p></div>
+        </details>
+        <details>
+          <summary>Is my artwork private?</summary>
+          <div class="answer"><p>Yes. Your pictures stay on your Mac and are never uploaded. See the <a href="/privacy/">privacy policy</a>.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="/"><img src="/assets/app-icon.png" alt="" width="32" height="32">Easy Paint Pro</a>
+    <div class="foot-links">
+      <a href="/download/">Download</a>
+      <a href="/gallery.html">Gallery</a>
+      <a href="/guides/">Guides</a>
+      <a href="/support/">Support</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/contact.html?topic=education">Licensing</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms &amp; refunds</a>
+      <button class="link-button" type="button" data-sales="app-store">Mac App Store (coming soon)</button>
+    </div>
+    <span>© <span id="copyright-year">2026</span> Easy Paint Pro</span>
+  </div>
+</footer>
+
+<div class="toast" role="status" aria-live="polite" aria-atomic="true" hidden>
+  <strong></strong>
+  <span></span>
+</div>
+<div class="reading-panel" id="reading-panel" popover aria-labelledby="reading-title">
+  <div>
+    <h2 id="reading-title">Make it easy to read</h2>
+    <p class="intro">Your choices are saved on this device.</p>
+  </div>
+  <fieldset>
+    <legend>Look</legend>
+    <div class="seg">
+      <label><input type="radio" name="rp-theme" value="system">Match my Mac</label>
+      <label><input type="radio" name="rp-theme" value="light">Day</label>
+      <label><input type="radio" name="rp-theme" value="dark">Night</label>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Text size</legend>
+    <div class="seg size-seg">
+      <label><input type="radio" name="rp-size" value="1"><span aria-hidden="true">A</span><span class="visually-hidden">Standard</span></label>
+      <label><input type="radio" name="rp-size" value="1.15"><span aria-hidden="true">A</span><span class="visually-hidden">Large</span></label>
+      <label><input type="radio" name="rp-size" value="1.3"><span aria-hidden="true">A</span><span class="visually-hidden">Larger</span></label>
+      <label><input type="radio" name="rp-size" value="1.5"><span aria-hidden="true">A</span><span class="visually-hidden">Largest</span></label>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Font</legend>
+    <div class="font-list">
+      <div class="font-choice"><label class="f-atkinson"><input type="radio" name="rp-font" value=""><strong>Atkinson Hyperlegible</strong><small>Standard. Designed for low vision, every letter easy to tell apart.</small></label></div>
+      <div class="font-choice"><label class="f-lexend"><input type="radio" name="rp-font" value="lexend"><strong>Lexend</strong><small>Wider spacing made for smoother, less tiring reading.</small></label></div>
+      <div class="font-choice"><label class="f-dyslexic"><input type="radio" name="rp-font" value="dyslexic"><strong>OpenDyslexic</strong><small>Weighted letters made for readers with dyslexia.</small></label></div>
+    </div>
+  </fieldset>
+  <div class="panel-foot">
+    <button class="link-button" type="button" data-reading-reset>Reset to standard</button>
+    <button class="button button-primary button-small" type="button" popovertarget="reading-panel" popovertargetaction="hide">Done</button>
+  </div>
+</div>
+</body>
+</html>
