@@ -397,13 +397,6 @@ html { font-size: calc(clamp(16px, .35vw + 11px, 19px) * var(--text-scale, 1)); 
 }
 /* Large displays: give the app more room */
 
-/* Coming-soon pill for the Mac App Store (not Apple's badge; the listing isn't live yet) */
-.soon-pill {
-  display: inline-flex; align-items: center; gap: .5em;
-  font: 500 .82rem/1.2 var(--f-mono); color: var(--muted);
-  padding: .65em 1em; border-radius: 999px; border: 1px dashed var(--line); background: var(--surface);
-}
-.soon-pill svg { width: 15px; height: 15px; fill: currentColor; flex: none; }
 .button-primary .dl-icon { width: 18px; height: 18px; flex: none; }
 
 /* Subpages: download, support, legal */

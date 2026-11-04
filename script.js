@@ -3,7 +3,7 @@
 // APP_STORE_URL: the Mac App Store listing.
 // While a value is empty, its buttons show a short notice instead of a dead link.
 const DOWNLOAD_URL = "https://github.com/easypaintpro/easypaintpro-site/releases/latest/download/EasyPaintPro.dmg";
-const APP_STORE_URL = "";
+const APP_STORE_URL = "https://apps.apple.com/app/easy-paint-pro/id6822956115?mt=12";
 // Paddle checkout (live). The client-side token is public by design: it can only
 // open checkouts. Paddle.js loads only when someone chooses Buy.
 const PADDLE_TOKEN = "live_57e942cd69dce4a4ee60057fa73";
