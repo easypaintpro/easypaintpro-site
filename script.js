@@ -582,3 +582,47 @@ document.querySelectorAll(".owner-btn").forEach((btn) => {
 
 const year = document.getElementById("copyright-year");
 if (year) year.textContent = new Date().getFullYear();
+
+// App screenshots in Day or Night, on pages with a look switch. Follows the site's own
+// Day/Night setting until the visitor picks one.
+const lookHost = document.querySelector("main[data-look]");
+if (lookHost) {
+  const lookButtons = [...document.querySelectorAll(".look-switch button")];
+  const darkQuery = matchMedia("(prefers-color-scheme: dark)");
+  let lookChosen = null;
+  const siteIsDark = () => root.dataset.theme === "dark" || (root.dataset.theme !== "light" && darkQuery.matches);
+  const applyLook = (v) => {
+    lookHost.dataset.look = v;
+    lookButtons.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.look === v)));
+  };
+  const follow = () => { if (!lookChosen) applyLook(siteIsDark() ? "night" : "day"); };
+  follow();
+  lookButtons.forEach((b) => b.addEventListener("click", () => { lookChosen = b.dataset.look; applyLook(lookChosen); }));
+  new MutationObserver(follow).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
+  darkQuery.addEventListener?.("change", follow);
+}
+
+// Features page: find a feature by typing.
+const fxSearch = document.getElementById("fx-search");
+if (fxSearch) {
+  const fxItems = [...document.querySelectorAll(".fx-item")];
+  const fxCats = [...document.querySelectorAll(".fx-cat")];
+  const fxNone = document.getElementById("fx-none");
+  const fxCount = document.getElementById("fx-count");
+  const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  fxItems.forEach((it) => { it.dataset.text = norm(it.textContent + " " + (it.closest(".fx-cat")?.querySelector("h2")?.textContent || "")); });
+  const runSearch = () => {
+    const words = norm(fxSearch.value.trim()).split(/\s+/).filter(Boolean);
+    let shown = 0;
+    fxItems.forEach((it) => {
+      const ok = words.every((w) => it.dataset.text.includes(w));
+      it.hidden = !ok;
+      if (ok) shown++;
+    });
+    fxCats.forEach((c) => { c.hidden = words.length > 0 && !c.querySelector(".fx-item:not([hidden])"); });
+    fxNone.hidden = shown > 0;
+    fxCount.textContent = words.length ? (shown === 1 ? "1 feature matches" : `${shown} features match`) : "";
+  };
+  fxSearch.addEventListener("input", runSearch);
+  fxSearch.addEventListener("keydown", (e) => { if (e.key === "Escape") { fxSearch.value = ""; runSearch(); } });
+}

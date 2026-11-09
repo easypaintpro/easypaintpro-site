@@ -28,8 +28,8 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/styles.css?v=16">
-<script src="/script.js?v=16" defer></script>
+<link rel="stylesheet" href="/styles.css?v=17">
+<script src="/script.js?v=17" defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -105,15 +105,13 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
   <nav class="nav wrap" aria-label="Primary">
     <a class="brand" href="/"><img src="/assets/app-icon.png" alt="" width="32" height="32"><span>Easy Paint Pro</span></a>
     <div class="nav-links">
-      <a href="#tools">Tools</a>
-      <a href="#your-way">Classic look</a>
+      <a href="/compare/">Compare</a>
       <a href="/gallery.html">Gallery</a>
-      <a href="#compare">Compare</a>
-      <a href="#pricing">Pricing</a>
+      <a href="/#pricing">Pricing</a>
       <a href="/support/">Support</a>
-      <a href="/contact.html">Contact</a>
     </div>
     <div class="nav-tools">
+      <button class="icon-btn menu-btn" type="button" popovertarget="site-menu" aria-label="Menu" title="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg><span class="label">Menu</span></button>
       <button class="icon-btn" type="button" popovertarget="reading-panel" aria-label="Reading options: text size and font" title="Text size and font"><span class="aa" aria-hidden="true">Aa</span></button>
       <button class="icon-btn theme-toggle" type="button" title="Switch between Day and Night">
         <span class="to-night"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.4 14.6A8.5 8.5 0 0 1 9.4 3.6a.6.6 0 0 0-.8-.7 9.7 9.7 0 1 0 12.5 12.5.6.6 0 0 0-.7-.8z"/></svg><span class="label">Night</span><span class="visually-hidden">Switch to Night look</span></span>
@@ -123,6 +121,21 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
     <a class="button button-primary button-small" href="/download/">Download free trial</a>
   </nav>
 </header>
+<div class="site-menu" id="site-menu" popover aria-label="Site menu">
+  <ul>
+    <li><a href="/compare/"><strong>Compare</strong><span>How it stacks up, and what it costs</span></a></li>
+    <li><a href="/gallery.html"><strong>Gallery</strong><span>Pictures made in the app</span></a></li>
+    <li><a href="/#pricing"><strong>Pricing</strong><span>Try free, then buy once</span></a></li>
+    <li><a href="/support/"><strong>Support</strong><span>Help, questions and licenses</span></a></li>
+    <li><a href="/download/"><strong>Download</strong><span>Free 7-day trial for Mac</span></a></li>
+    <li><a href="/guides/"><strong>Guides</strong><span>Step-by-step how-tos</span></a></li>
+    <li><a href="/contact.html"><strong>Contact</strong><span>Questions and school or team licenses</span></a></li>
+  </ul>
+  <div class="site-menu-actions">
+    <a class="button button-primary" href="/download/">Download free trial</a>
+    <a class="button button-quiet" href="https://apps.apple.com/app/easy-paint-pro/id6822956115?mt=12" data-sales="app-store">Get it on the Mac App Store</a>
+  </div>
+</div>
 
 <main id="main">
 
@@ -469,23 +482,23 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
 
         <div role="tabpanel" id="cp-preview" aria-labelledby="c-preview" tabindex="0">
           <div class="table-wrap">
-            <table>
+            <table class="stack">
               <caption class="visually-hidden">Easy Paint Pro compared with Apple Preview</caption>
               <thead><tr><th scope="col">What you want to do</th><th scope="col" class="col-epp"><span><img src="assets/app-icon.png" alt="" width="24" height="24">Easy Paint Pro</span></th><th scope="col">Apple Preview</th></tr></thead>
               <tbody>
-                <tr><th scope="row">Paint with real brushes</th><td class="col-epp"><span class="mark yes">✓</span>Classic tips and professional brush families</td><td><span class="mark part">◐</span>Sketch and Draw markup</td></tr>
-                <tr><th scope="row">Airbrush</th><td class="col-epp"><span class="mark yes">✓</span>Dedicated spray tool and presets</td><td><span class="mark no">—</span></td></tr>
-                <tr><th scope="row">Pattern fills with adjustable scale</th><td class="col-epp"><span class="mark yes">✓</span>1× to 8× with live preview</td><td><span class="mark no">—</span></td></tr>
-                <tr><th scope="row">Gradient and emoji fills</th><td class="col-epp"><span class="mark yes">✓</span>Five gradient types, any emoji</td><td><span class="mark no">—</span></td></tr>
-                <tr><th scope="row">Text and shapes</th><td class="col-epp"><span class="mark yes">✓</span>Text boxes, shapes, lines, curves, polygons</td><td><span class="mark yes">✓</span>Text boxes, shapes and line styles</td></tr>
-                <tr><th scope="row">Stamps</th><td class="col-epp"><span class="mark yes">✓</span>Approved, Paid, dates, custom wording</td><td><span class="mark part">◐</span>Saved signatures, a different job</td></tr>
-                <tr><th scope="row">Layers and masks</th><td class="col-epp"><span class="mark yes">✓</span>Names, visibility, locks, opacity, masks</td><td><span class="mark no">—</span></td></tr>
-                <tr><th scope="row">Selections</th><td class="col-epp"><span class="mark yes">✓</span>Rectangle, circle, lasso, magic wand</td><td><span class="mark yes">✓</span>Rectangle, ellipse, lasso, Smart Lasso</td></tr>
-                <tr><th scope="row">Crop, resize, rotate, adjust color</th><td class="col-epp"><span class="mark yes">✓</span>Included</td><td><span class="mark yes">✓</span>Included</td></tr>
-                <tr><th scope="row">Classic and modern looks, custom toolbar</th><td class="col-epp"><span class="mark yes">✓</span>Six looks, 1 to 3 toolbar rows, Icons Only</td><td><span class="mark no">—</span></td></tr>
-                <tr><th scope="row">Record and replay your drawing</th><td class="col-epp"><span class="mark yes">✓</span>Canvas recording with replay</td><td><span class="mark no">—</span></td></tr>
-                <tr><th scope="row">Fill forms, sign and reorder original PDF pages</th><td class="col-epp"><span class="mark part">◐</span>Pages open as images to paint on</td><td><span class="mark yes">✓</span>Better choice for this</td></tr>
-                <tr><th scope="row">Price</th><td class="col-epp">7 days free, then a one-time purchase</td><td>Included with macOS</td></tr>
+                <tr><th scope="row">Paint with real brushes</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Classic tips and professional brush families</td><td data-label="Apple Preview"><span class="mark part">◐</span>Sketch and Draw markup</td></tr>
+                <tr><th scope="row">Airbrush</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Dedicated spray tool and presets</td><td data-label="Apple Preview"><span class="mark no">—</span></td></tr>
+                <tr><th scope="row">Pattern fills with adjustable scale</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>1× to 8× with live preview</td><td data-label="Apple Preview"><span class="mark no">—</span></td></tr>
+                <tr><th scope="row">Gradient and emoji fills</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Five gradient types, any emoji</td><td data-label="Apple Preview"><span class="mark no">—</span></td></tr>
+                <tr><th scope="row">Text and shapes</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Text boxes, shapes, lines, curves, polygons</td><td data-label="Apple Preview"><span class="mark yes">✓</span>Text boxes, shapes and line styles</td></tr>
+                <tr><th scope="row">Stamps</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Approved, Paid, dates, custom wording</td><td data-label="Apple Preview"><span class="mark part">◐</span>Saved signatures, a different job</td></tr>
+                <tr><th scope="row">Layers and masks</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Names, visibility, locks, opacity, masks</td><td data-label="Apple Preview"><span class="mark no">—</span></td></tr>
+                <tr><th scope="row">Selections</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Rectangle, circle, lasso, magic wand</td><td data-label="Apple Preview"><span class="mark yes">✓</span>Rectangle, ellipse, lasso, Smart Lasso</td></tr>
+                <tr><th scope="row">Crop, resize, rotate, adjust color</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Included</td><td data-label="Apple Preview"><span class="mark yes">✓</span>Included</td></tr>
+                <tr><th scope="row">Classic and modern looks, custom toolbar</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Six looks, 1 to 3 toolbar rows, Icons Only</td><td data-label="Apple Preview"><span class="mark no">—</span></td></tr>
+                <tr><th scope="row">Record and replay your drawing</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Canvas recording with replay</td><td data-label="Apple Preview"><span class="mark no">—</span></td></tr>
+                <tr><th scope="row">Fill forms, sign and reorder original PDF pages</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark part">◐</span>Pages open as images to paint on</td><td data-label="Apple Preview"><span class="mark yes">✓</span>Better choice for this</td></tr>
+                <tr><th scope="row">Price</th><td data-label="Easy Paint Pro" class="col-epp">7 days free, then a one-time purchase</td><td data-label="Apple Preview">Included with macOS</td></tr>
               </tbody>
             </table>
           </div>
@@ -495,21 +508,21 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
 
         <div role="tabpanel" id="cp-paint" aria-labelledby="c-paint" tabindex="0" hidden>
           <div class="table-wrap">
-            <table>
+            <table class="stack">
               <caption class="visually-hidden">Easy Paint Pro compared with Microsoft Paint</caption>
               <thead><tr><th scope="col">Capability</th><th scope="col" class="col-epp"><span><img src="assets/app-icon.png" alt="" width="24" height="24">Easy Paint Pro</span></th><th scope="col">Microsoft Paint</th></tr></thead>
               <tbody>
-                <tr><th scope="row">Runs on</th><td class="col-epp"><span class="mark yes">✓</span>macOS 14 or later, Apple silicon</td><td>Windows 11</td></tr>
-                <tr><th scope="row">Labeled, always-visible tools</th><td class="col-epp"><span class="mark yes">✓</span>A name under every button</td><td><span class="mark part">◐</span>Familiar ribbon tools</td></tr>
-                <tr><th scope="row">Textured brushes with live options</th><td class="col-epp"><span class="mark yes">✓</span>Watercolor, oil, crayon, splatter and professional families</td><td><span class="mark part">◐</span>Built-in brush styles</td></tr>
-                <tr><th scope="row">Objects stay editable until placed</th><td class="col-epp"><span class="mark yes">✓</span>Strokes, text, shapes, stamps and 3D presets</td><td><span class="mark part">◐</span>Mostly pixel editing</td></tr>
-                <tr><th scope="row">Pattern and emoji fills</th><td class="col-epp"><span class="mark yes">✓</span>Included</td><td><span class="mark no">—</span></td></tr>
-                <tr><th scope="row">Layers</th><td class="col-epp"><span class="mark yes">✓</span>Layers, opacity, locks and masks</td><td><span class="mark yes">✓</span>Layers</td></tr>
-                <tr><th scope="row">Precision selections</th><td class="col-epp"><span class="mark yes">✓</span>Lasso, magic wand, circle select, measure</td><td><span class="mark part">◐</span>Rectangle and free-form</td></tr>
-                <tr><th scope="row">Privacy cover-ups and sanitized export</th><td class="col-epp"><span class="mark yes">✓</span>Blur, pixelate, redact, sanitized copy</td><td><span class="mark no">—</span></td></tr>
-                <tr><th scope="row">Canvas recording and replay</th><td class="col-epp"><span class="mark yes">✓</span>Included</td><td><span class="mark no">—</span></td></tr>
-                <tr><th scope="row">AI image generation</th><td class="col-epp"><span class="mark no">—</span>Not part of the app</td><td><span class="mark yes">✓</span>Depends on device and account</td></tr>
-                <tr><th scope="row">Price</th><td class="col-epp">7 days free, then a one-time purchase</td><td>Included with Windows</td></tr>
+                <tr><th scope="row">Runs on</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>macOS 14 or later, Apple silicon</td><td data-label="Microsoft Paint">Windows 11</td></tr>
+                <tr><th scope="row">Labeled, always-visible tools</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>A name under every button</td><td data-label="Microsoft Paint"><span class="mark part">◐</span>Familiar ribbon tools</td></tr>
+                <tr><th scope="row">Textured brushes with live options</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Watercolor, oil, crayon, splatter and professional families</td><td data-label="Microsoft Paint"><span class="mark part">◐</span>Built-in brush styles</td></tr>
+                <tr><th scope="row">Objects stay editable until placed</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Strokes, text, shapes, stamps and 3D presets</td><td data-label="Microsoft Paint"><span class="mark part">◐</span>Mostly pixel editing</td></tr>
+                <tr><th scope="row">Pattern and emoji fills</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Included</td><td data-label="Microsoft Paint"><span class="mark no">—</span></td></tr>
+                <tr><th scope="row">Layers</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Layers, opacity, locks and masks</td><td data-label="Microsoft Paint"><span class="mark yes">✓</span>Layers</td></tr>
+                <tr><th scope="row">Precision selections</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Lasso, magic wand, circle select, measure</td><td data-label="Microsoft Paint"><span class="mark part">◐</span>Rectangle and free-form</td></tr>
+                <tr><th scope="row">Privacy cover-ups and sanitized export</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Blur, pixelate, redact, sanitized copy</td><td data-label="Microsoft Paint"><span class="mark no">—</span></td></tr>
+                <tr><th scope="row">Canvas recording and replay</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Included</td><td data-label="Microsoft Paint"><span class="mark no">—</span></td></tr>
+                <tr><th scope="row">AI image generation</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark no">—</span>Not part of the app</td><td data-label="Microsoft Paint"><span class="mark yes">✓</span>Depends on device and account</td></tr>
+                <tr><th scope="row">Price</th><td data-label="Easy Paint Pro" class="col-epp">7 days free, then a one-time purchase</td><td data-label="Microsoft Paint">Included with Windows</td></tr>
               </tbody>
             </table>
           </div>
@@ -592,6 +605,7 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
     <a class="brand" href="/"><img src="/assets/app-icon.png" alt="" width="32" height="32">Easy Paint Pro</a>
     <div class="foot-links">
       <a href="/download/">Download</a>
+      <a href="/compare/">Compare</a>
       <a href="/gallery.html">Gallery</a>
       <a href="/guides/">Guides</a>
       <a href="/support/">Support</a>

@@ -27,8 +27,8 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/styles.css?v=16">
-<script src="/script.js?v=16" defer></script>
+<link rel="stylesheet" href="/styles.css?v=17">
+<script src="/script.js?v=17" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -37,15 +37,13 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
   <nav class="nav wrap" aria-label="Primary">
     <a class="brand" href="/"><img src="/assets/app-icon.png" alt="" width="32" height="32"><span>Easy Paint Pro</span></a>
     <div class="nav-links">
-      <a href="/#tools">Tools</a>
-      <a href="/#your-way">Classic look</a>
+      <a href="/compare/">Compare</a>
       <a href="/gallery.html" aria-current="page">Gallery</a>
-      <a href="/#compare">Compare</a>
       <a href="/#pricing">Pricing</a>
       <a href="/support/">Support</a>
-      <a href="/contact.html">Contact</a>
     </div>
     <div class="nav-tools">
+      <button class="icon-btn menu-btn" type="button" popovertarget="site-menu" aria-label="Menu" title="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg><span class="label">Menu</span></button>
       <button class="icon-btn" type="button" popovertarget="reading-panel" aria-label="Reading options: text size and font" title="Text size and font"><span class="aa" aria-hidden="true">Aa</span></button>
       <button class="icon-btn theme-toggle" type="button" title="Switch between Day and Night">
         <span class="to-night"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.4 14.6A8.5 8.5 0 0 1 9.4 3.6a.6.6 0 0 0-.8-.7 9.7 9.7 0 1 0 12.5 12.5.6.6 0 0 0-.7-.8z"/></svg><span class="label">Night</span><span class="visually-hidden">Switch to Night look</span></span>
@@ -55,6 +53,21 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
     <a class="button button-primary button-small" href="/download/">Download free trial</a>
   </nav>
 </header>
+<div class="site-menu" id="site-menu" popover aria-label="Site menu">
+  <ul>
+    <li><a href="/compare/"><strong>Compare</strong><span>How it stacks up, and what it costs</span></a></li>
+    <li><a href="/gallery.html" aria-current="page"><strong>Gallery</strong><span>Pictures made in the app</span></a></li>
+    <li><a href="/#pricing"><strong>Pricing</strong><span>Try free, then buy once</span></a></li>
+    <li><a href="/support/"><strong>Support</strong><span>Help, questions and licenses</span></a></li>
+    <li><a href="/download/"><strong>Download</strong><span>Free 7-day trial for Mac</span></a></li>
+    <li><a href="/guides/"><strong>Guides</strong><span>Step-by-step how-tos</span></a></li>
+    <li><a href="/contact.html"><strong>Contact</strong><span>Questions and school or team licenses</span></a></li>
+  </ul>
+  <div class="site-menu-actions">
+    <a class="button button-primary" href="/download/">Download free trial</a>
+    <a class="button button-quiet" href="https://apps.apple.com/app/easy-paint-pro/id6822956115?mt=12" data-sales="app-store">Get it on the Mac App Store</a>
+  </div>
+</div>
 
 <main id="main">
   <section class="page-hero">
@@ -132,6 +145,7 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
     <a class="brand" href="/"><img src="/assets/app-icon.png" alt="" width="32" height="32">Easy Paint Pro</a>
     <div class="foot-links">
       <a href="/download/">Download</a>
+      <a href="/compare/">Compare</a>
       <a href="/gallery.html">Gallery</a>
       <a href="/guides/">Guides</a>
       <a href="/support/">Support</a>
