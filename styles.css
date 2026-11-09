@@ -869,3 +869,22 @@ mark.fx-hit { background: color-mix(in srgb, var(--accent) 28%, transparent); co
   .nav-tools { gap: 6px; }
   .nav-tools .theme-toggle { display: none; }
 }
+
+/* Work page: drawn illustration of covering private details (not a screenshot) */
+.redact-art { margin: 0; display: grid; gap: 10px; }
+.ra-window { border-radius: 12px; border: 1px solid var(--line); background: var(--surface); box-shadow: var(--shadow); overflow: hidden; }
+.ra-bar { display: flex; gap: 6px; padding: 10px 12px; background: var(--sunk); border-bottom: 1px solid var(--line); }
+.ra-bar i { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; }
+.ra-bar i:nth-child(2) { background: #febc2e; } .ra-bar i:nth-child(3) { background: #28c840; }
+.ra-body { padding: clamp(18px, 4vw, 36px); display: grid; gap: 14px; font: 500 clamp(1rem, .9rem + .6vw, 1.3rem)/1.3 var(--f-mono); }
+.ra-line { margin: 0; display: flex; align-items: center; gap: 12px; color: var(--ink); }
+.ra-line.short { color: var(--muted); }
+.ra-pixel { display: inline-block; width: 11em; height: 1.4em; border-radius: 3px;
+  background: conic-gradient(from 90deg at 50% 50%, #8ea0c8 25%, #b9c6e4 0 50%, #a7b5d8 0 75%, #7d8fbd 0) 0 0 / .7em .7em; }
+.ra-black { display: inline-block; width: 13em; height: 1.4em; border-radius: 3px; background: #111; }
+.redact-art figcaption { font-size: .9rem; color: var(--muted); }
+/* Home: links to the new pages */
+.more-features, .full-compare { margin-top: 24px; }
+a.lesson.made-for { color: var(--ink); text-decoration: none; }
+a.lesson.made-for:hover { border-color: var(--accent); }
+a.lesson.made-for .go { color: var(--accent); font-weight: 700; font-size: .95rem; }
