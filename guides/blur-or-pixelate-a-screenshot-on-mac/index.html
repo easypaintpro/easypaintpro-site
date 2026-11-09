@@ -27,8 +27,8 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/styles.css?v=17">
-<script src="/script.js?v=17" defer></script>
+<link rel="stylesheet" href="/styles.css?v=18">
+<script src="/script.js?v=18" defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -95,6 +95,7 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
   <nav class="nav wrap" aria-label="Primary">
     <a class="brand" href="/"><img src="/assets/app-icon.png" alt="" width="32" height="32"><span>Easy Paint Pro</span></a>
     <div class="nav-links">
+      <a href="/features/">Features</a>
       <a href="/compare/">Compare</a>
       <a href="/gallery.html">Gallery</a>
       <a href="/schools/">Schools</a>
@@ -115,6 +116,7 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
 </header>
 <div class="site-menu" id="site-menu" popover aria-label="Site menu">
   <ul>
+    <li><a href="/features/"><strong>Features</strong><span>Every tool, with Day and Night screenshots</span></a></li>
     <li><a href="/compare/"><strong>Compare</strong><span>How it stacks up, and what it costs</span></a></li>
     <li><a href="/gallery.html"><strong>Gallery</strong><span>Pictures made in the app</span></a></li>
     <li><a href="/schools/"><strong>Schools</strong><span>For classrooms and teachers</span></a></li>
@@ -159,6 +161,14 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
         </ol>
 
         <h2 id="which">Pixelate, blur or redact?</h2>
+        <figure class="guide-figure redact-trio-fig">
+          <div class="redact-trio" aria-hidden="true">
+            <div class="ra-window"><div class="ra-bar"><i></i><i></i><i></i></div><div class="ra-body"><p class="ra-tag">Pixelate</p><p class="ra-line">Email <span class="ra-pixel"></span></p></div></div>
+            <div class="ra-window"><div class="ra-bar"><i></i><i></i><i></i></div><div class="ra-body"><p class="ra-tag">Strong blur</p><p class="ra-line">Email <span class="ra-blur">sam@example.com</span></p></div></div>
+            <div class="ra-window"><div class="ra-bar"><i></i><i></i><i></i></div><div class="ra-body"><p class="ra-tag">Solid redaction</p><p class="ra-line">Email <span class="ra-black"></span></p></div></div>
+          </div>
+          <figcaption>Illustration of the three choices on the same line of a screenshot. All three replace the pixels underneath.</figcaption>
+        </figure>
         <ul>
           <li><strong>Solid redaction</strong> is the safest for text such as names, addresses and account numbers. Nothing of the original is left.</li>
           <li><strong>Pixelate</strong> looks friendlier and is fine for faces and larger areas.</li>
@@ -200,6 +210,7 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
     <a class="brand" href="/"><img src="/assets/app-icon.png" alt="" width="32" height="32">Easy Paint Pro</a>
     <div class="foot-links">
       <a href="/download/">Download</a>
+      <a href="/features/">Features</a>
       <a href="/compare/">Compare</a>
       <a href="/gallery.html">Gallery</a>
       <a href="/schools/">Schools</a>

@@ -28,8 +28,8 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/styles.css?v=17">
-<script src="/script.js?v=17" defer></script>
+<link rel="stylesheet" href="/styles.css?v=18">
+<script src="/script.js?v=18" defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -105,6 +105,7 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
   <nav class="nav wrap" aria-label="Primary">
     <a class="brand" href="/"><img src="/assets/app-icon.png" alt="" width="32" height="32"><span>Easy Paint Pro</span></a>
     <div class="nav-links">
+      <a href="/features/">Features</a>
       <a href="/compare/">Compare</a>
       <a href="/gallery.html">Gallery</a>
       <a href="/schools/">Schools</a>
@@ -125,6 +126,7 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
 </header>
 <div class="site-menu" id="site-menu" popover aria-label="Site menu">
   <ul>
+    <li><a href="/features/"><strong>Features</strong><span>Every tool, with Day and Night screenshots</span></a></li>
     <li><a href="/compare/"><strong>Compare</strong><span>How it stacks up, and what it costs</span></a></li>
     <li><a href="/gallery.html"><strong>Gallery</strong><span>Pictures made in the app</span></a></li>
     <li><a href="/schools/"><strong>Schools</strong><span>For classrooms and teachers</span></a></li>
@@ -248,7 +250,7 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
         <div class="shot only-night"><img class="zoomable" src="assets/toolbar150-a-night.webp" width="1779" height="296" loading="lazy" alt="The Easy Paint Pro toolbar in Night, at 150% size. Top row: New, Open, Save, Share, Print, Undo, Redo, Paste, Clear Canvas, Resize, Select/Move, Crop, Rotate, Flip and Zoom. Bottom row: Pencil, Brush, Fill, Rectangle, Line, Curve, Select, Color Picker, Eraser, Text, Airbrush, 3D, Shapes, Ellipse, Polygon and Circle Select. Every button has its name under it."></div>
         <div class="shot tb-rest only-night"><img class="zoomable" src="assets/toolbar150-b-night.webp" width="1118" height="142" loading="lazy" alt="The end of the toolbar in Night: Stamp, More, the colour palette, Utilities and the Day/Night switch."></div>
       </div>
-      <p class="caption">The real toolbar at 150% size, with a name under every button. Round Rect, Measure, Zoom Area, Magic Wand and Lasso are under More.</p>
+      <p class="caption">The real toolbar at 150% size, with a name under every button. Round Rect, Measure, Zoom Area, Magic Wand and Lasso are in the scrolling tool strip, or under More in the fixed layouts.</p>
 
       <div class="nostalgia" id="your-way">
         <div class="shot"><img class="zoomable" src="assets/cu-classic-window.webp" width="1344" height="998" loading="lazy" alt="Close-up of the Classic Retro skin: a blue title bar, small toolbar, document tabs and the two-column tool palette on the left beside a canvas with a kite."></div>
@@ -290,6 +292,7 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
           <h3>Text</h3><p>Type right on the picture and style it.</p>
         </figure>
       </div>
+      <p class="more-features"><a class="button button-quiet" href="/features/">See every feature, with Day and Night screenshots</a></p>
     </div>
   </section>
 
@@ -347,7 +350,7 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
           <div class="shot"><img class="zoomable" src="assets/shot-fills.webp" srcset="assets/shot-fills-1200.webp 1200w, assets/shot-fills.webp 1920w" sizes="(max-width: 1560px) 100vw, 1500px" data-full="assets/shot-fills.webp" width="1920" height="986" loading="lazy" alt="Shapes filled with a brick pattern, smiley and heart emoji, a wave pattern and two gradients, with Fill With Color options open."></div>
         </div>
         <div class="panel" role="tabpanel" id="p-shape" aria-labelledby="t-shape" tabindex="0" hidden>
-          <div class="panel-line"><h3>Shapes and 3D that wait for you</h3><p>30+ shapes, plus 3D letters and solids with soft shadows. Move and resize before you place them.</p></div>
+          <div class="panel-line"><h3>Shapes and 3D that wait for you</h3><p>30 shapes, plus 3D letters, numbers and solids with soft shadows. Move and resize them before you place them, and reopen them later.</p></div>
           <div class="shot"><img class="zoomable" src="assets/shot-shapes.webp" srcset="assets/shot-shapes-1200.webp 1200w, assets/shot-shapes.webp 1920w" sizes="(max-width: 1560px) 100vw, 1500px" data-full="assets/shot-shapes.webp" width="1920" height="986" loading="lazy" alt="Shapes and 3D canvas: the word PAINT in colourful 3D letters, a row of 3D solids (cube, sphere, cylinder, cone, pyramid and star) with soft shadows, and filled shapes below (heart, star, hexagon, circle, lightning bolt and check mark), with 3D Options open."></div>
         </div>
         <div class="panel" role="tabpanel" id="p-text" aria-labelledby="t-text" tabindex="0" hidden>
@@ -374,7 +377,7 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
           <ul class="checks">
             <li>Records only the picture. No screen or audio.</li>
             <li>Countdown, skip idle time, choose replay speed.</li>
-            <li>Saves the replay with your picture.</li>
+            <li>Export it as an MP4, MOV or GIF, or keep it with the picture in an .epp file.</li>
           </ul>
         </div>
         <div class="shot"><img class="zoomable" src="assets/crop-recording.webp" width="1400" height="971" loading="lazy" alt="The Canvas recording popover under the Record button, with countdown, show cursor, skip idle time, replay speed and loop options."></div>
@@ -542,7 +545,7 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
                 <tr><th scope="row">Runs on</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>macOS 14 or later, Apple silicon</td><td data-label="Microsoft Paint">Windows 11</td></tr>
                 <tr><th scope="row">Labeled, always-visible tools</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>A name under every button</td><td data-label="Microsoft Paint"><span class="mark part">◐</span>Familiar ribbon tools</td></tr>
                 <tr><th scope="row">Textured brushes with live options</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Watercolor, oil, crayon, splatter and professional families</td><td data-label="Microsoft Paint"><span class="mark part">◐</span>Built-in brush styles</td></tr>
-                <tr><th scope="row">Objects stay editable until placed</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Strokes, text, shapes, stamps and 3D presets</td><td data-label="Microsoft Paint"><span class="mark part">◐</span>Mostly pixel editing</td></tr>
+                <tr><th scope="row">Objects stay editable, even after placing</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Strokes, text, shapes, stamps and 3D presets</td><td data-label="Microsoft Paint"><span class="mark part">◐</span>Mostly pixel editing</td></tr>
                 <tr><th scope="row">Pattern and emoji fills</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Included</td><td data-label="Microsoft Paint"><span class="mark no">—</span></td></tr>
                 <tr><th scope="row">Layers</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Layers, opacity, locks and masks</td><td data-label="Microsoft Paint"><span class="mark yes">✓</span>Layers</td></tr>
                 <tr><th scope="row">Precision selections</th><td data-label="Easy Paint Pro" class="col-epp"><span class="mark yes">✓</span>Lasso, magic wand, circle select, measure</td><td data-label="Microsoft Paint"><span class="mark part">◐</span>Rectangle and free-form</td></tr>
@@ -633,6 +636,7 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
     <a class="brand" href="/"><img src="/assets/app-icon.png" alt="" width="32" height="32">Easy Paint Pro</a>
     <div class="foot-links">
       <a href="/download/">Download</a>
+      <a href="/features/">Features</a>
       <a href="/compare/">Compare</a>
       <a href="/gallery.html">Gallery</a>
       <a href="/schools/">Schools</a>
