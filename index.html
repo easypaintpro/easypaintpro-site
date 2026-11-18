@@ -28,8 +28,8 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/styles.css?v=19">
-<script src="/script.js?v=19" defer></script>
+<link rel="stylesheet" href="/styles.css?v=20">
+<script src="/script.js?v=20" defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -150,7 +150,7 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
       <div class="hero-copy">
         <div class="hero-name">
           <img src="assets/app-icon.png" alt="" width="76" height="76">
-          <h1>Easy Paint Pro</h1>
+          <h1>Easy Paint Pro <span class="h1-kicker">Simple paint app for Mac</span></h1>
         </div>
         <p class="hero-tag">Paint should feel <span class="rainbow">easy again.</span></p>
         <p class="lede">The classic paint program, made for Mac. Every tool has its name on it.</p>
@@ -256,6 +256,7 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
           <p class="eyebrow">The Classic look</p>
           <h2>Remember the paint program you grew up with?</h2>
           <p class="lede">Turn on the Classic Retro skin. Tool palette on the left, colors along the bottom, a blue title bar on top.</p>
+          <p><a href="/guides/ms-paint-for-mac/">Coming from Windows? Is there MS Paint for Mac? →</a></p>
           <ul class="skin-list"><li>Sky Blue</li><li>Veggie Green</li><li>Pebble Gray</li><li>Night</li><li>Modern Day</li><li>Modern Night</li></ul>
           <div class="palette" aria-hidden="true">
             <i style="background:#000"></i><i style="background:#808080"></i><i style="background:#800000"></i><i style="background:#808000"></i><i style="background:#008000"></i><i style="background:#008080"></i><i style="background:#000080"></i><i style="background:#800080"></i><i style="background:#808040"></i><i style="background:#004040"></i><i style="background:#0080ff"></i><i style="background:#004080"></i><i style="background:#8000ff"></i><i style="background:#804000"></i>
@@ -352,7 +353,7 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
           <div class="shot"><img class="zoomable" src="assets/shot-shapes.webp" srcset="assets/shot-shapes-1200.webp 1200w, assets/shot-shapes.webp 1920w" sizes="(max-width: 1560px) 100vw, 1500px" data-full="assets/shot-shapes.webp" width="1920" height="986" loading="lazy" alt="Shapes and 3D canvas: the word PAINT in colourful 3D letters, a row of 3D solids (cube, sphere, cylinder, cone, pyramid and star) with soft shadows, and filled shapes below (heart, star, hexagon, circle, lightning bolt and check mark), with 3D Options open."></div>
         </div>
         <div class="panel" role="tabpanel" id="p-text" aria-labelledby="t-text" tabindex="0" hidden>
-          <div class="panel-line"><h3>Text on the picture</h3><p>Fonts, styles, alignment and rotation.</p></div>
+          <div class="panel-line"><h3>Text on the picture</h3><p>Fonts, styles, alignment and rotation. <a href="/guides/draw-on-a-picture-on-mac/">Write on a photo, step by step →</a></p></div>
           <div class="shot"><img class="zoomable" src="assets/shot-text.webp" srcset="assets/shot-text-1200.webp 1200w, assets/shot-text.webp 1920w" sizes="(max-width: 1560px) 100vw, 1500px" data-full="assets/shot-text.webp" width="1920" height="1251" loading="lazy" alt="Classic Retro skin at night with the headline Make your ideas visible on the canvas and the Text Options panel open."></div>
         </div>
         <div class="panel" role="tabpanel" id="p-stamp" aria-labelledby="t-stamp" tabindex="0" hidden>
@@ -648,6 +649,14 @@ try { var d = document.documentElement, t = localStorage.getItem("epp-theme"), f
       <a href="https://apps.apple.com/app/easy-paint-pro/id6822956115?mt=12" data-sales="app-store">Mac App Store</a>
     </div>
     <span>© <span id="copyright-year">2026</span> Easy Paint Pro</span>
+    <nav class="foot-guides" aria-label="Guides">
+      <span>Guides:</span>
+      <a href="/guides/ms-paint-for-mac/">MS Paint for Mac</a>
+      <a href="/guides/blur-or-pixelate-a-screenshot-on-mac/">Blur a screenshot</a>
+      <a href="/guides/remove-background-from-a-picture-on-mac/">Remove a background</a>
+      <a href="/guides/pixel-art-on-mac/">Pixel art on a Mac</a>
+      <a href="/guides/draw-on-a-picture-on-mac/">Draw on a picture</a>
+    </nav>
   </div>
 </footer>
 

@@ -1,0 +1,32 @@
+# Easy Paint Pro
+
+> Easy Paint Pro is a simple paint app for Mac in the spirit of classic Paint: a name under every tool, 50+ brushes, gradient, pattern and emoji fills, editable text, shapes and stamps, layers and masks, tab groups, screenshot privacy tools and canvas recording. It needs a Mac with Apple silicon and macOS 14 or later. Every tool is free to try for 7 days, then it's a one-time purchase from this website or an in-app purchase on the Mac App Store. No account, no ads, and pictures stay on the Mac.
+
+## Product
+
+- [Home](https://easypaintpro.com/): what Easy Paint Pro is, with screenshots of the Modern and Classic looks
+- [Features](https://easypaintpro.com/features/): every feature in the current version and where to find it in the app
+- [Download](https://easypaintpro.com/download/): free 7-day trial, price, system requirements and the Mac App Store link
+- [Compare](https://easypaintpro.com/compare/): how it compares with the Mac's Preview, Paint on Windows and professional art apps
+- [Gallery](https://easypaintpro.com/gallery.html): pictures made with the app's own tools, including a recording of a pixel-art knight
+- [Schools](https://easypaintpro.com/schools/): use in classrooms, lesson ideas and school licenses
+- [Work](https://easypaintpro.com/work/): marking up screenshots, hiding private details and quick graphics at work
+
+## Guides
+
+- [Is there MS Paint for Mac?](https://easypaintpro.com/guides/ms-paint-for-mac/): what to use on a Mac instead of Microsoft Paint, and how to do the usual Paint jobs
+- [Blur or pixelate part of a screenshot](https://easypaintpro.com/guides/blur-or-pixelate-a-screenshot-on-mac/): hide names, emails and numbers permanently before sharing
+- [Remove the background from a picture](https://easypaintpro.com/guides/remove-background-from-a-picture-on-mac/): cut out a subject or clear a plain background and save a transparent PNG
+- [Make pixel art on a Mac](https://easypaintpro.com/guides/pixel-art-on-mac/): grid, snapping and square blocks, then export small or large
+- [Draw and write on a picture](https://easypaintpro.com/guides/draw-on-a-picture-on-mac/): arrows, highlights, text and stamps on a photo or screenshot
+
+## Help
+
+- [Help and FAQ](https://easypaintpro.com/support/): trial, buying, license keys, installing, updating and using the app
+- [Contact](https://easypaintpro.com/contact.html): questions, support, press and licensing for schools and businesses
+- [Privacy policy](https://easypaintpro.com/privacy/)
+- [Terms, license and refunds](https://easypaintpro.com/terms/)
+
+## Follow
+
+- [Easy Paint Pro on Facebook](https://www.facebook.com/profile.php?id=61596266551168): news and new pictures
