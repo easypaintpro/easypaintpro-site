@@ -955,3 +955,30 @@ a.lesson.made-for .go { color: var(--accent); font-weight: 700; font-size: .95re
 .fx-visual .fx-closeups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .fx-visual .redact-trio { grid-template-columns: 1fr; max-width: 420px; }
 [data-theme="dark"] .ra-black, .ra-black { box-shadow: 0 0 0 1px rgba(255,255,255,.08); }
+
+/* Mac App Store first: a blue App Store button with a grey .dmg button under it */
+.get-app { display: inline-grid; gap: 10px; width: min(100%, 330px); justify-items: stretch; }
+.get-app .button { width: 100%; }
+.button-appstore { background: var(--accent); color: var(--accent-ink); padding: .8em 1.4em; gap: .7em; }
+.button-appstore:hover { filter: brightness(1.08); }
+.button-appstore .dl-icon { width: 20px; height: 20px; flex: none; }
+.button-appstore span { display: grid; text-align: left; line-height: 1.1; }
+.button-appstore small { font: 500 .88rem/1.15 var(--f-body); opacity: .92; }
+.button-appstore small b { font: 700 1.12rem/1.1 var(--f-body); opacity: 1; letter-spacing: .01em; }
+.button-appstore strong { font: 700 1.1rem/1.15 var(--f-body); }
+.button-grey { background: var(--grey-btn, #e3e6ed); color: var(--ink); border-color: transparent; font-size: .92rem; padding: .75em 1.2em; }
+.button-grey:hover { background: var(--grey-btn-hover, #d6dae3); }
+:root[data-theme="dark"] .button-grey { --grey-btn: #3a4152; --grey-btn-hover: #465066; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .button-grey { --grey-btn: #3a4152; --grey-btn-hover: #465066; } }
+.get-app-small { width: min(100%, 270px); gap: 8px; }
+.get-app-small .button-appstore { padding: .6em 1.1em; }
+.get-app-small .button-appstore strong { font-size: 1rem; }
+.get-app-small .button-appstore small { font-size: .8rem; }
+.get-app-small .button-appstore small b { font-size: 1rem; }
+.get-app-small .button-grey { font-size: .85rem; padding: .6em 1em; }
+.cta-row:has(.get-app), .hero-actions:has(.get-app) { align-items: flex-start; }
+.site-menu-actions .get-app { width: 100%; }
+.install-store { margin: 0 0 4px; }
+.install-dmg { margin: 8px 0 0; color: var(--muted); }
+@media (max-width: 640px) { .get-app, .get-app-small { width: 100%; } .guide-cta .get-app { grid-column: 1 / -1; } }
+.button-appstore strong, .button-appstore small, .button-appstore b { color: inherit; }
